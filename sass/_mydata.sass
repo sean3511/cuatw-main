@@ -1,0 +1,206 @@
+//mydata
+.mydata 
+  .btn-tab 
+    width: 100%
+    display: flex
+    background-color: white
+    &__item 
+      width: 100%
+      min-width: 80px
+      color: #786464
+      border-right: 0
+      line-height: 45px
+      display: block
+      text-align: center
+      font-size: 16px
+      position: relative
+      white-space: nowrap
+      &:after 
+        content: ''
+        display: block
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+        width: 0
+        height: 2px
+        background-color: #6a3a3a
+      
+      &--active 
+        color: #6a3a3a
+        font-weight: 600
+        transition: 0.4s
+        &:after 
+          width: 50px
+          transition: 0.4s
+        
+      
+    
+  
+  .form 
+    &__body 
+      overflow: hidden
+    
+    &__footer 
+      display: flex
+      flex-direction: column
+      align-items: center
+    
+    .checkbox 
+      padding: $space-xs 0 $space-lg
+    
+  
+  .alert 
+    padding-top: 0
+  
+
+
+.mydata-title 
+  font-size: 16px
+  color: #786464
+  font-weight: normal
+  margin: $space-sm 0
+  .symbol-text,
+  .symbol 
+    vertical-align: middle
+  
+
+  .symbol 
+    font-size: 8px
+    padding-right: $space-sm
+  
+  & + .mydata-text 
+    margin: 0 0 $space-sm
+  
+
+.mydata-img 
+  width: 100%
+  display: block
+
+.mydata-text 
+  font-size: 12px
+  color: #786464
+  line-height: 19px
+
+
+.mydata-text-red 
+  color: #ad0522
+
+.mydata-text-strong 
+  color: #6a3a3a
+  font-weight: 600
+
+
+.mydata
+  .ui-tableviewcell 
+    margin: 0px (-$space-lg)
+    background-image: none
+    background-color: hsla(0,0%,100%,0.3)
+    &__text 
+      flex-direction: row
+      border-bottom: 1px solid #eceef4
+      .title
+        width: 25%
+      .text
+        font-size: 12px
+        margin: 0px
+        &.-danger
+          color: #ff3d3d
+    .detail 
+      .btn
+        font-size: 12px
+        height: auto
+        padding: 8px
+  
+
+
+.mydata-content 
+  display: flex
+  flex-direction: column
+  flex: 1
+  overflow-y: auto
+
+  &__list 
+    padding: $space-sm 0
+    .mydata-title 
+      display: inline-block
+      font-size: 13px
+    
+  
+  &__item 
+    border-bottom: 1px solid #e8c7ae
+  
+
+
+.contact-info 
+  width: 100%
+  padding: $space-lg 0 0
+  &__text 
+    font-size: 14px
+    color: rgba(255, 255, 255, 0.6)
+    text-align: center
+    margin: 0px
+  
+
+
+.mydata-contact 
+  background-color: #ffffff
+  border-radius: $bod-default
+  padding: $space-lg
+  margin-bottom: $space-lg
+  .contact-list 
+    &__item 
+      display: flex
+      align-items: center
+      color: #515561
+      & + .contact-list__item 
+        padding-top: $space-sm
+      
+    
+    &__img 
+      width: 24px
+      height: 24px
+      display: block
+    
+    &__title 
+      margin: 0
+      font-size: 14px
+      display: flex
+      align-items: center
+      width: 20%
+      white-space: nowrap
+      padding-right: $space-sm
+    
+
+    &__content 
+      font-size: 12px
+    
+  
+  .contact-btn 
+    margin-top: $space-lg
+  
+
+.add-bank-card 
+  display: flex
+  flex-direction: column
+  height: 100%
+  .add-card-content 
+    display: flex
+    flex-direction: column
+    flex: 1
+    overflow-y: auto
+    padding: $space-lg
+    .cell-list 
+      .cell__form 
+        .form-select 
+          font-size: 16px
+        
+      
+    
+    .alert 
+      flex-shrink: 0
+      padding-top: 0px
+    
+  
+

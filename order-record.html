@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover " />
+    <title>cua</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+
+</head>
+
+<body>
+    <div class="layout-main inner-bg">
+        <!-- 高级筛选  start-->
+        <div id="show" class="popup" style="display: none;">
+            <div class="popup-mask">
+                <!--popup-->
+                <div class="input-popup">
+                    <div class="input-popup__header">
+                        <div class="input-popup__header__top">
+                            <div class="header-title">
+                                <div class="title-text">高级筛选</div>
+                                <div class="sub-text">仅限查询近3个月的资料</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-popup__body">
+                        <div class="form">
+                            <div class="form__body">
+                                <div class="cell-list">
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-title">
+                                                <p class="form-title__text">起始日期</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="el-text">
+                                                    <p>2020-11-30 00:00</p>
+                                                </label>
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-secondary rounded-pill btn-ripple btn-event btn--disabled">
+                                                    <span>选择时间</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-title">
+                                                <p class="form-title__text">截止日期</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="el-text">
+                                                    <p>2020-11-30 00:00</p>
+                                                </label>
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-secondary rounded-pill btn-ripple btn-event">
+                                                    <span>选择时间</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form com-cell__form--disabled">
+                                            <div class="form-title">
+                                                <p class="form-title__text">类型</p>
+                                            </div>
+                                            <div class="form-select">
+                                                <label class="el-select">
+                                                    <input placeholder="項目" readonly="readonly" />
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-tab">
+                            <a class="btn-tab__item btn-tab__item--active" href="javascript:void(0);">
+                                <span class="btn-tab__item__text">本日</span>
+                            </a>
+                            <a class="btn-tab__item" href="javascript:void(0);">
+                                <span class="btn-tab__item__text">本周</span>
+                            </a>
+                            <a class="btn-tab__item" href="javascript:void(0);">
+                                <span class="btn-tab__item__text">本月</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="input-popup__footer">
+                        <div class="row">
+                            <div class="col-50">
+                                <a href="javascript:void(0);" class="btn btn-cancel rounded-pill btn-ripple"
+                                    onclick="showPopup();">
+                                    取消
+                                </a>
+                            </div>
+                            <div class="col-50">
+                                <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                                    onclick="showPopup();">
+                                    确定
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--popup-->
+            </div>
+        </div>
+        <!-- 高级筛选  end-->
+        <div class="nav glow-bg">
+            <div class="nav__left">
+                <a class="btn-return" href="javascript:history.go(-1);">
+                    <div class="img"></div>
+                </a>
+            </div>
+            <div class="nav__logo">
+                <span class="logo-text">投注记录</span>
+            </div>
+            <div class="nav__right">
+                <a href="javascript:void(0)" class="filter" onclick="showPopup()">
+                    <span class="filter__text">筛选</span>
+                    <div class="filter__icon"></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="layout-content">
+            <div class="com-inner">
+                <div class="order-filter">
+                    <div class="order-select">
+                        <div class="order-select__title">
+                            <select class="order-select__sel">
+                                <option value="">全部</option>
+                                <option value="">红包</option>
+                                <option value="">彩票</option>
+                                <option value="">KK棋牌</option>
+                                <option value="">VG棋牌</option>
+                                <option value="">FG棋牌</option>
+                                <option value="">GM棋牌</option>
+                                <option value="">龙城棋牌</option>
+                                <option value="">开元棋牌</option>
+                                <option value="">百胜棋牌</option>
+                                <option value="">麻将</option>
+                                <option value="">AG电子</option>
+                                <option value="">FG电子</option>
+                                <option value="">BBIN电子</option>
+                                <option value="">MG电子</option>
+                                <option value="">PT电子</option>
+                                <option value="">SW电子</option>
+                                <option value="">CQ9电子</option>
+                                <option value="">SB电子</option>
+                                <option value="">DT电子</option>
+                                <option value="">BBIN捕鱼</option>
+                                <option value="">百胜捕鱼</option>
+                                <option value="">CQ9捕鱼</option>
+                                <option value="">AG捕鱼</option>
+                                <option value="">AG视讯</option>
+                                <option value="">GC视讯</option>
+                                <option value="">BBIN视讯</option>
+                                <option value="">MG视讯</option>
+                                <option value="">DG视讯</option>
+                                <option value="">BBIN体育</option>
+                                <option value="">皇冠体育</option>
+                                <option value="">3S体育</option>
+                                <option value="">SB体育</option>
+                                <option value="">SB百练赛</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="time-filter">
+                        <div class="time-filter__select">
+                            <input type="datetime-local" class="form-control">
+                        </div>
+                        <span class="time-filter__text">至</span>
+                        <div class="time-filter__select">
+                            <input type="datetime-local" class="form-control">
+                        </div>
+                    </div>
+                    <div class="btn-tab">
+                        <a class="btn-tab__item btn-tab__item--active" href="javascript:void(0);"
+                            onclick="openCity(event, 'tab1')">
+                            <span class="btn-tab__item__text">本日</span>
+                        </a>
+                        <a class="btn-tab__item" href="javascript:void(0);" onclick="openCity(event, 'tab2')">
+                            <span class="btn-tab__item__text">本周</span>
+                        </a>
+                        <a class="btn-tab__item" href="javascript:void(0);" onclick="openCity(event, 'tab3')">
+                            <span class="btn-tab__item__text">本月</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="order-info-list">
+                    <div class="order-info-list__item">
+                        <div class="order-info-list__item__title">
+                            有效投注：
+                        </div>
+                        <div class="order-info-list__item__number">
+                            0
+                        </div>
+                    </div>
+                    <div class="order-info-list__item">
+                        <div class="order-info-list__item__title">
+                            派彩：
+                        </div>
+                        <div class="order-info-list__item__number">
+                            0
+                        </div>
+                    </div>
+                </div>
+                <div id="tab1" class="com-inner__content">
+                    <div class="order-range">
+                        查询时间：2020年07月28日00:00~2020年07月28日23:59
+                    </div>
+                    <!-- inner-content -->
+                    <div class="order">
+                        <div class="order-list">
+                            <div class="order-list__item" style="--animation-order:1">
+                                <div class="order-list__content">
+                                    <h4 class="order-head">
+                                        2020 年 3月11日 09:52:29
+                                    </h4>
+                                    <div class="order-info">
+                                        <div class="order-info__status">
+                                            <div class="order-info__status__left">
+                                                <span class="order-info__status__type">PT电子</span>
+                                            </div>
+                                            <div class="order-info__status__right">
+                                                <div class="badge badge--success">
+                                                    <div class="badge__text">
+                                                        已结算
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-info__status">
+                                            <span class="order-info__status__name">宾果拉霸宾果拉霸宾果拉霸宾果拉霸拉霸</span>
+                                        </div>
+                                        <div class="item-list">
+                                            <div class="item-list__content">
+                                                <div class="content__title">单号：</div>
+                                                <div class="content__item">SF620071336600000A</div>
+                                            </div>
+                                            <div class="item-list__content">
+                                                <div class="content__title">期(局)号：</div>
+                                                <div class="content__item">200713366000</div>
+                                            </div>
+                                        </div>
+                                        <ul class="order-info__list">
+                                            <li class="list__text">
+                                                <div class="list__text__title">注额：</div>
+                                                <div class="list__text__result">【6注】60.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">订单状态：</div>
+                                                <div class="list__text__result">已确认</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">派彩：</div>
+                                                <div class="list__text__result">1,020.80</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">有效投注：</div>
+                                                <div class="list__text__result">10.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">返水：</div>
+                                                <div class="list__text__result">0.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">输赢：</div>
+                                                <div class="list__text__result">
+                                                    <span class="text-green">-39.20</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-list__item" style="--animation-order:2">
+                                <div class="order-list__content">
+                                    <h4 class="order-head">
+                                        2020 年 3月11日 09:52:29
+                                    </h4>
+                                    <div class="order-info">
+                                        <div class="order-info__status">
+                                            <div class="order-info__status__left">
+                                                <span class="order-info__status__type">澳門彩票</span>
+                                            </div>
+                                            <div class="order-info__status__right">
+                                                <!-- <div class="badge badge--success">
+                                                  <div class="badge__text">已结算</div>
+                                                </div>
+                                                <div class="badge badge--warning">
+                                                  <div class="badge__text">待结算</div>
+                                                </div> -->
+                                                <div class="badge badge--danger">
+                                                    <div class="badge__text">重新结算</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-info__status">
+                                            <span class="order-info__status__name">澳门分分六合彩</span>
+                                        </div>
+                                        <div class="order-info__result">
+                                            <ul class="result-list">
+                                                <li class="result-list__item">【A盘】不中-五不中 (共6注)</li>
+                                                <li class="result-list__item">05,06,22,23,39 @2.08 x 10.00</li>
+                                                <li class="result-list__item">05,06,22,23,40 @2.08 x 10.00</li>
+                                                <li class="result-list__item">05,06.22,39,40 @2.08 x 10.00</li>
+                                                <li class="result-list__item">05,06,23,39,40 @2.08 x 10.00</li>
+                                                <li class="result-list__item">05,22,23,39,40 @2.08 x 10.00</li>
+                                                <li class="result-list__item">06.22.23,39,40 @2.08 x 10.00</li>
+                                            </ul>
+                                            <ul class="result-list">
+                                                <li class="result-list__item">尚未开奖</li>
+                                                <!-- <li class="result-list__item">46,6.27,36,49,21+47</li> -->
+                                            </ul>
+                                        </div>
+                                        <div class="item-list">
+                                            <div class="item-list__content">
+                                                <div class="content__title">单号：</div>
+                                                <div class="content__item">SF620071336600000A</div>
+                                            </div>
+                                            <div class="item-list__content">
+                                                <div class="content__title">期(局)号：</div>
+                                                <div class="content__item">200713366000</div>
+                                            </div>
+                                        </div>
+                                        <ul class="order-info__list">
+                                            <li class="list__text">
+                                                <div class="list__text__title">注额：</div>
+                                                <div class="list__text__result">【6注】60.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">订单状态：</div>
+                                                <div class="list__text__result">已确认</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">派彩：</div>
+                                                <div class="list__text__result"></div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">有效投注：</div>
+                                                <div class="list__text__result">0.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">返水：</div>
+                                                <div class="list__text__result"></div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">输赢：</div>
+                                                <div class="list__text__result">
+                                                    <span class="text-red">39</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-list__item" style="--animation-order:3">
+                                <div class="order-list__content">
+                                    <h4 class="order-head">
+                                        2020 年 3月11日 09:52:29
+                                    </h4>
+                                    <div class="order-info">
+                                        <div class="order-info__status">
+                                            <div class="order-info__status__left">
+                                                <span class="order-info__status__type">红包</span>
+                                            </div>
+                                            <div class="order-info__status__right">
+                                                <div class="badge badge--success">
+                                                    <div class="badge__text">已结算</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-info__status">
+                                            <span class="order-info__status__name">牛牛</span>
+                                        </div>
+                                        <div class="order-info__result">
+                                            <ul class="result-list">
+                                                <li class="result-list__item">[Bot_Red_ Emrelope_Hall]-牛牛抢包300.00 x
+                                                    1.00(共6注)</li>
+                                                <li class="result-list__item">40.32 @1.00 x 500 00</li>
+                                            </ul>
+                                            <ul class="result-list">
+                                                <li class="result-list__item">开奖结果</li>
+                                                <li class="result-list__item">闲[40.32牛5] 赢庄 [164.00牛4]</li>
+                                                <li class="result-list__item">:500.00*1.00=500.00</li>
+                                                <li class="result-list__item">抽水:15.00</li>
+                                            </ul>
+                                        </div>
+                                        <div class="item-list">
+                                            <div class="item-list__content">
+                                                <div class="content__title">单号：</div>
+                                                <div class="content__item">SF620071336600000A</div>
+                                            </div>
+                                            <div class="item-list__content">
+                                                <div class="content__title">期(局)号：</div>
+                                                <div class="content__item">200713366000</div>
+                                            </div>
+                                        </div>
+                                        <ul class="order-info__list">
+                                            <li class="list__text">
+                                                <div class="list__text__title">注额：</div>
+                                                <div class="list__text__result">【6注】60.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">订单状态：</div>
+                                                <div class="list__text__result">已确认</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">派彩：</div>
+                                                <div class="list__text__result">1,020.80</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">有效投注：</div>
+                                                <div class="list__text__result">10.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">返水：</div>
+                                                <div class="list__text__result">0.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">输赢：</div>
+                                                <div class="list__text__result">
+                                                    <span class="text-green">-39.20</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-list__item" style="--animation-order:4">
+                                <div class="order-list__content">
+                                    <h4 class="order-head">
+                                        2020 年 3月11日 09:52:29
+                                    </h4>
+                                    <div class="order-info">
+                                        <div class="order-info__status">
+                                            <div class="order-info__status__left">
+                                                <span class="order-info__status__type">红包</span>
+                                            </div>
+                                            <div class="order-info__status__right">
+                                                <div class="badge badge--success">
+                                                    <div class="badge__text">已结算</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-info__status">
+                                            <span class="order-info__status__name">扫雷</span>
+                                        </div>
+                                        <div class="order-info__result">
+                                            <ul class="result-list">
+                                                <li class="result-list__item">[7-300发包]-扫雷:发包(共1注])</li>
+                                                <li class="result-list__item">5@1.60 x 7.00</li>
+                                            </ul>
+                                            <ul class="result-list">
+                                                <li class="result-list__item">开奖结果</li>
+                                                <li class="result-list__item">雷号:5中雷:0包</li>
+                                                <li class="result-list__item">退款:7.00</li>
+                                            </ul>
+                                        </div>
+                                        <div class="item-list">
+                                            <div class="item-list__content">
+                                                <div class="content__title">单号：</div>
+                                                <div class="content__item">SF620071336600000A</div>
+                                            </div>
+                                            <div class="item-list__content">
+                                                <div class="content__title">期(局)号：</div>
+                                                <div class="content__item">200713366000</div>
+                                            </div>
+                                        </div>
+                                        <ul class="order-info__list">
+                                            <li class="list__text">
+                                                <div class="list__text__title">注额：</div>
+                                                <div class="list__text__result">【6注】60.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">订单状态：</div>
+                                                <div class="list__text__result">已确认</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">派彩：</div>
+                                                <div class="list__text__result">1,020.80</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">有效投注：</div>
+                                                <div class="list__text__result">10.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">返水：</div>
+                                                <div class="list__text__result">0.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">输赢：</div>
+                                                <div class="list__text__result">
+                                                    <span class="text-green">-39.20</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-list__item" style="--animation-order:5">
+                                <div class="order-list__content">
+                                    <h4 class="order-head">
+                                        2020 年 3月11日 09:52:29
+                                    </h4>
+                                    <div class="order-info">
+                                        <div class="order-info__status">
+                                            <div class="order-info__status__left">
+                                                <span class="order-info__status__type">麻将</span>
+                                            </div>
+                                            <div class="order-info__status__right">
+                                                <div class="badge badge--success">
+                                                    <div class="badge__text">已结算</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-info__status">
+                                            <span class="order-info__status__name">红中麻将</span>
+                                        </div>
+                                        <div class="order-info__result">
+                                            <ul class="result-list">
+                                                <li class="result-list__item">低注:5</li>
+                                                <li class="result-list__item">上家暗杠-2倍</li>
+                                                <li class="result-list__item">下家自摸-2倍</li>
+                                                <li class="result-list__item">中鸟(1)-1倍</li>
+                                            </ul>
+                                            <ul class="result-list">
+                                                <li class="result-list__item">开奖结果</li>
+                                                <li class="result-list__item">本家:共輸-5倍总计25分</li>
+                                            </ul>
+                                        </div>
+                                        <div class="item-list">
+                                            <div class="item-list__content">
+                                                <div class="content__title">单号：</div>
+                                                <div class="content__item">SF620071336600000A</div>
+                                            </div>
+                                            <div class="item-list__content">
+                                                <div class="content__title">期(局)号：</div>
+                                                <div class="content__item">200713366000</div>
+                                            </div>
+                                        </div>
+                                        <ul class="order-info__list">
+                                            <li class="list__text">
+                                                <div class="list__text__title">注额：</div>
+                                                <div class="list__text__result">【6注】60.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">订单状态：</div>
+                                                <div class="list__text__result">已确认</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">派彩：</div>
+                                                <div class="list__text__result">1,020.80</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">有效投注：</div>
+                                                <div class="list__text__result">10.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">返水：</div>
+                                                <div class="list__text__result">0.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">输赢：</div>
+                                                <div class="list__text__result">
+                                                    <span class="text-green">-39.20</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-list__item" style="--animation-order:6">
+                                <div class="order-list__content">
+                                    <h4 class="order-head">
+                                        2020 年 3月11日 09:52:29
+                                    </h4>
+                                    <div class="order-info">
+                                        <div class="order-info__status">
+                                            <div class="order-info__status__left">
+                                                <span class="order-info__status__type">麻将</span>
+                                            </div>
+                                            <div class="order-info__status__right">
+                                                <div class="badge badge--success">
+                                                    <div class="badge__text">已结算</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-info__status">
+                                            <span class="order-info__status__name">血战到底</span>
+                                        </div>
+                                        <div class="order-info__result">
+                                            <ul class="result-list">
+                                                <li class="result-list__item">低注:5</li>
+                                                <li class="result-list__item">被刮风上家-1倍</li>
+                                                <li class="result-list__item">被自摸(平胡)对家2信</li>
+                                                <li class="result-list__item">被自精(平胡)对家2倍</li>
+                                                <li class="result-list__item">被自摸(清一色)上家-8倍</li>
+                                                <li class="result-list__item">被自模(小七对)下家-8倍</li>
+                                                <li class="result-list__item">被刮风上家-1倍</li>
+                                                <li class="result-list__item">被自摸(平胡)对家2信</li>
+                                                <li class="result-list__item">被自精(平胡)对家2倍</li>
+                                                <li class="result-list__item">被自摸(清一色)上家-8倍</li>
+                                                <li class="result-list__item">被自模(小七对)下家-8倍</li>
+                                                <li class="result-list__item">被刮风上家-1倍</li>
+                                                <li class="result-list__item">被自摸(平胡)对家2信</li>
+                                                <li class="result-list__item">被自精(平胡)对家2倍</li>
+                                                <li class="result-list__item">被自摸(清一色)上家-8倍</li>
+                                                <li class="result-list__item">被自模(小七对)下家-8倍</li>
+                                            </ul>
+                                            <ul class="result-list">
+                                                <li class="result-list__item">开奖结果</li>
+                                                <li class="result-list__item">本家:共輸-5倍总计25分</li>
+                                            </ul>
+                                        </div>
+                                        <div class="item-list">
+                                            <div class="item-list__content">
+                                                <div class="content__title">单号：</div>
+                                                <div class="content__item">SF620071336600000A</div>
+                                            </div>
+                                            <div class="item-list__content">
+                                                <div class="content__title">期(局)号：</div>
+                                                <div class="content__item">200713366000</div>
+                                            </div>
+                                        </div>
+                                        <ul class="order-info__list">
+                                            <li class="list__text">
+                                                <div class="list__text__title">注额：</div>
+                                                <div class="list__text__result">【6注】60.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">订单状态：</div>
+                                                <div class="list__text__result">已确认</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">派彩：</div>
+                                                <div class="list__text__result">1,020.80</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">有效投注：</div>
+                                                <div class="list__text__result">10.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">返水：</div>
+                                                <div class="list__text__result">0.00</div>
+                                            </li>
+                                            <li class="list__text">
+                                                <div class="list__text__title">输赢：</div>
+                                                <div class="list__text__result">
+                                                    <span class="text-green">-39.20</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- inner-content -->
+                </div>
+            </div>
+        </div>
+        <!--layout-tabbar-->
+        <div class="layout-tabbar">
+            <!-- ./component/footer -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        //show/hide
+        function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName('com-inner__content');
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = 'none';
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName('btn-tab__item');
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(
+                    'btn-tab__item--active',
+                    ''
+                );
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = 'block';
+            evt.currentTarget.className += ' btn-tab__item--active';
+        }
+
+        function showPopup() {
+            var popup = document.getElementById('show');
+            if (popup.style.display === 'none') {
+                popup.style.display = 'block';
+            } else {
+                popup.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

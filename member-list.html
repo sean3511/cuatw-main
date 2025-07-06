@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover " />
+    <title>cua</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+
+</head>
+
+<body>
+    <!-- 會員詳細 start -->
+    <div id="show1" class="cardboard-dialog" style="display: none;">
+        <div class="dialog-mask">
+            <div class="dialog success">
+                <a href="javascript:void(0);" class="dialog__close" onclick="show1()">
+                    <div class="dialog__close__img"></div>
+                </a>
+                <div class="dialog__header">
+                    <div class="dialog__header__top">
+                        <p class="amount-title">會員詳細</p>
+                    </div>
+                </div>
+                <div class="dialog__body">
+                    <div class="dialog-amount-list">
+                        <div class="dialog-amount-list__input">
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">帳號：</p>
+                                    <p class="text">aaa999</p>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">餘額：</p>
+                                    <p class="text">310.00</p>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">會員層級：</p>
+                                    <p class="text">代理</p>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">統一占成-統一占成：</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-select">
+                                                <select class="form-select__sel">
+                                                    <option value="">0%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">棋牌遊戲館-棋牌遊戲館 返點：</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-select">
+                                                <select class="form-select__sel">
+                                                    <option value="">0%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">體育館-體育館 返點：</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-select">
+                                                <select class="form-select__sel">
+                                                    <option value="">0%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">電子遊戲-電子遊戲 返點：</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-select">
+                                                <select class="form-select__sel">
+                                                    <option value="">0%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">真人百家-真人百家 返點：</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-select">
+                                                <select class="form-select__sel">
+                                                    <option value="">0%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog__body-footer">
+                    <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                        onclick="show1()">變更會員資料</a>
+                </div>
+            </div>
+            <!--popup-->
+        </div>
+    </div>
+    <!-- 會員詳細 end -->
+    <!-- 轉帳 start -->
+    <div id="show2" class="cardboard-dialog" style="display: none;">
+        <div class="dialog-mask">
+            <div class="dialog success">
+                <a href="javascript:void(0);" class="dialog__close" onclick="show2()">
+                    <div class="dialog__close__img"></div>
+                </a>
+                <div class="dialog__header">
+                    <div class="dialog__header__top">
+                        <p class="amount-title">轉帳</p>
+                    </div>
+                </div>
+                <div class="dialog__body">
+                    <div class="dialog-amount-list">
+                        <div class="dialog-amount-list__input">
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">帳號：</p>
+                                    <p class="text">aaa999</p>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">餘額：</p>
+                                    <p class="text">310.00</p>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">轉帳金額：</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-group">
+                                                <input type="number" class="el-input" placeholder="请输入金額">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">密碼確認：</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-group">
+                                                <input type="number" class="el-input" placeholder="请输入密碼">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="title">備註：</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-group">
+                                                <textarea name="" id="" class="form-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog__body-footer">
+                    <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                        onclick="show2()">確定</a>
+                </div>
+            </div>
+            <!--popup-->
+        </div>
+    </div>
+    <!-- 轉帳 end -->
+    <div class="layout-main inner-bg">
+        <div class="nav glow-bg">
+            <div class="nav__left">
+                <a class="btn-return" href="member.html">
+                    <div class="img"></div>
+                </a>
+            </div>
+            <div class="nav__logo">
+                <span class="logo-text">會員列表</span>
+            </div>
+        </div>
+        <div class="layout-content">
+            <div class="com-inner">
+                <div class="mywallet-filter">
+                    <div class="com-cell">
+                        <div class="com-cell__form">
+                            <div class="form-group">
+                                <div class="el-icon -icon_search"></div>
+                                <input type="text" class="el-input" placeholder="搜尋會員帳號">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-tab">
+                        <a class="btn-tab__item btn-tab__item--active" href="javascript:void(0);"
+                            onclick="openCity(event, 'tab1')">
+                            <span class="btn-tab__item__text">全部</span>
+                        </a>
+                        <a class="btn-tab__item btn-tab__item--disabled" href="javascript:void(0);"
+                            onclick="openCity(event, 'tab2')">
+                            <span class="btn-tab__item__text">代理</span>
+                        </a>
+                        <a class="btn-tab__item" href="javascript:void(0);" onclick="openCity(event, 'tab3')">
+                            <span class="btn-tab__item__text">會員</span>
+                        </a>
+                    </div>
+                </div>
+                <div id="tab1" class="com-inner__content">
+                    <!-- inner-content -->
+                    <div class="member-list">
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th"><span class="text">會員帳號</span></th>
+                                    <th class="th"><span class="text">餘額</span></th>
+                                    <th class="th"><span class="text">操作</span></th>
+                                </tr>
+                            </thead>
+                            <tbody class="tbody">
+                                <tr class="tr">
+                                    <td class="td">
+                                        <span class="text">aaa999</span>
+                                    </td>
+                                    <td class="td"><span class="text">310.00</span></td>
+                                    <td class="td">
+                                        <div class="btn-group">
+                                            <a href="javascript:void(0)" class="btn btn-secondary"
+                                                onclick="show2()">轉帳</a>
+                                            <a href="javascript:void(0)" class="btn btn-secondary"
+                                                onclick="show1()">詳細</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">
+                                        <span class="text">aaa999</span>
+                                    </td>
+                                    <td class="td"><span class="text">310.00</span></td>
+                                    <td class="td">
+                                        <div class="btn-group">
+                                            <a href="javascript:void(0)" class="btn btn-secondary"
+                                                onclick="show2()">轉帳</a>
+                                            <a href="javascript:void(0)" class="btn btn-secondary"
+                                                onclick="show1()">詳細</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">
+                                        <span class="text">aaa999</span>
+                                    </td>
+                                    <td class="td"><span class="text">310.00</span></td>
+                                    <td class="td">
+                                        <div class="btn-group">
+                                            <a href="javascript:void(0)" class="btn btn-secondary"
+                                                onclick="show2()">轉帳</a>
+                                            <a href="javascript:void(0)" class="btn btn-secondary"
+                                                onclick="show1()">詳細</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- inner-content -->
+                </div>
+                <div id="tab2" class="com-inner__content" style="display: none;">
+                    <!-- inner-content -->
+                    <div class="mywallet">
+                        <div class="mywallet-range">
+                            查询时间：2020年07月28日00:00~2020年07月28日23:59
+                        </div>
+                        <!-- 无资料 -->
+                        <div class="empty">
+                            <div class="empty-content">
+                                <div class="empty-icon"></div>
+                                <h3 class="empty-title">无资料</h3>
+                            </div>
+                        </div>
+                        <!-- 无资料 end-->
+                    </div>
+                    <!-- inner-content -->
+                </div>
+                <div id="tab3" class="com-inner__content" style="display: none;">
+                    <!-- inner-content -->
+                    <div class="mywallet">
+                        <div class="mywallet-range">
+                            查询时间：2020年07月28日00:00~2020年07月28日23:59
+                        </div>
+                        <!-- 无资料 -->
+                        <div class="empty">
+                            <div class="empty-content">
+                                <div class="empty-icon"></div>
+                                <h3 class="empty-title">无资料</h3>
+                            </div>
+                        </div>
+                        <!-- 无资料 end-->
+                    </div>
+                    <!-- inner-content -->
+                </div>
+            </div>
+        </div>
+        <!--layout-tabbar-->
+        <div class="layout-tabbar">
+            <!-- ./component/footer -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        //show/hide
+        function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName('com-inner__content');
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = 'none';
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName('btn-tab__item');
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(
+                    'btn-tab__item--active',
+                    ''
+                );
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = 'block';
+            evt.currentTarget.className += ' btn-tab__item--active';
+        }
+
+        //popup-show/hide
+        function show1() {
+            var x = document.getElementById('show1');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+        //popup-show/hide
+        function show2() {
+            var x = document.getElementById('show2');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

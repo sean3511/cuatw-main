@@ -1,0 +1,176 @@
+.modal
+  &-close
+    background: #146F50
+    font-weight: 700
+    width: 44px
+    height: 44px
+    border-radius: 50%
+    border: 1px solid white
+    color: white
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 13px
+    line-height: 13px
+    position: relative
+    position: absolute
+    right: -10px
+    top: -20px
+    z-index: 999
+    cursor: pointer
+  &-content
+    width: 90%
+    height: 100%
+    max-height: 90vh
+    margin: auto
+    border: none
+    border-radius: 0px
+    background-color: #DDDDDD
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, .3)
+    position: relative
+    &__title
+      font-size: 20px
+      color: #5B5B5B
+      border-bottom: solid 1px #CECECE
+    &__content
+      height: 100%
+      flex: 1
+      overflow-y: auto
+  .game-info
+    flex-direction: column
+    line-height: normal
+    background-color: transparent
+    border: none
+    &__name
+      font-size: 16px
+    &__team
+      font-size: 14px
+      color: #474747
+  .btn-group
+    border-top: 1px solid #CECECE
+  &-btn
+    +bluePrimaryBtn(100%)
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 0px
+    background-color: transparent
+    margin: 0px !important
+    min-height: 48px
+    color: #474747
+    border-right: 1px solid #CECECE
+    &:last-child
+      border-right: 0px
+    &:hover
+      color: #54E5B5
+    &.-active
+      background-color: #54E5B5
+      &:hover
+        color: white
+  
+  .promotions,.announcement
+    &-text
+      max-height: 65vh
+      overflow: auto
+    &-date
+      font-size: 14px
+      color: #585858
+    &-back-btn
+      +bluePrimaryBtn(80px)
+      text-align: center
+      margin: auto
+  &.promotion
+    .modal-content
+      background: #333333
+    .modal-btn
+      color: #E4E4E4
+    .promotions
+      &-title
+        color: #54E5B5
+        border-bottom: 1px solid #E4E4E4
+      &-date
+        color: #E4E4E4
+      &-text
+        color: #E4E4E4
+  &-check-btn
+    +bluePrimaryBtn(100%)
+    font-size: 10px
+    padding: 8px 16px
+    border-radius: 0px
+    margin: 0px
+    white-space: nowrap
+  .table-th 
+    background: transparent
+    border: 1px solid #CECECE
+    color: #474747
+    font-size: 14px
+  .table-td
+    background: transparent !important
+    border-bottom: 1px solid #CECECE
+    color: #474747
+    font-size: 14px
+  &-bet
+    &__info
+      background: #146F50
+      color: white
+      padding: 8px 5px
+      span
+        color: #54E5B5
+    &__table
+      border-bottom: solid 1px $dark-purple
+      input
+        font-size: 14px
+        border: none
+        background: #AFAFAF
+        color: #474747
+        font-weight: 600
+        text-align: center
+        padding: 5px 2px
+        &::placeholder
+          color: #E4E4E4
+        &:focus
+          outline: none
+    &__btns
+      position: relative
+      &:after
+        content:''
+        position: absolute
+        top: -8px
+        left: 16%
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 6px 8px 6px
+        border-color: transparent transparent #DDDDDD transparent
+    &__btn
+      width: 100%
+      color: #146F50
+      padding: 8px 0px
+      border: 1px solid #146F50
+      background: transparent
+      &:hover
+        background: #146F50
+        color: white
+.promo-banner
+  overflow: hidden
+  max-height: 190px
+  &__img
+    display: block
+    width: 100%
+.announcement
+  &-lists
+    list-style: none
+  &-list
+    position: relative
+    display: flex
+    align-items: center
+    padding: 5px 0px
+    &:hover
+      background: #eee
+    &::before
+      position: absolute
+      left: -5px
+      font-size: 10px
+      content: '♦'
+    a
+      color: #484b61

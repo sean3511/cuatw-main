@@ -1,0 +1,39 @@
+.member-list
+  .table
+    width: 100%
+    table-layout: fixed
+    border-collapse: collapse
+    .tr
+      .td,
+      .th
+        padding: 8px
+        color: #e4e4e4
+        font-size: 14px
+        font-weight: 500
+        height: 38px
+        text-align: center
+        & + .td,
+        & + .th
+          border-left: 1px solid #656874
+        .text
+          overflow: hidden
+          white-space: nowrap
+          text-overflow: ellipsis
+          display: block
+    .thead
+      width: 100%
+      .th
+        width: 100%
+        color: #ffffff
+        background-color: #4d8aff
+    .tbody
+      .tr
+        background-color: rgb(34, 52, 113,0.8)
+        &:nth-child(odd)
+          background-color: rgb(34, 52, 113)
+    .btn
+      height: auto
+      padding: 8px
+      margin-bottom: 8px
+      &:last-child
+        margin-bottom: 0px

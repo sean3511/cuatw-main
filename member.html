@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover " />
+    <title>cua</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+
+</head>
+
+<body>
+    <div class="layout-main inner-bg">
+        <!-- 轉帳維護提示 start -->
+        <div class="ios-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <div class="dialog-ios">
+                    <div class="dialog-ios__body">
+                        <h5 class="ios-title">尊贵的会员</h5>
+                        <span class="ios-text">全频道正在维护中<br />
+                            暂时无法进行额度转换</span>
+                    </div>
+                    <div class="dialog-ios__footer">
+                        <div class="btn-group">
+                            <a href="javascript:void(0);" class="btn-primary">
+                                确认
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 轉帳維護提示 end -->
+
+        <!-- 銀行卡未綁定提示 start -->
+        <div class="ios-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <div class="dialog-ios">
+                    <div class="dialog-ios__body">
+                        <h5 class="ios-title">未绑定银行卡</h5>
+                        <span class="ios-text">系统侦测到您未绑定银行卡<br />
+                            请您先进行绑定，以便为您办理出款。</span>
+                    </div>
+                    <div class="dialog-ios__footer">
+                        <div class="btn-group">
+                            <button type="button" class="btn-primary">
+                                取消
+                            </button>
+                            <a href="javascript:void(0);" class="btn-primary">
+                                前往绑定
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 銀行卡未綁定提示 end -->
+
+        <div id="toast" class="toast-popup" style="display: none;">
+            <div class="toast-popup__body">
+                <div class="toast-popup__icon">
+                    <div class="toast-popup__icon__img -success"></div>
+                </div>
+                <div class="toast-popup__text">已复制账号</div>
+            </div>
+        </div>
+
+        <div id="regsuccess" class="reg-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <!--popup-->
+                <div class="dialog success">
+                    <div class="dialog__body">
+                        <div class="xfe-reg">
+                            <p class="xfe-reg__title">恭喜您注册成功!</p>
+                            <div class="xfe-reg__icon"></div>
+                            <p class="xfe-reg__text">会员账号: zxcv1234</p>
+                        </div>
+                    </div>
+                    <div class="dialog__body-footer">
+                        <div class="btn-group">
+                            <a href="javascript:void(0);" class="btn btn-secondary rounded-pill btn-ripple"
+                                onclick="rippleBtn(event,this)">去完善资料</a>
+                            <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                                onclick="rippleBtn(event,this)">立即充值</a>
+                        </div>
+                    </div>
+                </div>
+                <!--popup-->
+            </div>
+        </div>
+
+        <div id="toastUpdate" class="toast-popup" style="display: none;">
+            <div class="toast-popup__body">
+                <div class="toast-popup__icon">
+                    <div class="toast-popup__icon__img -success"></div>
+                </div>
+                <div class="toast-popup__text">更新成功</div>
+            </div>
+        </div>
+        <div id="toastLogin" class="toast-popup" style="display: none;">
+            <div class="toast-popup__body">
+                <div class="toast-popup__icon">
+                    <div class="toast-popup__icon__img -success"></div>
+                </div>
+                <div class="toast-popup__text">登录成功</div>
+            </div>
+        </div>
+
+        <div class="nav navimg-board">
+            <div class="nav__logo">
+                <span>会员 </span>
+            </div>
+        </div>
+
+        <div class="layout-content">
+            <div class="img-board img-board--auto">
+                <!-- 已登入 start-->
+                <div class="member-center__user-m">
+                    <div class="user-m__icon">
+                        <div class="user-m__icon__vip -normal -silver -gold">
+                            <span>金</span>
+                        </div>
+                    </div>
+                    <div class="user-m__info">
+                        <div class="info-list">
+                            <div class="info-list__item">
+                                <span class="user-m__name">金級</span>
+
+                                <span class="list-text"></span>
+                                <span class="list-text"></span>
+                            </div>
+                            <div class="info-list__item">
+                                <span class="list-text">账号: 22364789091</span>
+                                <a href="javascript:void(0)" class="list-btn" onclick="window.toast()">复制</a>
+                                <span class="list-text price">
+                                    <div class="price-img"></div>
+                                    <span class="price-text">5,274,365.00</span>
+                                    元
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 已登入 end-->
+                <!-- 未登入 start-->
+                <div class="member-center__user-m" style="display: none;">
+                    <div class="user-m__icon">
+                        <div class="user-m__icon__img">
+                            <div class="user-m__icon__avatar" style="
+                        background-image: url('./images/common/image/not_loggedin@2x.png')"></div>
+                        </div>
+                    </div>
+                    <div class="user-m__info">
+                        <div class="info-list">
+                            <div class="info-list__item">
+                                <span class="user-m__name">未登录</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 未登入 end-->
+            </div>
+            <div class="member-menu-top">
+                <div class="member-menu-top-border">
+                    <div class="member-menu-top-bg">
+                        <a href="deposit.html" class="member-menu-top__item">
+                            <div class="menu-img-wrap">
+                                <img src="././images/common/image/ic_recharge@2x.png" class="menu-img-wrap__img"
+                                    alt="" />
+                            </div>
+                            <h3 class="menu-title">充值</h3>
+                        </a>
+                        <a href="withdraw.html" class="member-menu-top__item">
+                            <div class="menu-img-wrap">
+                                <img src="././images/common/image/ic_withdraw@2x.png" class="menu-img-wrap__img"
+                                    alt="" />
+                            </div>
+                            <h3 class="menu-title">提款</h3>
+                        </a>
+                        <a href="share.html" class="member-menu-top__item">
+                            <div class="menu-img-wrap">
+                                <img src="././images/common/image/ic_share@2x.png" class="menu-img-wrap__img" alt="" />
+                            </div>
+                            <h3 class="menu-title">推廣</h3>
+                        </a>
+                        <a href="member-list.html" class="member-menu-top__item">
+                            <div class="menu-img-wrap">
+                                <img src="././images/common/image/ic_member-list@2x.png" class="menu-img-wrap__img"
+                                    alt="" />
+                            </div>
+                            <h3 class="menu-title">會員列表</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="member-menu-bottom">
+                <div class="com-inner">
+                    <div class="com-inner__content">
+                        <div class="row row-cols-3 g-3 g-lg-3 member-menu">
+                            <a class="col member-menu__item" href="history.html">
+                                <div class="item-cell">
+                                    <img src="././images/common/image/withdrawal_records@2x.png" alt=""
+                                        class="item-cell__icon">
+                                    <p class="item-cell__title">交易记录</p>
+                                </div>
+                            </a>
+                            <a class="col member-menu__item" href="transfer.html">
+                                <div class="item-cell">
+                                    <img src="././images/common/image/transaction@2x.png" alt=""
+                                        class="item-cell__icon">
+                                    <p class="item-cell__title">外接管金額</p>
+                                </div>
+                            </a>
+                            <a class="col member-menu__item" href="deposit-record.html">
+                                <div class="item-cell">
+                                    <img src="././images/common/image/recharge_record@2x.png" alt=""
+                                        class="item-cell__icon">
+                                    <p class="item-cell__title">充值紀錄</p>
+                                </div>
+                            </a>
+                            <a class="col member-menu__item" href="order-record.html">
+                                <div class="item-cell">
+                                    <img src="././images/common/image/betting_record@2x.png" alt=""
+                                        class="item-cell__icon">
+                                    <p class="item-cell__title">下注紀錄</p>
+                                </div>
+                            </a>
+                            <a class="col member-menu__item" href="mydata.html">
+                                <div class="item-cell">
+                                    <img src="././images/common/image/information@2x.png" alt=""
+                                        class="item-cell__icon">
+                                    <p class="item-cell__title">我的資料</p>
+                                </div>
+                            </a>
+                            <a class="col member-menu__item" href="vip.html">
+                                <div class="item-cell">
+                                    <img src="././images/common/image/ic_vip@2x.png" alt="" class="item-cell__icon">
+                                    <p class="item-cell__title">VIP特權</p>
+                                </div>
+                            </a>
+                            <a class="col member-menu__item" href="vip-rule.html">
+                                <div class="item-cell">
+                                    <img src="././images/common/image/ic_vip@2x.png" alt="" class="item-cell__icon">
+                                    <p class="item-cell__title">VIP規則</p>
+                                </div>
+                            </a>
+                            <a class="col member-menu__item" href="message.html">
+                                <div class="item-cell">
+                                    <img src="././images/common/image/ic_cs@2x.png" alt="" class="item-cell__icon">
+                                    <p class="item-cell__title">會員信箱</p>
+                                </div>
+                            </a>
+                            <a class="col member-menu__item" href="about.html">
+                                <div class="item-cell">
+                                    <img src="././images/common/image/aboutus@2x.png" alt="" class="item-cell__icon">
+                                    <p class="item-cell__title">關於我們</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="javascript:void(0);" class="entry-btn">
+                            <span class="entry-btn__text">账号登出</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- layout-tabbar -->
+        <div class="layout-tabbar">
+            <!-- ./component/footer -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

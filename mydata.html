@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover " />
+    <title>cua</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+
+</head>
+
+<body>
+    <div class="layout-main inner-bg">
+        <!-- 顯示上傳存摺圖片 -->
+        <div id="show9" class="cardboard-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <!--success-->
+                <div class="dialog success">
+                    <div class="dialog__body">
+                        <div class="cardboard">
+                            <img class="cardboard__img" src="./images/common/demo/index/banner.png" alt="">
+                        </div>
+                    </div>
+                    <div class="dialog__body-footer">
+                        <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                            onclick="show9()">關閉</a>
+                    </div>
+                </div>
+                <!--success-->
+                <!--popup-->
+            </div>
+        </div>
+        <!-- 提交成功 start -->
+        <div id="show5" class="ios-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <div class="dialog-ios">
+                    <div class="dialog-ios__body">
+                        <h5 class="ios-title">登录设定</h5>
+                        <span class="ios-text">修改成功</span>
+                    </div>
+                    <div class="dialog-ios__footer">
+                        <div class="btn-group">
+                            <button type="button" class="btn-primary" onclick="show5()">
+                                好
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="show6" class="ios-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <div class="dialog-ios">
+                    <div class="dialog-ios__body">
+                        <h5 class="ios-title">安全密码设定</h5>
+                        <span class="ios-text">修改成功</span>
+                    </div>
+                    <div class="dialog-ios__footer">
+                        <div class="btn-group">
+                            <button type="button" class="btn-primary" onclick="show6()">
+                                好
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="iosDialog" class="ios-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <div class="dialog-ios">
+                    <div class="dialog-ios__body">
+                        <h5 class="ios-title">联系方式</h5>
+                        <span class="ios-text">修改成功</span>
+                    </div>
+                    <div class="dialog-ios__footer">
+                        <div class="btn-group">
+                            <button type="button" class="btn-primary" onclick="window.toastJumpmember()">
+                                好
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="show8" class="ios-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <div class="dialog-ios">
+                    <div class="dialog-ios__body">
+                        <h5 class="ios-title">绑定银行卡</h5>
+                        <span class="ios-text">填写成功</span>
+                    </div>
+                    <div class="dialog-ios__footer">
+                        <div class="btn-group">
+                            <button type="button" class="btn-primary" onclick="show8()">
+                                好
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav glow-bg">
+            <div class="nav__left">
+                <a class="btn-return" href="member.html">
+                    <div class="img"></div>
+                </a>
+            </div>
+            <div class="nav__logo">
+                <span class="logo-text">我的资料</span>
+            </div>
+        </div>
+
+        <div class="layout-content">
+            <div class="com-inner">
+                <div class="tab -scrollable">
+                    <a class="tab__item tab__item--active" href="javascript:void(0);"
+                        onclick="openCity(event, 'show7')">
+                        <span class="text">我的資料</span>
+                    </a>
+                    <a class="tab__item" href="javascript:void(0);" onclick="openCity(event, 'show1')">
+                        <span class="text">登录设定</span>
+                    </a>
+                    <a class="tab__item" href="javascript:void(0);" onclick="openCity(event, 'show2')">
+                        <span class="text">安全密码设定</span>
+                    </a>
+                    <a class="tab__item" href="javascript:void(0);" onclick="openCity(event, 'show3')">
+                        <span class="text">联系方式</span>
+                    </a>
+                    <a class="tab__item" href="javascript:void(0);" onclick="openCity(event, 'show4')">
+                        <span class="text">绑定银行卡</span>
+                    </a>
+                </div>
+                <div class="com-inner__content">
+                    <div id="show7" class="mydata">
+                        <div class="ui-tableviewcell -default -value1 -subtitle">
+                            <div class="ui-tableviewcell__text">
+                                <p class="title">會員帳號</p>
+                                <p class="text">player01</p>
+                            </div>
+                        </div>
+                        <div class="ui-tableviewcell -default -value1 -subtitle">
+                            <div class="ui-tableviewcell__text">
+                                <p class="title">真實姓名</p>
+                                <p class="text">金富發</p>
+                            </div>
+                        </div>
+                        <div class="ui-tableviewcell -default -value1 -subtitle">
+                            <div class="ui-tableviewcell__text">
+                                <p class="title">生日</p>
+                                <p class="text -danger">尚未驗證</p>
+                            </div>
+                            <div class="detail">
+                                <a class="btn btn-primary btn-ripple rounded-pill" href="verified.html">前往驗證</a>
+                            </div>
+                        </div>
+                        <div class="ui-tableviewcell -default -value1 -subtitle">
+                            <div class="ui-tableviewcell__text">
+                                <p class="title">身分證號</p>
+                                <p class="text -danger">尚未驗證</p>
+                            </div>
+                            <div class="detail">
+                                <a class="btn btn-primary btn-ripple rounded-pill" href="verified.html">前往驗證</a>
+                            </div>
+                        </div>
+                        <div class="ui-tableviewcell -default -value1 -subtitle">
+                            <div class="ui-tableviewcell__text">
+                                <p class="title">錢包餘額</p>
+                                <p class="text">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="show1" class="mydata" style="display: none;">
+                        <div class="cell-list">
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">原密码</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="el-input" placeholder="请输入6位数字" minlength="5"
+                                            maxlength="9"   />
+                                        <div class="el-value">
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="com-cell__verify com-cell__verify--correct">
+                                    <div class="verify-icon"></div>
+                                    <span class="verify-text">格式正确</span>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">新密码</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="el-input" placeholder="请输入6-12位字符" minlength="5"
+                                            maxlength="9"   />
+                                        <div class="el-value">
+                                            <span class="el-value__reveal el-value__reveal--off"></span>
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">确认密码</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="el-input" placeholder="请再次输入新密码" minlength="5"
+                                            maxlength="9"   />
+                                        <div class="el-value">
+                                            <span class="el-value__reveal el-value__reveal--off"></span>
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">安全密码</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="el-input" placeholder="请输入6位数字" minlength="5"
+                                            maxlength="9"   />
+                                        <div class="el-value">
+                                            <span class="el-value__reveal el-value__reveal--off"></span>
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell-info ">
+                                安全密码 默认
+                                <span class="text-red">
+                                    123456
+                                </span>
+                                ，为了保障您的账号以及资金安全 请至"安全密码设定"修改。
+                            </div>
+                        </div>
+                        <div class="com-inner__content-footer">
+                            <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple btn--disabled"
+                                onclick="show1();">确认送出</a>
+                        </div>
+                    </div>
+
+                    <div id="show2" class="mydata" style="display: none;">
+                        <div class="cell-list">
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">原安全密码</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="el-input" placeholder="请输入6位数字" minlength="5"
+                                            maxlength="9"   />
+                                        <div class="el-value">
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="com-cell__verify com-cell__verify--correct">
+                                    <div class="verify-icon"></div>
+                                    <span class="verify-text">格式正确</span>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">新安全密码</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="el-input" placeholder="请输入6位数字" minlength="5"
+                                            maxlength="9"   />
+                                        <div class="el-value">
+                                            <span class="el-value__reveal el-value__reveal--off"></span>
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">确认新安全密码</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="el-input" placeholder="请再次输入新安全密码" minlength="5"
+                                            maxlength="9"   />
+                                        <div class="el-value">
+                                            <span class="el-value__reveal el-value__reveal--off"></span>
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell-info ">
+                                安全密码 默认
+                                <span class="text-red">
+                                    123456
+                                </span>
+                                ，为了保障您的账号以及资金安全 请至"安全密码设定"修改。
+                            </div>
+                        </div>
+                        <div class="com-inner__content-footer">
+                            <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple btn--disabled"
+                                onclick="show1();">确认送出</a>
+                            <a href="javascript:void(0);" class="btn btn-cancel rounded-pill btn-ripple">取消</a>
+                        </div>
+                    </div>
+
+                    <div id="show3" class="mydata" style="display: none;">
+                        <a href="contact.html" class="ui-tableviewcell -default -value1 -subtitle">
+                            <div class="ui-tableviewcell__text">
+                                <p class="title">QQ号码</p>
+                            </div>
+                            <div class="detail">
+                                <p class="detail__text -danger">尚未绑定</p>
+                                <div class="detail__icon"></div>
+                            </div>
+                        </a>
+                        <a href="contact.html" class="ui-tableviewcell -default -value1 -subtitle">
+                            <div class="ui-tableviewcell__text">
+                                <p class="title">微信账号</p>
+                            </div>
+                            <div class="detail">
+                                <p class="detail__text -success">已绑定</p>
+                                <div class="detail__icon"></div>
+                            </div>
+                        </a>
+                        <a href="contact.html" class="ui-tableviewcell -default -value1 -subtitle">
+                            <div class="ui-tableviewcell__text">
+                                <p class="title">电子邮箱</p>
+                            </div>
+                            <div class="detail">
+                                <p class="detail__text -danger">尚未绑定</p>
+                                <div class="detail__icon"></div>
+                            </div>
+                        </a>
+                        <a href="contact.html" class="ui-tableviewcell -default -value1 -subtitle">
+                            <div class="ui-tableviewcell__text">
+                                <p class="title">手机号码</p>
+                            </div>
+                            <div class="detail">
+                                <p class="detail__text -danger">尚未绑定</p>
+                                <div class="detail__icon"></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="show4" class="mydata" style="display: none;">
+                        <div class="bind">
+                            <div class="alert alert-danger">
+                                <div class="alert__img">
+                                    <div class="alert__img__icon"></div>
+                                </div>
+                                <div class="alert__text-info">
+                                    注: 最多支持添加1张银行卡，银行卡的开户人必须与会员的真实姓名相符，否则无法出款成功。
+                                </div>
+                            </div>
+
+                            <!--disabled禁用 add-card-btn--disabled -->
+                            <a href="add-bank-card.html" class="add-card-btn">
+                                <div class="add-card-btn__content">
+                                    <div class="btn-icon"></div>
+                                    <p class="btn-text">银行卡数量已达上限</p>
+                                </div>
+                            </a>
+                            <div class="bind-card">
+                                <div class="bind-card__item">
+                                    <div class="bank-card">
+                                        <div class="bank-card__order">
+                                            <span class="order-number">01</span>
+                                        </div>
+                                        <div class="bank-card__bank">
+                                            <div class="bank-lf">
+                                                <div class="bank-icon">
+                                                    <img class="bank-icon__img"
+                                                        src="./images/common/demo/member/bankLogo@2x.png">
+                                                </div>
+                                                <p class="bank-name">中国银行</p>
+                                            </div>
+                                            <div class="bank-rt">
+                                                <a href="javascript:void(0)"
+                                                    class="detail-uploader btn btn-secondary rounded-pill"
+                                                    onclick="show9()">查看已上傳圖片
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="bank-card__detail">
+                                            <div class="detail-lf">
+                                                <div class="detail-item">
+                                                    <span class="detail-item__title">开户网点：</span>
+                                                    <span class="detail-item__text">广州/深圳</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <span class="detail-item__title">开户人：</span>
+                                                    <span class="detail-item__text">张三</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bank-card__account">
+                                            <span class="account-number">7896 - **** - 1234</span>
+                                            <label class="card-switch">
+                                                <input class="card-switch__input" type="checkbox" checked>
+                                                <span class="card-switch__slider">
+                                                    <span class="slider-text">通過</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bind-card__item">
+                                    <div class="bank-card">
+                                        <div class="bank-card__order">
+                                            <span class="order-number">02</span>
+                                        </div>
+                                        <div class="bank-card__bank">
+                                            <div class="bank-lf">
+                                                <div class="bank-icon">
+                                                    <img class="bank-icon__img"
+                                                        src="./images/common/demo/member/bankLogo@2x.png">
+                                                </div>
+                                                <p class="bank-name">中国银行</p>
+                                            </div>
+                                            <div class="bank-rt">
+                                                <a href="javascript:void(0)"
+                                                    class="detail-uploader btn btn-secondary rounded-pill"
+                                                    onclick="show9()">查看已上傳圖片
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="bank-card__detail">
+                                            <div class="detail-lf">
+                                                <div class="detail-item">
+                                                    <span class="detail-item__title">开户网点：</span>
+                                                    <span class="detail-item__text">广州/深圳</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <span class="detail-item__title">开户人：</span>
+                                                    <span class="detail-item__text">张三</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bank-card__account">
+                                            <span class="account-number">7896 - **** - 1234</span>
+                                            <label class="card-switch">
+                                                <input class="card-switch__input" type="checkbox" checked>
+                                                <span class="card-switch__slider -danger">
+                                                    <span class="slider-text">拒絕</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="bind-card__item">
+                                    <div class="bank-card">
+                                        <div class="bank-card__order">
+                                            <span class="order-number">02</span>
+                                        </div>
+                                        <div class="bank-card__bank">
+                                            <div class="bank-lf">
+                                                <div class="bank-icon">
+                                                    <img class="bank-icon__img"
+                                                        src="./images/common/demo/member/bankLogo@2x.png">
+                                                </div>
+                                                <p class="bank-name">中国银行</p>
+                                            </div>
+                                            <div class="bank-rt">
+                                                <a href="javascript:void(0)"
+                                                    class="detail-uploader btn btn-secondary rounded-pill"
+                                                    onclick="show9()">查看已上傳圖片
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="bank-card__detail">
+                                            <div class="detail-lf">
+                                                <div class="detail-item">
+                                                    <span class="detail-item__title">开户网点：</span>
+                                                    <span class="detail-item__text">广州/深圳</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <span class="detail-item__title">开户人：</span>
+                                                    <span class="detail-item__text">张三</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bank-card__account">
+                                            <span class="account-number">7896 - **** - 1234</span>
+                                            <label class="card-switch">
+                                                <input class="card-switch__input" type="checkbox" checked>
+                                                <span class="card-switch__slider -warning">
+                                                    <span class="slider-text">未審核</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-info">
+                                    <p class="contact-info__text">如您遇到问题，请联系在线客服咨询</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- layout-tabbar -->
+            <div class="layout-tabbar">
+                <!-- ./component/footer -->
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+            </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            //show/hide
+            function openCity(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName('mydata');
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = 'none';
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName('tab__item');
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(
+                        'tab__item--active',
+                        ''
+                    );
+                }
+
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(cityName).style.display = 'block';
+                evt.currentTarget.className += ' tab__item--active';
+            }
+
+            function edit() {
+                var dataform = document.getElementById('dataform');
+                var defaultform = document.getElementById('defaultform');
+                var editBtn = document.getElementById('editBtn');
+                var confirmBtn = document.getElementById('confirmBtn');
+                dataform.style.display = 'block';
+                confirmBtn.style.display = 'block';
+                defaultform.style.display = 'none';
+                editBtn.style.display = 'none';
+            }
+            function cancel() {
+                var dataform = document.getElementById('dataform');
+                var defaultform = document.getElementById('defaultform');
+                var editBtn = document.getElementById('editBtn');
+                var confirmBtn = document.getElementById('confirmBtn');
+                dataform.style.display = 'none';
+                confirmBtn.style.display = 'none';
+                defaultform.style.display = 'block';
+                editBtn.style.display = 'block';
+            }
+
+            //popup-show/hide
+            function show5() {
+                var x = document.getElementById('show5');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+
+            //popup-show/hide
+            function show6() {
+                var x = document.getElementById('show6');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+            //popup-show/hide
+            function show8() {
+                var x = document.getElementById('show8');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+            function show9() {
+                var x = document.getElementById('show9');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+        </script>
+</body>
+
+</html>

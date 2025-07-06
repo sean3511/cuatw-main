@@ -1,0 +1,412 @@
+.transfer
+  display: flex
+  flex-direction: column
+  // overflow-y: auto
+
+  //balance
+  .balance
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: $space-sm
+    background-color: #ffffff
+    padding-top: $space-md
+    padding-right: $space-lg
+    padding-bottom: $space-md
+    padding-left: ($space-lg + 34px + 12px)
+    border-radius: 6px
+    &:before
+      content: ''
+      position: absolute
+      top: calc(50% - 17px)
+      left: $space-lg
+      width: 34px
+      height: 34px
+      mask-image: url('../images/common/image/icon/icon_deposit_money@2x.png')
+      mask-size: contain
+      mask-repeat: no-repeat
+      mask-position: center
+      background-color: #d4bba1
+    &__bg
+      background-size: 34px
+      background-repeat: no-repeat
+      background-position: 12px center
+
+      &__text
+        margin: 0
+        font-size: 12px
+        line-height: 18px
+        color: #515561
+      &__total
+        color: #909abb
+        font-size: 16px
+        line-height: 18px
+    //refresh
+    .refresh
+      flex-shrink: 0
+      width: 24px
+      height: 24px
+      mask: url('../images/common/image/icon/icon_refresh@2x.png') no-repeat center center
+      mask-size: contain
+      background-color: #d4bba1
+      margin-right: $space-md
+      &--active
+        animation: refresh 0.8s infinite linear
+  .list-wrap
+    border-radius: $bod-default
+    overflow: hidden
+  //main-item
+  .main-item
+    min-width: 100%
+    height: 52px
+    padding-bottom: $space-sm
+    display: flex
+    align-items: center
+    text-decoration: none
+    padding: 0 $space-lg
+    background-color: #ffffff
+    position: relative
+    &:after
+      content: ''
+      display: block
+      border-top: 1px solid rgba(255,200,97,0.25)
+      position: absolute
+      bottom: 0
+      height: 1px
+      right: $space-sm
+      left: $space-sm
+      margin: auto
+    &__img
+      padding-right: $space-sm
+
+      .img-icon
+        width: 36px
+        height: 36px
+        display: block
+        mask-image: url('../images/common/image/icon/icon_wallet@2x.png')
+        mask-size: contain
+        mask-position: center
+        mask-repeat: no-repeat
+        background-color: #d4bba1
+    &__text
+      width: 178px
+      text-align: left
+
+      .text-txt,
+      .txt-title
+        font-size: 12px
+        color: #515561
+        margin: 0
+        padding-bottom: $space-xs
+        display: flex
+
+        &:last-child
+          padding-bottom: 0
+
+        &__number
+          color: #909abb
+          margin-bottom: 0
+          flex: 1
+          @include text-ellipsis
+      .txt-title
+        font-size: 14px
+        font-weight: 500
+      .txt-txt
+        color: #909abb
+
+    //refresh
+    .refresh
+      flex-shrink: 0
+      width: 24px
+      height: 24px
+      mask: url('../images/common/image/icon/icon_refresh@2x.png') no-repeat center center
+      mask-size: contain
+      background-color: #d4bba1
+      margin-right: $space-md
+      &--active
+        animation: refresh 0.8s infinite linear
+
+    //btn-restore
+    .btn-restore
+      width: auto
+      min-width: 81px
+      height: 28px
+      display: flex
+      align-items: center
+      justify-content: center
+      outline: none
+      border-radius: $bod-round
+      border: none
+      padding: 0 $space-md
+      margin-left: auto
+      &__text
+        font-size: 12px
+        color: #ffffff
+        margin: 0
+      &__number
+        width: 0
+        transition: 0.4s
+      &--disabled
+        background-color: #eceef4
+        color: #909abb
+        cursor: not-allowed
+        .btn-restore__text
+          color: #909abb
+        .btn-restore__number
+          width: auto
+          font-size: 12px
+          color: #909abb
+          opacity: 1 !important
+          transition: 0.4s
+  //list
+  .list
+    display: flex
+    flex-wrap: wrap
+    overflow: hidden
+    padding: $space-sm
+    background-color: #ffffff
+    position: relative
+    transition: 0.4s
+
+    //list-item
+    .list-item
+      width: 25%
+      max-width: 25%
+      height: 49px
+      margin-bottom: $space-sm
+      display: flex
+      align-items: center
+      text-decoration: none
+      outline: 0
+      &__img
+        padding-right: $space-sm
+
+        .img-icon,
+        .img-icon--active
+          width: 36px
+          height: 36px
+      &__text
+        margin: 0 auto
+        .text-txt,
+        .txt-title
+          font-size: 12px
+          color: #515561
+          margin: 0
+          padding-bottom: $space-xs
+          display: flex
+          justify-content: center
+
+          &:last-child
+            padding-bottom: 0
+
+          &__number
+            color: #909abb
+            max-width: 75px
+            margin-bottom: 0
+            flex: 1
+            @include text-ellipsis
+        .txt-title
+          font-weight: 500
+        .txt-txt
+          color: #909abb
+
+      &--disabled
+        background-color: var(--brand-color-bg-bg-2)
+        cursor: not-allowed
+
+        .img-icon
+          display: none
+          &--active
+            display: block
+            filter: contrast(0)
+
+    //-hide
+    &--hide
+      transition: 0.4s
+      + .btn-more .btn-more__item__img
+        transform: rotate(0)
+  .btn-more
+    width: 100%
+    height: 44px + $space-sm
+    right: 0
+    left: 0
+    bottom: 0
+    transition: transform 0.3s
+    background-color: #ffffff
+    padding: 0 $space-sm
+    padding-top: $space-sm
+    display: flex
+    align-items: center
+    &__item
+      width: 100%
+      height: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      border-top: 1px solid rgba(255,200,97,0.25)
+      &__text
+        font-size: 12px
+        color: #ffc861
+        padding-right: $space-xs
+        margin: 0
+      &__img
+        width: 12px
+        height: 10px
+        transform: rotate(180deg)
+        mask-image: url('../images/common/image/icon/icon_open_down@3x.png')
+        mask-size: contain
+        mask-position: center
+        mask-repeat: no-repeat
+        background-color: #ffc861
+      &:last-child
+        background-color: #ffffff
+  //amount-info
+  .amount-info
+    padding-top: $space-lg
+    border-radius: $bod-default
+    display: flex
+    align-items: center
+    position: relative
+
+    &__item
+      width: 100%
+      max-width: 50%
+      display: flex
+      align-items: center
+
+      &:first-child
+        margin-right: $space-lg
+      &:last-child
+        margin-left: $space-lg
+      &:before
+        content: ''
+        width: 20px
+        height: 20px
+        mask-image: url('../images/common/image/icon/icon_go@2x.png')
+        mask-size: contain
+        mask-repeat: no-repeat
+        mask-position: center
+        background-color: #ffc861
+        padding: 0 $space-sm
+        @include position-v($space-lg, 0, 0, 0)
+      .item-select
+        width: 100%
+        height: 64px
+        background-color: #ffffff
+        padding: 0 $space-md
+        border-radius: $bod-default
+        display: flex
+        flex-direction: column
+        align-items: start
+        justify-content: center
+        text-decoration: none
+        position: relative
+        &__sel
+          width: 100%
+          color: #515561
+          padding-bottom: $space-lg
+          padding-left: $space-md
+          padding-right: $space-xxxxl
+          font-size: 14px
+          font-weight: 500
+          background-color: transparent
+          @include position-v(0, 0, 0, 0)
+        &__txt
+          width: 100%
+          max-width: 120px
+          font-size: 12px
+          color: #909abb
+          padding-top: $space-xxxxl
+          margin: 0
+          @include text-ellipsis
+        &:before
+          content: ''
+          position: absolute
+          right: 8px
+          width: 24px
+          height: 24px
+          mask-image: url('../images/common/image/icon/icon_picker_down@2x.png')
+          mask-position: center
+          mask-size: contain
+          mask-repeat: no-repeat
+          background-color: #515561
+
+    &__icon
+      height: 20px
+      margin: 0 $space-sm
+      transform: rotate(-90deg)
+
+  //amount-list
+  .amount-list
+    padding-top: $space-lg
+    &__title
+      font-size: 16px
+      font-weight: 600
+      color: #515561
+      margin: 0
+      padding-bottom: $space-xs
+    &__input
+      width: 100%
+    &__segmentedcontrol
+      width: 100%
+      background-color: #ffffff
+      padding: 12px
+      border-radius: 6px
+      .amount-list__selection
+        .selection-item
+          background-color: #f3f4f7
+          &__text
+            color: #909abb
+          &--active
+            background-color: #d4bba1
+            .selection-item__text
+              color: #ffffff
+            &--disabled
+              cursor: not-allowed
+              background-color: #eceef4
+              color: #909abb
+    .msg
+      font-size: 12px
+      margin: 0
+      padding: $space-xs 0
+      color: #ff3d3d
+    &__selection
+      width: 100%
+      display: flex
+      flex-wrap: wrap
+      padding-top: $space-sm
+      padding-bottom: $space-sm
+      margin-top: -2%
+      .selection-item
+        width: 23.333%
+        max-width: 23.333%
+        height: 34px
+        line-height: 34px
+        background-color: #ffffff
+        border-radius: $bod-default / 2
+        margin: 2% 2% 0 0
+        text-align: center
+
+        &:nth-child(4n)
+          margin-right: 0
+
+        &__text
+          font-size: 12px
+          color: #909abb
+          margin: 0
+        &--active
+          background-color: #d4bba1
+          .selection-item__text
+            color: #ffffff
+
+        &--disabled
+          cursor: not-allowed
+          background-color: #eceef4
+          color: #909abb
+  //amount-footer
+  .amount-footer
+    display: flex
+    align-items: center
+    padding: $space-lg 0 0
+    margin-top: 2%

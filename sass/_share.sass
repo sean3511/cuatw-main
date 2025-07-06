@@ -1,0 +1,120 @@
+.share
+  .share-list 
+    &__item 
+      margin-bottom: $space-sm
+      background-color: #ffffff
+      border-radius: $bod-default
+      // box-shadow: 0 2px 4px rgba(black, 0.06)
+      display: block
+      &:last-child 
+        margin-bottom: 0
+      
+    
+    &__content 
+      position: relative  
+      padding: $space-lg
+      padding-bottom: $space-sm
+    
+  .arrow-btn
+    position: absolute
+    right: 12px
+    top: 12px
+    display: flex
+    align-items: center
+    &__text
+      font-size: 12px
+      color: #4d8aff
+    &__icon
+      display: block
+      width: 24px
+      //transition: transform 0.3s ease
+  .share-wallet 
+    color: #786464
+    display: flex
+    align-items: center
+    &__img 
+      width: 40px
+      height: 40px
+      display: block
+    
+    &__text 
+      padding: 0 $space-sm
+    
+    &__name 
+      margin: 0
+      padding-bottom: $space-xs
+      font-size: 12px
+      font-weight: normal
+    
+    &__money 
+      font-size: 16px
+      font-weight: 600
+    
+  
+  .share-head 
+    color: #4d8aff
+    font-size: 12px
+    margin: 0 0 $space-sm
+    padding: 0 0 $space-md 0
+    border-bottom: 1px solid #4d8aff
+    font-weight: 600
+    line-height: 1.2
+  
+  .share-info 
+    color: #909abb
+    &__title 
+      margin: 0
+      font-size: 14px
+      padding-bottom: $space-sm
+    
+    &__list 
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-start
+      padding-top: $space-sm
+    
+    .list__text 
+      display: flex
+      overflow: hidden
+      font-size: 12px
+      padding-bottom: $space-sm
+      padding-right: $space-sm
+      line-height: 1.2
+      &__title
+        flex-shrink: 0
+      &__result
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+    .list__collapse
+      padding: 0px
+      transition: height 0.3s ease
+  .btn-group
+    display: flex
+    justify-content: end
+    width: 100%
+    .btn
+      width: auto
+      height: fit-content
+      white-space: nowrap
+      padding: 8px
+      font-size: 12px
+      line-height: 1
+      margin-right: 8px
+      &:last-child
+        margin-right: 0px
+  .collapse
+    height: 100%
+    transition: height 0.3s ease
+  .collapse:not(.show)
+    display: none
+    height: 0
+  .accordion-button
+    .arrow-btn__icon
+      transition: transform .2s ease-in-out
+  .accordion-button:not(.collapsed)
+    .arrow-btn__icon
+      transform: rotate(-180deg)

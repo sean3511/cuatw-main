@@ -1,0 +1,456 @@
+//deposit
+.deposit 
+  // padding: $space-lg $space-lg $space-lg * 2
+  &__item 
+    width: 100%
+    height: 64px
+    position: relative
+    display: flex
+    align-items: center
+    padding: 0 $space-sm
+    border-radius: $bod-default
+    background-image: url('../images/common/image/img_pay_bg@2x.png')
+    background-size: 100%
+    background-repeat: no-repeat
+    background-position: center
+    margin-bottom: $space-sm
+    @include animation-order(bounceInUp)
+    &:last-child 
+      margin-bottom: 0
+    
+
+    .item-img 
+      width: 48px
+      height: 48px
+      display: flex
+      align-items: center
+      justify-content: center
+      overflow: hidden
+      &__icon 
+        max-width: 100%
+      
+    
+    .item-ct 
+      padding: 0 $space-lg 0 $space-sm
+      flex: 1
+      &__title,
+      &__text 
+        margin: 0
+      
+      &__title 
+        color: #515561
+        font-weight: 600
+        font-size: 16px
+        min-height: 20px
+      
+      &__text 
+        color: #909abb
+        padding-top: $space-xs
+        font-size: 14px
+        min-height: 20px
+      
+    
+    .item-icon 
+      width: 24px
+      height: 24px
+      mask-image: url('../images/common/image/icon/icon_go@2x.png')
+      mask-size: contain
+      mask-repeat: no-repeat
+      mask-position: center
+      background-color: #ffc861
+    
+  
+
+
+//pay-group
+.pay-group 
+  background-color: #ffffff
+  border-radius: $bod-default
+  padding: $space-sm $space-sm 0 $space-sm
+  &__item 
+    min-height: 64px
+    border-bottom: 1px solid rgba(255,200,97,0.25)
+    padding: $space-sm $space-lg
+    display: flex
+    flex-direction: column
+    justify-content: center
+    position: relative
+    &--disabled 
+      cursor: not-allowed
+    
+    &:last-child 
+      border-bottom: 0
+    
+    .el-radio 
+      width: 100%
+      .el-radio-style 
+        align-self: flex-start
+      
+    .el-radio-label 
+      width: 100%
+      font-size: 16px
+      padding-left: $space-lg
+      color: #909abb
+      &__title 
+        display: flex
+        align-items: center
+      
+    .pay-info 
+      padding: $space-xs 0 0
+      .pay-info__text + .pay-info__text-danger 
+        padding-bottom: 0px
+  &.-row
+    display: flex
+    .pay-group__item
+      border: none
+  .ui-tableviewcell
+    background-image: none
+    padding: 0px
+    &__text
+      flex-direction: row
+      align-items: center
+      .title
+        width: 25%
+        color: #515561
+      .text
+        max-width: 50%
+        color: #909abb
+        margin: 0
+        @include text-ellipsis
+    .detail
+      padding-right: 0
+      .btn
+        font-size: 12px
+        height: auto
+        padding: 8px
+    &:first-child
+      .ui-tableviewcell__text
+        padding-top: 8px
+.pay 
+  .btn-tab
+    flex-wrap: wrap
+    &__item
+      flex-direction: column
+      width: 32%
+      height: 56px
+      border-radius: 12px
+      margin-right: 2%
+      margin-bottom: 2%
+      &:nth-child(3n)
+        margin-right: 0  
+  &__step 
+    padding-top: $space-lg
+    &:first-child 
+      padding-top: 0
+    
+    .pay-info 
+      padding-bottom: 0
+
+    .pay-title 
+      margin: 0
+      padding-bottom: $space-sm
+      display: flex
+      justify-content: space-between
+      align-items: center
+      &__text 
+        color: #ffffff
+        font-weight: 600
+        display: flex
+        .text-number 
+          display: block
+        
+        .text-red 
+          color: #ff3d3d
+      
+      .intro 
+        display: flex
+        align-items: center
+        max-width:40%
+        &__icon 
+          flex-shrink: 0
+          width: 24px
+          height: 24px
+          mask-image: url('../images/common/image/icon/icon_tutorial@2x.png')
+          mask-size: contain
+          mask-position: center
+          mask-repeat: no-repeat
+          background-color: #ffc861
+        
+        &__text 
+          font-size: 14px
+          color: #ffc861
+          padding-left: $space-xs
+          font-weight: 600
+        
+    .cell__form 
+      border: 1px solid #ffffff
+      &--disabled 
+        background-color: #eceef4
+        border: 1px solid #ffffff
+        cursor: no-drop
+      
+      &--invalid 
+        border: 1px solid #ff3d3d
+
+    //cell__bank
+    .cell__bank 
+      display: flex
+      flex-direction: column
+
+    //cell__form-item
+    .cell__form-item 
+      display: flex
+      .restore 
+        width: auto
+        min-width: 96px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 16px
+        outline: none
+        border-radius: $bod-round
+        color: #ffffff
+        border: none
+        height: 28px
+        &__text 
+          margin: 0
+        
+        &__number 
+          display: none
+        
+        &--disabled 
+          opacity: 0.8
+          color: #909abb
+          background-color: #eceef4
+          .restore__text 
+            display: none
+          
+          .restore__number 
+            color: #7f7f7f
+            font-size: 14px
+            display: inline-block
+            opacity: 1 !important
+
+  //btn
+  .btn-event 
+    width: auto
+    min-width: 96px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 12px
+    outline: none
+    border-radius: $bod-round
+    border: none
+    height: 28px
+  
+  //com-cell--pay.page
+  .com-cell 
+    padding: 0
+  
+  .com-cell + .com-cell 
+    padding-top: $space-sm
+
+.com-cell + .amount-list 
+  padding-top: $space-sm
+
+.amount-list + .com-cell 
+  padding-top: $space-sm
+
+//amount-list
+.amount-list 
+  display: flex
+  flex-wrap: wrap
+  // margin-bottom: -2%
+
+  &__item 
+    width: 23.333%
+    max-width: 23.333%
+    height: 34px
+    line-height: 34px
+    background-color: #ffffff
+    border-radius: 4px
+    margin: 0 2% 2% 0
+    text-align: center
+
+    &:nth-child(4n) 
+      margin-right: 0
+    
+    .item-text 
+      font-size: 12px
+      color: #909abb
+      margin: 0
+    
+    &--active 
+      background-color: #4d8aff
+
+      .item-text 
+        color: #ffffff
+
+    &--disabled 
+      cursor: not-allowed
+      background-color: #eceef4
+      .item-text 
+        color: #909abb
+
+//pay-info--獨立
+.pay-info 
+  font-size: 12px
+  padding-bottom: $space-lg
+  margin-left: auto
+  &__text 
+    margin: 0
+    padding-bottom: $space-xs
+    color: #909abb
+    font-weight: normal
+    line-height: 19px
+    font-size: 12px
+    word-break: break-all
+    &:last-child 
+      padding-bottom: 0
+    
+    &__txt 
+      font-size: 12px
+      padding-right: $space-lg
+      &:last-child 
+        padding-right: 0px
+      
+  &__text-danger 
+    color: #ff3d3d
+    margin: 0
+    font-weight: 600
+    line-height: 19px
+    font-size: 12px
+    .pay-info__text 
+      color: #ff3d3d
+    
+  .text-danger 
+    color: #ff3d3d
+  
+  &__text-remark 
+    color: #4d8aff
+    margin: 0
+    font-weight: 400
+    line-height: 19px
+    font-size: 12px
+  
+.pay-info__text + .pay-info__text-danger 
+  padding-bottom: $space-lg
+
+.record-list 
+  &__item 
+    margin-bottom: $space-sm
+    background-color: #ffffff
+    border-radius: $bod-default
+    // box-shadow: 0 2px 4px rgba(black, 0.06)
+    display: block
+    @include animation-order(bounceInUp)
+    &:last-child 
+      margin-bottom: 0
+  &__content 
+    position: relative  
+    padding: $space-lg
+    padding-bottom: $space-md
+  .arrow-btn
+    position: absolute
+    right: 12px
+    top: 12px
+    display: flex
+    align-items: center
+    &__text
+      font-size: 12px
+      color: #4d8aff
+    &__icon
+      display: block
+      width: 24px
+      //transition: transform 0.3s ease
+  .record-wallet 
+    color: #786464
+    display: flex
+    align-items: center
+    &__img 
+      width: 40px
+      height: 40px
+      display: block
+    
+    &__text 
+      padding: 0 $space-sm
+    
+    &__name 
+      margin: 0
+      padding-bottom: $space-xs
+      font-size: 12px
+      font-weight: normal
+    
+    &__money 
+      font-size: 16px
+      font-weight: 600
+    
+  
+  .record-head 
+    color: #4d8aff
+    font-size: 12px
+    margin: 0 0 $space-sm
+    padding: 0 0 $space-md 0
+    border-bottom: 1px solid #4d8aff
+    font-weight: 600
+    line-height: 1.2
+  
+  .record-info 
+    color: #909abb
+    &__title 
+      margin: 0
+      font-size: 14px
+      padding-bottom: $space-sm
+    
+    &__list 
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-start
+      padding-top: $space-sm
+    
+    .list__text 
+      display: flex
+      overflow: hidden
+      font-size: 12px
+      padding-bottom: $space-sm
+      padding-right: $space-sm
+      line-height: 1.2
+      &__title
+        flex-shrink: 0
+      &__result
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+    .list__collapse
+      padding: 0px
+      transition: height 0.3s ease
+  .btn-group
+    display: flex
+    justify-content: end
+    width: 100%
+    .btn
+      width: auto
+      height: fit-content
+      white-space: nowrap
+      padding: 8px
+      font-size: 12px
+      line-height: 1
+      margin-right: 8px
+      &:last-child
+        margin-right: 0px
+  .collapse
+    height: 100%
+    transition: height 0.3s ease
+  .collapse:not(.show)
+    display: none
+    height: 0
+  .accordion-button
+    &::before
+      transition: transform .2s ease-in-out
+  .accordion-button:not(.collapsed)
+    &::before
+      transform: rotate(-180deg)

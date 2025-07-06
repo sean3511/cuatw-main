@@ -1,0 +1,115 @@
+.message-cell 
+  &__item 
+    display: block
+    margin-top: $space-sm
+    background-color: #ffffff
+    border-radius: $bod-default
+    // box-shadow: 0 2px 4px rgba(black, 0.06)
+    @include animation-order(bounceInUp, 1s)
+    &:first-child 
+      margin-top: 0
+    
+    .message-title 
+      &:before 
+        content: ''
+        position: relative
+        bottom: 0
+        z-index: 1
+        flex: 0 0 auto
+        display: inline-block
+        width: 30px
+        height: 30px
+        mask-image: url('../images/common/image/icon/icon_message_close@2x.png')
+        mask-size: contain
+        mask-repeat: no-repeat
+        mask-position: center
+        background-color: #515561
+    
+    &--open 
+      .message-title 
+        &:before 
+          mask-image: url('../images/common/image/icon/icon_message_open@2x.png')
+          bottom: 3px
+    
+    &--hide 
+      display: none
+    
+    &--detail 
+      animation: none
+      .message-cell__content 
+        padding-bottom: $space-lg
+      
+      .message-title 
+        padding-bottom: $space-sm
+        &__text 
+          white-space: normal
+          text-overflow: initial
+          padding-right: 0 
+  
+  &__content 
+    padding: $space-lg
+    padding-bottom: $space-sm
+    // transform: perspective(1000)
+    position: relative
+  
+.message-date 
+  color: #4d8aff
+  font-size: 12px
+  margin: 0 0 $space-sm
+  padding: 0 0 $space-md 0
+  border-bottom: 1px solid #4d8aff3b
+  text-align: center
+  font-weight: normal
+  line-height: 1.2
+  position: relative
+  padding-right: 40px
+  padding-left: 40px
+  .message-delete 
+    position: absolute
+    right: 0px
+    bottom: 0
+    width: 40px
+    height: 40px
+    mask-image: url('../images/common/image/icon/icon_delete@2x.png')
+    mask-size: 20px 20px
+    mask-repeat: no-repeat
+    mask-position: center
+    background-color: #b4bacf
+  
+
+.message-title 
+  margin: 0
+  display: flex
+  width: 100%
+  align-items: flex-start
+  position: relative
+  z-index: 1
+  &__text 
+    font-size: 18px
+    color: #515561
+    padding-left: $space-sm
+    padding-right: 40px
+    padding-top: $space-xxs
+    @include text-ellipsis
+
+.message-description 
+  font-size: 12px
+  margin: 0
+  transition: all 0.3s
+  overflow-x: auto
+  word-wrap: break-word
+  word-break: break-all
+  line-height: normal
+
+.message-arrow 
+  position: absolute
+  right: 24px
+  bottom: 12px
+  width: 22px
+  height: 22px
+  mask-image: url('../images/common/image/icon/icon_picker_right@2x.png')
+  mask-size: contain
+  mask-repeat: no-repeat
+  mask-position: 50%
+  background-color: #515561
+

@@ -1,0 +1,535 @@
+.member-center 
+  &__user-m 
+    display: flex
+    flex-direction: column
+    // padding: 16px 0px 50px
+    .user-m__icon 
+      display: flex
+      background-image: url('../images/common/image/member_login_bg@2x.png')
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+      justify-content: center
+      align-items: center
+      width: 100%
+      height: 78px
+      position: relative
+      &__avatar 
+        width: 68px
+        height: 68px
+        border-radius: $bod-circle
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+        overflow: hidden
+      
+      &__img 
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+
+      &__vip
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 70px
+        height: 70px
+        border-radius: 50%
+        font-size: 20px
+        &.-normal
+          background: linear-gradient(135deg,#bac2ff 30%,#002e99 100%)
+        &.-gold
+          background: linear-gradient(135deg,#fff1b8 30%,#ab862b 100%)
+        &.-silver
+          background: linear-gradient(135deg,#ffffff 50%,#8d90a2 100%)
+
+      &__upload-icon,
+      &__input 
+        position: absolute
+        right: 0
+        bottom: 0
+        width: 26px
+        height: 26px
+      
+      &__input 
+        opacity: 0
+        background-color: transparent
+      
+    
+    .user-m__name 
+      font-size: 16px
+      font-weight: 600
+      color: #ffffff
+      text-align: center
+    
+    .user-m__info 
+      position: relative
+      min-height: 54px
+      padding-top: $space-sm
+      .info-list 
+        padding: 0
+        margin: 0
+        list-style: none
+        display: flex
+        flex-direction: column
+        align-items: center
+        &__item 
+          display: flex
+          align-items: center
+          padding-top: $space-lg
+          &:first-child 
+            padding-top: 0
+          
+
+          .list-btn 
+            color: #2c2e34
+            font-size: 11px
+            display: inline-block
+            background-color: hsla(0,0%,100%,0.4)
+            padding: $space-xs $space-sm
+            border-radius: 11px
+            margin: 0 $space-sm
+            white-space: nowrap
+          
+          .list-text 
+            font-size: 14px
+            color: #fff9
+            display: flex
+            align-items: center
+            white-space: nowrap
+            &.price 
+              display: flex
+              max-width: 160px
+              color: #2c2e34
+              background-color: hsla(0,0%,100%,0.4)
+              padding: $space-xxs $space-sm $space-xxs $space-xxs
+              border-radius: 11px
+              font-weight: 500
+              overflow: hidden
+              white-space: nowrap
+              .price-text 
+                font-weight: 500
+                overflow: hidden
+                white-space: nowrap
+                text-overflow: ellipsis
+              
+              .price-img 
+                width: 16px
+                height: 16px
+                margin-right: $space-xs
+                mask-image: url('../images/common/image/icon/icon_deposit_money@2x.png')
+                mask-size: contain
+                mask-position: center
+                mask-repeat: no-repeat
+                background-color: #2c2e34
+              
+            
+          
+        
+        &__lt 
+          justify-content: flex-end
+        
+        &__rt 
+          justify-content: flex-start
+        
+        .refresh 
+          width: 24px
+          height: 24px
+          mask: url('../images/common/image/icon/icon_refresh@2x.png') no-repeat center center
+          mask-size: contain
+          background-color: #515561
+          margin-left: $space-sm
+          &--active 
+            animation: refresh 0.8s infinite linear
+          
+        
+      
+    
+  
+  .inner-content 
+    top: 230px
+  
+.member-menu-top 
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  position: relative
+  margin: 10px $space-lg 0
+  background: transparent linear-gradient(180deg, #a2abff 0%, #689eff 6%, #57d7ff 40%, #689eff 74%, #a2abff 96%, #6e74ae 100%) 0% 0% no-repeat
+  // filter: drop-shadow(0 0 20px #ffffff80)
+  border-radius: $bod-round
+  border: 1px solid #138ae7
+  z-index: 1
+
+  &__item 
+    position: relative
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    padding: $space-md
+
+    & + .member-menu-top__item:after 
+      content: ''
+      display: block
+      height: 20px
+      width: 1px
+      background-color: #d4bba1
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      // border-right: 1px solid #f5ca9f
+    
+    .menu-img-wrap 
+      display: flex
+      flex-shrink: 0
+      width: 32px
+      height: 32px
+      &__img         
+        display: block
+        width: 100%
+        margin: auto
+        position: relative
+        z-index: 1
+      
+    
+    .menu-title 
+      text-align: left
+      color: #263b8a
+      font-size: 12px
+      font-weight: 600
+      margin: 0
+      padding-top: 4px
+    
+  
+
+  .member-menu-top-bg 
+    // background-image: linear-gradient(to bottom, #ba7b53, #ffe1c3)
+    width: 100%
+    border-radius: $bod-default
+    position: relative
+    overflow: hidden
+    display: flex
+    align-items: center
+    justify-content: space-between
+  
+
+  .member-menu-top-border 
+    width: 100%
+  
+
+
+.member-menu-bottom 
+  display: flex
+  flex-direction: column
+  flex: 1
+  overflow-y: auto
+  background-image: url('../images/common/image/minemenu-bg.png')
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: top
+  margin-top: -50px
+  .com-inner
+    margin-top: 50px
+    &__content
+      padding: 16px 24px 32px
+  .ui-tableview-grouped
+    padding-bottom: 0px
+    margin-bottom: 16px
+    border-radius: 12px 
+    background: transparent linear-gradient(180deg, #5a7efa 0%, #375ad3 6%, #3353c1 40%, #375ad3 74%, #3c61e1 96%, #21357b 100%) 0% 0% no-repeat
+    .ui-tableviewcell
+      padding: 4px 0px
+      margin: 0px 16px
+      border-bottom: 1px solid #5a7efa
+      background-image: none
+      &:last-child
+        border-bottom: 0px 
+
+.member-menu
+  &__item
+    .item-cell
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      border-radius: 16px
+      padding: 12px
+      background-clip: padding-box, border-box
+      background-origin: padding-box, border-box
+      background-image: linear-gradient(to bottom, #314ba4 0, #131d3e 100%)
+      border: 2px rgba(255, 255, 255, 0.4392156863) solid
+      box-shadow: #496488 4px 4px 0px 0px
+      &__icon
+        display: flex
+        width: 40px
+      &__title
+        margin: 0
+        padding-top: 8px
+        font-size: 14px
+        color: #ffffff
+
+
+.img-board 
+  height: 176px - 44px * 2
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: 50%
+  position: relative
+
+  &--auto 
+    height: auto
+  
+
+  &__logo 
+    text-align: center
+    width: 100%
+    padding: $space-lg + $space-xxxxl + $space-lg 0 $space-xxxxl
+    display: flex
+    flex-direction: column
+    text-align: center
+    justify-content: center
+    &__img 
+      width: 148px
+      margin: 0 auto
+    
+    &__text 
+      color: #ffe4b5
+      font-size: 14px
+      padding-top: $space-md
+      margin: 0
+    
+  .btn-tab 
+    width: 100%
+    display: flex
+    &__item 
+      width: 100%
+      min-width: 80px
+      color: white
+      border-right: 0
+      line-height: 45px
+      display: block
+      text-align: center
+      font-size: 16px
+      position: relative
+      &--active 
+        color: white
+        &:after 
+          content: ''
+          display: block
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
+          margin: auto
+          width: 0
+          height: 0
+          border-style: solid
+          border-width: 0 6px 10px 6px
+          border-color: transparent transparent #ffe1c3 transparent
+        
+      
+    
+  
+
+.float-element 
+  width: 100%
+  height: 75px
+  background-color: #21357b
+  box-shadow: 0px -4px 4px #21357b
+  position: relative
+  margin-bottom: -20px
+
+  .alert 
+    max-width: max-content
+    margin: 0 auto
+    padding:$space-md
+    &__img 
+      margin-right: $space-sm
+      &__icon 
+        width: 34px
+        height: 34px
+
+        mask-position: center
+        mask-size: contain
+        mask-repeat: no-repeat
+      
+    
+    &.alert-warning 
+      .alert__img__icon 
+        mask-image: url('../images/common/icon/icon_deposit_money@2x.png')
+        background-color: #d4bba1
+      
+    
+    &__text 
+      font-size: 12px
+      font-weight: 500
+      line-height: normal
+      color: rgba(255, 255, 255, 0.6)
+    
+.entry-btn 
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-shrink: 0
+  height: 48px
+  padding: 0px $space-sm
+  margin-top: $space-lg
+  border-radius: $bod-round
+  //border: 1px solid #138ae7
+  //background: transparent linear-gradient(180deg,#5a7efa 0%,#375ad3 6%,#3353c1 40%,#375ad3 74%,#3c61e1 96%,#21357b 100%) 0% 0% no-repeat
+  background-image: url('../images/common/image/btn-primary-bg@2x.png')
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  &__text 
+    font-size: 14px
+    font-weight: 500
+    color: #ffffff
+  
+
+.version 
+  display: flex
+  flex-shrink: 0
+  margin-top: auto
+  padding-top: $space-sm
+  &__info 
+    min-width: 77px
+    height: 22px
+    padding: 0px $space-lg
+    background-color: #ffffff
+    border-radius: $bod-round 0px 0px $bod-round
+    margin-left: auto
+    .info-text 
+      font-size: 14px
+      font-weight: 500
+      color: rgba(255, 255, 255, 0.6)
+      line-height: 22px
+    
+  
+//內頁user狀態共用
+.inner-user 
+  padding: 0 $space-lg
+  &__user-m 
+    display: flex
+    align-items: center
+    .user-m__icon 
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 76px
+      height: 76px
+      background-color: hsla(0,0%,100%,0.4)
+      padding: $space-xs
+      border-radius: $bod-circle
+      margin-right: $space-sm
+      .icon-img 
+        width: 68px
+        height: 68px
+        display: block
+        border-radius: $bod-circle
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+        overflow: hidden
+      &__vip
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 70px
+        height: 70px
+        border-radius: 50%
+        font-size: 20px
+        &.-normal
+          background: linear-gradient(135deg,#bac2ff 30%,#002e99 100%)
+        &.-gold
+          background: linear-gradient(135deg,#fff1b8 30%,#ab862b 100%)
+        &.-silver
+          background: linear-gradient(135deg,#ffffff 50%,#8d90a2 100%)
+    
+    .user-m__name 
+      font-size: 16px
+      font-weight: 600
+      color: #ffffff
+      text-align: left
+      padding: $space-xs 0px
+      padding-right: $space-sm
+    
+  
+  &__info 
+    position: relative
+    .info-list 
+      padding: 0
+      margin: 0
+      list-style: none
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+
+      &__item 
+        display: flex
+        align-items: center
+        padding-bottom: $space-xs
+        &:last-child 
+          padding-bottom: 0
+        
+        .list-btn 
+          color: #515561
+          font-size: 11px
+          display: inline-block
+          background-color: hsla(0,0%,100%,0.4)
+          padding: $space-xs $space-sm
+          border-radius: 11px
+          margin: 0 $space-sm
+        
+        .list-text 
+          font-size: 13px
+          color: rgba(255, 255, 255, 0.6)
+          display: flex
+          align-items: center
+          &.price 
+            display: flex
+            background-color: hsla(0,0%,100%,0.4)
+            padding: 0px $space-sm 0px $space-xxs
+            border-radius: 11px
+            font-weight: 500
+            color: #2c2e34
+            .price-img 
+              width: 24px
+              height: 24px
+              margin-right: $space-xs
+              mask-image: url('../images/common/image/icon/icon_money@2x.png')
+              mask-size: contain
+              mask-position: center
+              mask-repeat: no-repeat
+              background-color: #2c2e34
+            
+          
+        
+      
+      &__lt 
+        justify-content: flex-end
+      
+      &__rt 
+        justify-content: flex-start
+      
+    
+  
+  .refresh 
+    width: 24px
+    height: 24px
+    mask: url('../images/common/image/icon/icon_refresh@2x.png') no-repeat center center
+    mask-size: contain
+    background-color: #515561
+    margin-left: $space-sm
+    &--active 
+      animation: refresh 0.8s infinite linear
+    
+  
+

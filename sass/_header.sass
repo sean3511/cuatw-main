@@ -1,0 +1,84 @@
+.header 
+  display: flex
+  padding: 6px 12px
+  position: relative
+  &__lf 
+    display: flex
+    align-items: center
+    margin-right: auto
+    .brand-logo 
+      height: 32px
+      display: flex
+      align-items: center
+      justify-content: center
+      &__img 
+        height: 100%
+        display: block
+        vertical-align: middle
+  &__rt 
+    display: flex
+    align-items: center
+    margin-left: auto
+    .header-icon
+      width: 24px
+      height: 24px
+      padding-top: 0px
+      padding-right: 0px
+      &__icon 
+        top: 0px
+        right: 0px
+        bottom: 0px
+        .icon-img
+          width: 100%
+          height: 100%
+          display: block
+          vertical-align: middle
+      &__icon-img
+        width: 24px
+        height: 24px
+        mask-image: url('../images/common/image/icon/icon_earth@2x.png')
+        mask-size: contain
+        mask-position: center
+        mask-repeat: no-repeat
+        background: linear-gradient(to right,#FDEED1 0%, #f5cb9b 100%)
+  .lang-list
+    position: absolute
+    top: 44px
+    right: 0px
+    background: #000000b3
+    list-style: none
+    margin: 0px
+    padding: 16px
+    z-index: 1
+    &__item
+      display: flex
+      justify-content: end
+      align-items: center
+      padding-bottom: 8px
+      .item-title
+        display: flex
+        align-items: center
+        font-size: 14px
+        color: #ffffff
+        &::before
+          content: ''
+          display: none
+          width: 20px
+          height: 20px
+          padding-right: 8px
+          background-image: url('../images/common/image/icon/icon_exclamation-gold@2x.png')
+          background-size: contain
+          background-repeat: no-repeat
+          background-position: center
+      .item-check
+        display: block
+        width: 20px 
+      &:last-child
+        padding-bottom: 0px
+      &--active
+        .item-title
+          font-weight: 600
+          color: #f5cb9b
+          &::before
+            display: block
+  

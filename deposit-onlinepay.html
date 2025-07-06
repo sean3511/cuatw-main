@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover " />
+    <title>cua</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+</head>
+
+<body>
+    <div class="layout-main inner-bg">
+        <!-- 已成功提交 start-->
+        <div id="show2" class="transfer-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <!--success-->
+                <div class="dialog success">
+                    <div class="dialog__body">
+                        <div class="xfe">
+                            <div class="xfe__icon"></div>
+                            <p class="xfe__title">已成功提交</p>
+                            <p class="xfe__text">请在弹出的网页上完成支付</p>
+                        </div>
+                    </div>
+                    <div class="dialog__body-footer">
+                        <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                            onclick="window.show();">查看进度</a>
+                    </div>
+                </div>
+                <!--success-->
+                <!--popup-->
+            </div>
+        </div>
+        <!-- 已成功提交 end-->
+        <div class="nav navimg-up-board">
+            <div class="nav__left">
+                <a class="btn-return" href="deposit.html">
+                    <div class="img"></div>
+                </a>
+            </div>
+            <div class="nav__logo">
+                <span>线上支付</span>
+            </div>
+            <div class="nav__right">
+                <a class="file" href="javascript:void(0)">
+                    <div class="file__icon"></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="layout-content">
+            <div class="com-inner">
+                <div class="img-board">
+                    <div class="inner-user">
+                        <div class="inner-user__user-m">
+                            <div class="user-m__icon">
+                                <div class="user-m__icon__vip -gold">
+                                    <span>金</span>
+                                </div>
+                            </div>
+                            <div class="inner-user__info">
+                                <div class="info-list">
+                                    <div class="info-list__item">
+                                        <span class="user-m__name">金級</span>
+                                        <span class="list-text">账号: 22364789091</span>
+                                    </div>
+                                    <div class="info-list__item">
+                                        <span class="list-text price">
+                                            <div class="price-img"></div>
+                                            5274365.00元
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="com-inner__content">
+                    <div class="pay">
+                        <div class="pay__step">
+                            <p class="pay-title">
+                                <span class="pay-title__text"><span class="text-number">1.</span>请选择充值平審核</span>
+                            </p>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-select">
+                                        <select class="el-select">
+                                            <option value="">请选择</option>
+                                            <option value="項目1">項目1</option>
+                                            <option value="項目2">項目2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pay__step">
+                            <p class="pay-title">
+                                <span class="pay-title__text"><span class="text-number">2.</span>请选择支付方式</span>
+                            </p>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-select">
+                                        <select class="el-select">
+                                            <option value="">请选择</option>
+                                            <option value="項目1">項目1</option>
+                                            <option value="項目2">項目2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pay__step">
+                            <p class="pay-title">
+                                <span class="pay-title__text"><span class="text-number">3.</span>转账金额</span>
+                            </p>
+                            <div class="com-cell-list">
+                                <!-- 金额输入框 -->
+                                <div class="com-cell">
+                                    <div class="com-cell__form">
+                                        <div class="form-group">
+                                            <input type="number" class="el-input" placeholder="请输入转账金额" />
+                                            <div class="el-value">
+                                                <span class="el-value__clear"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="com-cell__verify com-cell__verify--error">
+                                        <div class="verify-icon"></div>
+                                        <span class="verify-text">格式错误</span>
+                                    </div>
+                                </div>
+                                <!-- 金额输入框 end-->
+                                <!-- 金额挑选框 -->
+                                <div class="amount-list">
+                                    <div class="amount-list__item amount-list__item--active">
+                                        <p class="item-text">
+                                            100
+                                        </p>
+                                    </div>
+                                    <div class="amount-list__item amount-list__item--disabled">
+                                        <p class="item-text">
+                                            300
+                                        </p>
+                                    </div>
+                                    <div class="amount-list__item">
+                                        <p class="item-text">
+                                            500
+                                        </p>
+                                    </div>
+                                    <div class="amount-list__item">
+                                        <p class="item-text">
+                                            1,000
+                                        </p>
+                                    </div>
+                                    <div class="amount-list__item">
+                                        <p class="item-text">
+                                            3,000
+                                        </p>
+                                    </div>
+                                    <div class="amount-list__item">
+                                        <p class="item-text">
+                                            5,000
+                                        </p>
+                                    </div>
+                                    <div class="amount-list__item">
+                                        <p class="item-text">
+                                            8,000
+                                        </p>
+                                    </div>
+                                    <div class="amount-list__item">
+                                        <p class="item-text">
+                                            10,000
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- 金额挑选框 end-->
+                            </div>
+                            <p class="remind">
+                                <span class="remind__text-red">备注:
+                                    <span class="remind__text">即⽇起免充值⼿续费</span>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="com-inner__content-footer">
+                        <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                            onclick="window.show();">确认提交</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- layout-tabbar -->
+        <div class="layout-tabbar">
+            <!-- ./component/footer -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        function show() {
+            var x = document.getElementById('show2');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

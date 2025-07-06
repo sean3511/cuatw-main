@@ -1,0 +1,715 @@
+.member-data 
+  width: 100%
+  padding: $space-lg
+  padding-bottom: $space-lg
+
+  .alert 
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: auto
+    padding-bottom: $space-lg
+    font-weight: 600
+    color: #6a3a3a
+  
+
+.form 
+  &__footer 
+    padding: $space-lg 0
+    .btn + .btn 
+      margin-top: $space-lg
+    
+    // .btn-cancel 
+    //   color: white
+    //   background-color: #786464
+    // 
+    .row 
+      margin-left: -$space-xs
+      margin-right: -$space-xs
+    
+    .col-50 
+      padding-left: $space-xs
+      padding-right: $space-xs
+    
+    .alert 
+      padding-top: 0
+    
+  
+  &__contact 
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: nowrap
+    &::before 
+      content: ''
+      position: absolute
+      top: auto
+      bottom: auto
+      left: 0
+      display: block
+      flex: 1 1 auto
+      width: 80px
+      height: 1px
+      background-color: #6a3a3a
+    
+    &::after 
+      content: ''
+      position: absolute
+      top: auto
+      bottom: auto
+      right: 0
+      display: block
+      flex: 1 1 auto
+      width: 80px
+      height: 1px
+      background-color: #6a3a3a
+    
+    .contact__text 
+      display: flex
+      justify-content: center
+      width: 50%
+      font-size: 16px
+      font-weight: 600
+      text-align: center
+      color: #6a3a3a
+      padding: $space-xxxxl 0px
+    
+  
+
+.member-btn 
+  display: flex
+  width: 350px
+  height: 50px
+  background-color: #5dadff
+  border-radius: 4px
+  margin: auto
+  justify-content: center
+  align-items: center
+  margin-top: $space-xxxxl
+  margin-bottom: $space-xxxxl
+  color: white
+
+
+//cell
+.cell-list 
+  &__title 
+    font-size: 16px
+    color: #1d1d1f
+    padding: $space-lg
+  .cell-remind
+    padding-top: 12px
+    &__title
+      font-size: 14px
+      color: #ff3d3d
+      padding-bottom: 8px
+      margin: 0
+  .cell-remind-list
+    padding: 0px
+    margin: 0px
+    list-style: none
+    &__item
+      display: flex
+      padding-bottom: 4px
+      .item-icon
+        position: relative
+        flex: 0 0 auto
+        margin: 0
+        width: 16px
+        height: 16px
+        background-size: contain
+        mask-repeat: no-repeat
+        mask-position: center
+        mask: url(../images/common/image/icon/icon_mistake@2x.png) no-repeat center center
+        mask-size: contain
+        background-color: #ff3d3d !important
+      .item-text
+        font-size: 12px
+        color: #909abb
+        padding-left: 4px
+        &.-danger
+          color: #ff3d3d
+  .cell-row 
+    display: flex
+    justify-content: flex-start
+    margin-left: -$space-xs
+    margin-right: -$space-xs
+  
+  .cell-col-50 
+    padding-left: $space-xs
+    padding-right: $space-xs
+    flex: 1 1 50%
+    max-width: 50%
+    .no-title 
+      padding-top: $space-lg
+    
+  
+  .cell 
+    display: flex
+    flex-direction: column
+    padding: $space-xs 0
+
+    .cell-img 
+      width: 24px
+      height: 24px
+      margin-right: $space-sm
+      align-self: center
+    
+    .cell-text 
+      flex: 1
+      padding-top: $space-xs
+      align-self: center
+    
+    .cell-title 
+      @include input-title
+    
+    .cell-btn 
+      color: #666666
+      font-size: 17px
+      display: flex
+      align-items: center
+      margin-left: auto
+      &__icon 
+        width: 24px
+        height: 32px
+      
+    
+  
+  .cell__info 
+    font-size: 12px
+    color: #786464
+    line-height: 18px
+    .text-red 
+      color: #ad0522
+    
+  
+  .cell__form 
+    position: relative
+    padding: $space-sm $space-md 0px
+    background-color: #ffffff
+    min-height: 64px
+    border-radius: $bod-default
+    border: 1px solid transparent
+    &--invalid 
+      border-color: #ff3d3d
+    
+    .form-input,
+    .form-password 
+      width: 100%
+      height: 24px
+      padding: 0
+      box-shadow: none
+      background: none
+      font-size: 14px
+      @include input-placholder 
+        line-height: normal
+        letter-spacing: initial
+      
+    
+
+    .input-custom 
+      width: 100%
+      height: 24px
+      padding: 0
+      box-shadow: none
+      background: none
+      font-size: 16px
+      padding-right: $space-sm
+      display: flex
+      align-items: center
+      @include text-ellipsis
+      &__text 
+        width: 100%
+        color: #786464
+        @include text-ellipsis
+      
+      &__text-red 
+        color: #ad0522
+      
+    
+    .form-input,
+    .form-datetime 
+      padding-top: $space-xs
+    
+
+    .form-datetime 
+      font-size: 16px
+      color: #786464
+    
+
+    //清除input自動完成背景色
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active 
+      box-shadow: 0 0 0 30px white inset !important
+    
+    //form-p
+    .form-text 
+      display: flex
+      flex-direction: column
+      justify-content: center
+      margin-top: -$space-lg
+      &__title,
+      &__txt 
+        margin: 0
+      
+      &__title 
+        @include input-title
+      
+      &__txt 
+        padding-top: $space-sm
+        @include input-placholder
+      
+    
+
+    //form-bank
+    .form-bank 
+      width: 100%
+      display: flex
+      flex-direction: column
+      border-bottom: 1px solid rgba(255,200,97,0.25)
+      position: relative
+      padding: $space-md + $space-sm 0px
+      &--disabled 
+        cursor: not-allowed
+        filter: grayscale(1)
+      
+      &:first-child 
+        padding-top: $space-md
+        .bank-sprites 
+          top: 12px
+        
+      
+      &:last-child 
+        border-bottom: 0
+      
+      .bank-sprites 
+        width: 40px
+        height: 40px
+        background-image: url('../images/common/demo/member/bankLogo@2x.png')
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        position: absolute
+        top: 20px
+        left: 0
+        margin: auto
+      
+      .bank-chklst 
+        width: 100%
+        padding-left: 40px + $space-sm
+        &__item 
+          position: relative
+          display: flex
+          .el-radio 
+            width: 100%
+            > .el-radio-input 
+              width: 100%
+              display: block
+              z-index: 10
+              background-color: transparent
+              @include position-v(0, 0, 0, 0)
+              & + .el-radio-style 
+                align-self: flex-start
+                padding-right: 30px
+                margin-top: $space-xxs
+                &:before 
+                  border-radius: 4px
+                  border-color: #ffc861
+                
+              
+              &:checked 
+                & + .el-radio-style 
+                  &:before 
+                    background-color: #ffc861
+                  
+                  &:after 
+                    top: 3px
+                    left: 7px
+                    width: 7px
+                    height: 11px
+                    transform: rotate(45deg)
+                    border-right: 3px solid #ffffff
+                    border-bottom: 3px solid #ffffff
+                    background: none
+                    border-radius: 0
+                  
+                
+                &[disabled] 
+                  & + .el-radio-style 
+                    &:before 
+                      border-color: #eceef4
+                      background-color: #eceef4
+              &[disabled] 
+                & + .el-radio-style 
+                  &:before 
+                    border-color: #eceef4
+            .pay-info 
+              .pay-info__text + .pay-info__text-danger 
+                padding-bottom: 0px
+          .el-radio-label 
+            width: 100%
+            &__title 
+              display: flex
+              align-items: center
+        .label-title,
+        .label-item 
+          display: flex
+          align-items: center
+          color: #515561
+          margin: 0
+          padding-bottom: $space-sm
+          word-break: break-all
+          .text-remark,
+          .text 
+            font-size: 12px
+            flex: 1
+          
+
+          .text-remark 
+            font-weight: 400
+            color: #d4bba1
+          
+          .text-danger 
+            color: #ff3d3d
+          
+          &__text 
+            margin: 0
+            display: flex
+            padding-right: 20px
+            .text-txt,
+            .text-number 
+              flex: 1
+            
+            &:last-child 
+              padding-right: 0px
+            
+          
+          //btn-copy
+          .btn-copy 
+            max-width: 60px
+            min-width: 60px
+            height: 20px
+            font-size: 12px
+            margin: 0 0 0 auto
+            z-index: 20
+          
+        
+        .label-title 
+          font-size: 14px
+          font-weight: 600
+          padding-top: $space-xs
+        
+        .label-item 
+          font-size: 12px
+        
+      
+      .form-qr 
+        padding-bottom: 0
+      
+    
+
+    .form-bank + .btn-event 
+      margin-left: auto
+    
+
+    //form-uploader
+    .form-uploader 
+      display: flex
+      align-items: center
+      padding-top: $space-sm
+      padding-bottom: $space-lg
+      &__img 
+        width: 80px
+        height: 80px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: $bod-default
+        background-color: #f3f4f7
+        overflow: hidden
+        position: relative
+        padding: $space-xs $space-sm
+        .img-default 
+          width: 40px
+          height: 40px
+          padding: $space-md
+          mask-image: url('../images/common/image/icon/icon_updatephoto@2x.png')
+          mask-size: contain
+          mask-position: center
+          mask-repeat: no-repeat
+          background-color: #515561
+        
+        .img-icon,
+        img 
+          width: 100%
+        
+      
+      &__text 
+        font-size: 14px
+        padding-left: $space-lg
+        color: #515561
+      
+      &__input 
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        overflow: hidden
+        cursor: pointer
+        opacity: 0
+      
+    
+    .form-input + .btn-event,
+    .form-text + .btn-event,
+    .input-custom + .btn-event,
+    .form-datetime + .btn-event,
+    .form-uploader + .btn-event 
+      align-self: center
+      margin: -$space-sm 0 0 auto
+      margin-left: auto
+    
+
+    //form-qr
+    .form-qr 
+      padding-bottom: $space-lg
+      &__title
+        text-align: center
+        font-size: 16px
+        color: #515561
+        padding-bottom: 8px
+        .title-icon
+          width: 56px
+          height: auto
+          margin: auto
+          margin-bottom: 8px
+          &__img
+            display: block
+            width: 100%
+      &__price
+        text-align: center
+        font-size: 20px
+        color: #4d8aff
+        padding-bottom: 8px
+      &__info 
+        display: flex
+        justify-content: center
+        align-items: center
+        line-height: 22px
+        padding-bottom: $space-md
+        .info-title
+          font-size: 14px
+        .info-price
+          font-size: 16px
+        &__icon 
+          width: 12px
+          height: 12px
+          mask-image: url('../images/common/image/icon/icon_remind@3x.png')
+          mask-size: contain
+          mask-position: center
+          mask-repeat: no-repeat
+          background-color: #ff3d3d      
+        &__text,
+        &__text-red 
+          font-size: 12px
+          margin: 0
+        &__text 
+          color: #ff3d3d
+          padding-left: $space-sm
+        &__text-red 
+          color: #ff3d3d
+      &__img 
+        width: 120px
+        height: 0
+        margin: 0 auto
+        transition: 0.4s
+        &__icon 
+          width: 100%
+          opacity: 0
+        
+        &--show 
+          height: 120px
+          transition: 0.4s
+          .form-qr__img__icon 
+            opacity: 1
+            animation: zoomIn 0.4s
+            animation-fill-mode: forwards
+        &.-barcode
+          width: 100%
+          height: auto
+      &__text 
+        text-align: center
+        margin-top: $space-md
+        margin-bottom: 0
+        font-size: 14px
+        color: #515561
+        font-weight: 600
+        @include text-ellipsis
+        &.-danger
+          color: #ff3d3d
+      &__subtitle 
+        text-align: center
+        margin-top: $space-sm
+        margin-bottom: 0
+        font-size: 14px
+        color: #515561
+        font-weight: 600
+        &.-danger
+          color: #ff3d3d
+      &__btn 
+        margin: $space-md 0 0
+        padding:0px $space-sm
+        height: 32px
+        &__text 
+          height: max-content
+          margin: 0
+          text-align: center
+          font-size: 12px
+        
+      
+    
+
+    //form-password
+    .form-password 
+      padding: 6px 64px 6px 10px
+    
+    .form-select 
+      width: 100%
+      height: 26px
+      background-color: transparent
+      background-repeat: no-repeat
+      background-position: right top
+      position: relative
+      background-size: 15px auto
+      text-align: left
+      text-align-last: left
+      padding-left: 0
+      @include input-placholder
+      font-size: 14px
+    
+    input[type='text']:disabled 
+      background: #e5e5e5
+    
+    .form-status 
+      display: flex
+      max-width: 50%
+      justify-content: flex-end
+      margin-top: -$space-sm
+      &--show 
+        display: flex
+      
+    
+    &__group 
+      display: flex
+      align-items: center
+      .form-input,
+      .form-password 
+        flex: 1 1
+      
+      .verify 
+        justify-content: flex-end
+        padding-left: $space-sm
+        flex-wrap: nowrap
+        margin-top: -$space-sm
+      
+      .captcha 
+        margin-top: -$space-sm
+        padding: 0 $space-sm
+      
+    
+
+    &--disabled 
+      background-color: #f0ebeb
+      border: 1px solid transparent
+      cursor: no-drop
+    
+  
+
+  .cell-textarea 
+    padding: 0 $space-lg
+    &__ct 
+      width: 100%
+      border-radius: 4px
+      box-shadow: inset 0px 1px 3px 0px #00000080
+      border: 1px solid #d2d2d2
+      padding: $space-lg
+      resize: none
+      outline: none
+.cell-list + .pay-title
+  padding-top: 12px
+.captcha 
+  display: flex
+  align-items: center
+  &__img 
+    height: 28px
+  
+
+.uploader 
+  display: flex
+  justify-content: center
+  align-items: center
+  padding-bottom: $space-md
+  margin: -18px auto auto
+  position: relative
+  &__upload 
+    position: relative
+    &__img 
+      width: 100px
+      height: 100px
+    
+  
+  .upload 
+    &__img 
+      background-size: cover
+      width: 100px
+      height: 100px
+      border-radius: $bod-circle
+    
+
+    &__icon,
+    &__input 
+      position: absolute
+      right: 0
+      bottom: 0
+      width: 32px
+      height: 32px
+    
+    &__input 
+      opacity: 0
+      background-color: transparent
+    
+  
+
+
+.step-link 
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  &.right 
+    justify-content: flex-end
+  
+  &__item 
+    display: flex
+    align-items: center
+    padding: $space-sm $space-xs
+    .content 
+      &__icon 
+        width: 24px
+        height: 24px
+      
+      &__text 
+        font-size: 14px
+        color: #ad0522
+      
+    
+  
+
+
+//狀態紅色*
+.require 
+  display: inline-block
+  color: #6a3a3a
+  font-size: 12px
+

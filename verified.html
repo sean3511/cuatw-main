@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover " />
+    <title>cua</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+
+</head>
+
+<body>
+    <div class="layout-main inner-bg">
+        <!-- 顯示上傳存摺圖片 -->
+        <div id="show9" class="cardboard-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <div class="dialog success">
+                    <div class="dialog__body">
+                        <div class="cardboard">
+                            <img class="cardboard__img" src="./images/common/demo/member/demo-bank-card.jpeg" alt="">
+                            <p class="dialog-alert__text-info">請維持文件完整性，不能切角或切邊/反光/模糊不清/遮住個人資料</p>
+                        </div>
+                    </div>
+                    <div class="dialog__body-footer">
+                        <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                            onclick="show9()">關閉</a>
+                    </div>
+                </div>
+                <!--popup-->
+            </div>
+        </div>
+        <div class="nav glow-bg">
+            <div class="nav__left">
+                <a class="btn-return" href="member.html">
+                    <div class="img"></div>
+                </a>
+            </div>
+            <div class="nav__logo">
+                <span class="logo-text">實名認證</span>
+            </div>
+        </div>
+
+        <div class="layout-content">
+            <div class="com-inner">
+                <div class="com-inner__content">
+                    <div class="mydata">
+                        <div class="cell-list">
+                            <div class="com-cell-title">
+                                <h4 class="com-cell-title__text">1.基本資料</h4>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">持卡人姓名</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="el-input" placeholder="请输入真實姓名" />
+                                        <div class="el-value">
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="com-cell__verify com-cell__verify--correct">
+                                    <div class="verify-icon"></div>
+                                    <span class="verify-text">格式正确</span>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">生日</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="el-input" placeholder="请输入6-12位字符" minlength="5"
+                                            maxlength="9"   />
+                                        <div class="el-value">
+                                            <span class="el-value__reveal el-value__reveal--off"></span>
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">身分證號</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="el-input" placeholder="请再次输入身分證號" />
+                                        <div class="el-value">
+                                            <span class="el-value__reveal el-value__reveal--off"></span>
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell-title">
+                                <h4 class="com-cell-title__text">2.上傳認證</h4>
+                                <a href="javascript:void(0)" class="btn btn-secondary rounded-pill btn-ripple"
+                                    onclick="show9()">查看範例</a>
+                            </div>
+                            <div class="com-cell-info">
+                                <span class="text-red">
+                                    身分證'正面'+存摺+白紙
+                                </span>
+                                寫上僅供金富發使用+當日日期
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form cell__form-item">
+                                    <!-- form-uploader--active為已上傳後的樣式，拿掉則為未上傳的default -->
+                                    <div class="form-uploader form-uploader--active">
+                                        <div class="form-uploader__img">
+                                            <div class="img-default"></div>
+                                            <input type="file" class="form-uploader__input">
+                                        </div>
+                                        <div class="form-uploader__text">限JPG. PNG档</div>
+                                        <img class="form-uploader__img-full"
+                                            src="./images/common/demo/member/demo-bank-card.jpeg" alt="">
+                                    </div>
+                                    <a href="javascript:void(0);"
+                                        class="btn btn-secondary rounded-pill btn-ripple btn-event">
+                                        <p class="restore__text">清除</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="com-cell-info">
+                                <span class="text-red">
+                                    身分證'背面'+存摺+白紙
+                                </span>
+                                寫上僅供金富發使用+當日日期
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form cell__form-item">
+                                    <!-- form-uploader--active為已上傳後的樣式，拿掉則為未上傳的default -->
+                                    <div class="form-uploader">
+                                        <div class="form-uploader__img">
+                                            <div class="img-default"></div>
+                                            <input type="file" class="form-uploader__input">
+                                        </div>
+                                        <div class="form-uploader__text">限JPG. PNG档</div>
+                                        <img class="form-uploader__img-full" src="./images/common/demo/index/banner.png"
+                                            alt="">
+                                    </div>
+                                    <a href="javascript:void(0);"
+                                        class="btn btn-secondary rounded-pill btn-ripple btn-event btn--disabled">
+                                        <p class="restore__text">清除</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="com-cell-title">
+                                <h4 class="com-cell-title__text">注意事項</h4>
+                            </div>
+                            <div class="com-cell-info ">※上傳前請務必看過範例。</div>
+                            <div class="com-cell-info ">※無摺會員請使用「網銀截圖」，截圖中須包含「姓名」、「銀行」、「帳號」、「分行」。</div>
+                            <div class="com-cell-info ">※無摺會員在身分證(正面)需上傳身分證正面已及提款卡合照。</div>
+                        </div>
+                        <div class="com-inner__content-footer">
+                            <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple">确认送出</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- layout-tabbar -->
+        <div class="layout-tabbar">
+            <!-- ./component/footer -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        //popup-show/hide
+        function show9() {
+            var x = document.getElementById('show9');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

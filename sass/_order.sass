@@ -1,0 +1,442 @@
+//order-filter
+.order-filter 
+  padding: $space-sm
+  background-color: hsla(0,0%,100%,0.5)
+  .order-select 
+    width: 100%
+    height: 36px
+    background-color: #ffffff
+    border-radius: 4px
+    display: flex
+    align-items: center
+    padding: 0 $space-lg
+    position: relative
+    display: flex
+
+    &__title 
+      width: 100%
+      height: 100%
+      .select-text 
+        font-size: 12px
+        color: #515561
+        padding-bottom: $space-xxs
+        display: block
+      
+    
+    &__sel 
+      width: 100%
+      height: 100%
+      font-size: 12px
+      font-weight: 500
+      background-color: transparent
+      color: #515561
+      text-align: left
+      text-align-last: left
+      padding-left: 0
+    
+    &:after 
+      content: ''
+      width: 24px
+      height: 24px
+      mask-image: url('../images/common/image/icon/icon_picker_down@2x.png')
+      mask-size: contain
+      mask-repeat: no-repeat
+      mask-position: center
+      background-color: #515561
+    
+  
+  .btn-tab 
+    width: 100%
+    display: flex
+    padding-top: $space-sm
+    &__item 
+      width: 33.333%
+      height: 26px
+      min-width: 80px
+      color: #909abb
+      border-right: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 12px
+      position: relative
+      white-space: nowrap
+      background-color: hsla(0,0%,100%,0.7)
+      margin-right: $space-sm
+      border-radius: 4px
+      &--active 
+        color: #ffffff
+        background-color: #4d8aff
+        transition: 0.4s
+      
+      &:last-child 
+        margin-right: 0
+      
+      &--disabled 
+        background-color: #eceef4
+        color: #909abb
+        font-weight: normal
+      
+    
+  
+
+
+//order-common
+.order-range 
+  font-size: 12px
+  font-weight: 500
+  color: #909abb
+  padding-bottom: $space-sm
+  margin-top: -$space-sm
+  text-align: center
+
+.order-info-list 
+  display: flex
+  align-items: center
+  background: transparent linear-gradient(180deg,#3c61e1 0%,#375ad3 6%,#3353c1 40%,#375ad3 74%,#3c61e1 96%,#21357b 100%)0% 0% no-repeat
+  height: 28px
+  padding: $space-md $space-lg
+  &__item 
+    display: flex
+    align-items: center
+    flex: 1
+    max-width: 50%
+    &__title 
+      font-size: 14px
+      font-weight: 600
+      color: #ffffff
+      flex: 0 0 auto
+    
+    &__number 
+      @include text-ellipsis
+      font-size: 14px
+      font-weight: 600
+      color: #ffffff
+      padding-right: $space-sm
+    
+  
+
+
+.order 
+  .order-list 
+    &__item 
+      margin-bottom: $space-sm
+      background-color: #ffffff
+      border-radius: $bod-default
+      // box-shadow: 0 2px 4px rgba(black, 0.06)
+      display: block
+      @include animation-order(bounceInUp, 1s)
+      &:last-child 
+        margin-bottom: 0
+      
+    
+    &__content 
+      padding: $space-lg
+      padding-bottom: $space-sm
+    
+  
+
+  .order-head 
+    color: #4d8aff
+    font-size: 12px
+    font-weight: 600
+    margin: 0 0 $space-sm
+    padding: 0 0 $space-md 0
+    border-bottom: 1px solid #4d8aff3b
+    text-align: center
+    line-height: 1.2
+  
+  .order-info 
+    color: #909abb
+    .badge 
+      width: auto
+      height: 20px
+      padding-left: 0
+      padding-right: $space-xs
+      &:before 
+        width: 20px
+        height: 20px
+        margin-right: 0px
+      
+      &--success 
+        &:before 
+          mask-image: url('../images/common/image/icon/icon_success@2x.png')
+        
+      
+      &--warning 
+        &:before 
+          mask-image: url('../images/common/image/icon/icon_mistake@2x.png')
+        
+      
+      &--danger 
+        &:before 
+          mask-image: url('../images/common/image/icon/icon_mistake@2x.png')
+        
+      
+    
+    &__status 
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding: $space-xs 0 0
+      &__left 
+        flex: 1
+        @include text-ellipsis
+        display: flex
+        align-items: center
+        padding-right: $space-sm
+      
+      &__right 
+        display: flex
+        align-items: center
+      
+      &__name 
+        padding-right: $space-sm
+        font-weight: 600
+        font-size: 16px
+        color: #515561
+        word-break: break-all
+      
+      &__type 
+        padding-right: $space-sm
+        font-weight: 600
+        font-size: 16px
+        color: #515561
+      
+      &__number 
+        font-size: 14px
+        @include text-ellipsis
+      
+    
+    &__result 
+      padding: $space-sm
+      margin-top: $space-sm
+      font-size: 12px
+      font-weight: 500
+      color: #909abb
+      background-color: rgba(80,85,98,0.1)
+
+      .result-list 
+        margin: 0
+        padding: 0
+        list-style: none
+
+        & + .result-list 
+          padding-top: $space-sm
+          margin-top: $space-sm
+          border-top: 1px solid rgba(80,85,98,0.4)
+        
+        &__item 
+          font-size: 12px
+          word-break: break-all
+          & + .result-list__item 
+            padding-top: $space-sm
+          
+        
+      
+    
+    &__title 
+      margin: 0
+      font-size: 14px
+      padding-bottom: $space-sm
+    
+    &__list 
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-start
+      padding-top: $space-sm
+    
+    .list__text 
+      font-size: 12px
+      padding-bottom: $space-sm
+      padding-right: $space-sm
+      line-height: 1.2
+      flex: 1 0 50%
+      max-width: 50%
+      display: flex
+      align-items: flex-start
+      &:nth-child(even) 
+        padding-right: 0
+      
+      &__title 
+        flex: 0 0 auto
+        max-width: 50%
+      
+      &__result 
+        word-wrap: break-word
+        word-break: break-all
+      
+      .text-green 
+        color: #06c170
+      
+      .text-red 
+        color: #ff3d3d
+      
+    
+  
+
+  .item-list 
+    padding-top: $space-sm
+    &__content 
+      font-size: 12px
+      color: #909abb
+      display: flex
+      align-items: flex-start
+      & + .item-list__content 
+        padding-top: $space-sm
+      
+    
+    .content 
+      &__title 
+        flex: 0 0 auto
+      
+      &__item 
+        flex: 0 1 auto
+        word-break: break-all
+      
+    
+  
+  .order-detail 
+    padding: $space-sm 0
+    .detail-img 
+      width: 36px
+      display: block
+      height: 45px
+    
+    .detail-text 
+      font-size: 12px
+      color: #786464
+      padding: $space-sm 0
+      margin: 0
+    
+    .image-info 
+      background-color: rgba(#786464, 0.1)
+      padding: $space-sm
+      padding-bottom: $space-xs
+      & + .image-info 
+        margin-top: $space-xs
+      
+      .image-info-list 
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        &.scroll-x 
+          overflow-x: auto
+          flex-wrap: nowrap
+        
+        &__item 
+          margin-right: $space-xs
+          margin-bottom: $space-xs
+          &:last-child 
+            margin-right: 0
+          
+          &__img 
+            width: 36px
+            display: block
+            height: auto
+          
+          &__text 
+            width: 36px
+            height: 45px
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 18px
+            font-weight: 600
+            background-color: rgba(#786464, 0.1)
+          
+        
+      
+    
+
+    .table 
+      width: 100%
+      table-layout: fixed
+      border-collapse: collapse
+      margin-bottom: 0
+      border: 1px solid rgba(#786464, 0.1)
+      .tr 
+        .td 
+          font-size: 12px
+          padding: $space-xs $space-sm
+          color: #6a3a3a
+          &:first-child 
+            text-align: right
+          
+          &.td-w70 
+            width: 70px
+          
+        
+        &:nth-child(odd) 
+          background-color: rgba(#786464, 0.1)
+        
+      
+    
+
+    //sport
+    .sport-info 
+      background-color: rgba(#786464, 0.1)
+      padding: $space-xs $space-sm
+      .sport-info-board 
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: $space-sm 0 $space-xs
+      
+      .board 
+        &__team 
+          flex: 1 1 50%
+          max-width: 50%
+          font-size: 12px
+          @include text-ellipsis
+          &:first-child 
+            text-align: right
+          
+          &:last-child 
+            text-align: left
+          
+          &.vs-icon 
+            flex: 0 0 auto
+            width: 40px
+            height: 14px
+            background-repeat: no-repeat
+            background-position: left 40% center
+            background-size: contain
+          
+        
+      
+      .sport-info-result 
+        color: #ad0522
+        font-size: 12px
+        text-align: center
+        padding: $space-xs 0 $space-sm
+        margin: 0
+      
+.time-filter
+    display: flex
+    align-items: center
+    width: 100%
+    margin-top: 8px
+    &__select
+      position: relative
+      display: flex
+      align-items: center
+      width: 45%
+      height: 36px
+      background-color: #ffffff
+      border-radius: 4px
+      padding: 0 $space-lg
+      .form-control
+        width: 100%
+        font-size: 14px
+        color: #515561
+    &__text
+      width: 10%
+      text-align: center
+      font-size: 14px
+      color: #515561 
+  
+

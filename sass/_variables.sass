@@ -1,0 +1,390 @@
+//間距
+$space-xxs: 2px
+$space-xs: 4px
+$space-sm: 8px
+$space-md: 12px
+$space-lg: 16px
+
+$space-xl: 20px
+$space-xxl: 24px
+$space-xxxl: 28px
+$space-xxxxl: 32px
+$space-xxxxxl: 36px
+
+//圓角
+$bod-default: 8px
+$bod-round: 1000px
+$bod-circle: 50%
+
+a
+  text-decoration: none
+
+input,
+select 
+  outline-color: invert
+  outline-style: none
+  outline-width: 0px
+  border: none
+  border-style: none
+  text-shadow: none
+  appearance: none
+  user-select: text
+  outline-color: transparent
+  box-shadow: none
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none
+
+input[type='number'] 
+  -moz-appearance: textfield
+
+
+//@include
+@mixin scrolling--touch 
+  -webkit-overflow-scrolling: touch
+
+@mixin editor-setting  
+  word-wrap: break-word
+  word-break: break-all
+  p 
+    margin-top: 0
+  img 
+    width: 100%
+    display: block
+
+//ellipsis
+@mixin text-ellipsis 
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+
+//clearfix
+@mixin clearfix 
+  overflow: hidden
+
+
+//legacy-pie-clearfix
+@mixin legacy-pie-clearfix 
+  &:after 
+    content: ' '
+    display: block
+    line-height: 0
+    height: 0
+    font-size: 0
+    visibility: hidden
+    clear: both
+  
+
+
+//vertical
+@mixin after-v 
+  &:after 
+    content: ''
+    width: 0
+    height: 100%
+    display: inline-block
+    position: relative
+    vertical-align: middle
+  
+
+
+@mixin table-v 
+  display: table-cell
+  vertical-align: middle
+
+
+// @include position-v(0, 0, 0, 0)
+@mixin position-v($top, $right, $bottom, $left) 
+  position: absolute
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+  margin: auto
+
+
+//border
+// @include border(0.5, 0, 0, 0, 0, solid, #ccc)
+@mixin border($width, $top, $right, $bottom, $left, $style, $color) 
+  position: relative
+
+  &:after 
+    content: ''
+    pointer-events: none
+    box-sizing: border-box
+    position: absolute
+    top: -50%
+    right: -50%
+    bottom: -50%
+    left: -50%
+    transform: scale($width)
+    border-top-width: ($top * 2) + px
+    border-right-width: ($right * 2) + px
+    border-bottom-width: ($bottom * 2) + px
+    border-left-width: ($left * 2) + px
+    border-style: $style
+    border-color: $color
+  
+
+
+@mixin wap-view 
+  @media (min-width: 560px) 
+    max-width: 414px
+    margin: 0 auto
+  
+
+
+@mixin animation-order($name: zoomIn,$duration: 700ms,$fill-mode: both,$timing-function: ease-in-out,$delay: 100ms) 
+    animation-name: $name
+    animation-duration: $duration
+    animation-fill-mode: $fill-mode
+    animation-timing-function: $timing-function
+    animation-delay: calc(var(--animation-order) * #{$delay})
+
+//slide popup
+@mixin slide-handle-close($direction) 
+  .popup 
+    &__header 
+      display: flex
+      flex-direction: column
+      .header-close 
+        display: flex
+        align-items: center
+        margin-left: auto
+        position: absolute
+        z-index: 2000
+        @content
+        .close-icon 
+          width: 24px
+          height: 24px
+          mask-image: url('../images/common/image/icon/icon_navclose@2x.png')
+          mask-size: contain
+          mask-position: center
+          mask-repeat: no-repeat
+          background-color: #3B3538
+      &__handle 
+        padding: $space-sm 0
+        height: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+        &:before 
+          content: ''
+          display: inline-block
+          width: 36px
+          height: 4px
+          border-radius: $bod-round
+          background-color: #6a3a3a
+
+@mixin slide-popup($direction: $direction,$bg-color: #ffe1c3,$space: 90%,$offset: -100%)
+  .slide-popup 
+    .popup 
+      background-color: $bg-color
+      position: fixed
+      margin: auto
+      z-index: 2000
+      transition: 0.4s
+      &__body 
+        padding: 0 $space-lg
+        position: relative
+        z-index: 1
+      
+      @if ($direction == 'top') 
+        &--#{$direction} 
+          border-radius: 0 0 20px 20px
+          top: $offset
+          right: 0
+          left: 0
+          height: $space
+          width: 100%
+          display: flex
+          flex-direction: column-reverse
+          @include slide-handle-close($direction) 
+            right: $space-lg
+            bottom: $space-lg
+          
+          .popup-content 
+            display: flex
+            flex-direction: column-reverse
+          
+        
+      
+      @if ($direction == 'right') 
+        &--#{$direction} 
+          border-radius: 20px 0 0 20px
+          right: $offset
+          top: 0
+          bottom: 0
+          height: 100%
+          width: $space
+          display: flex
+          flex-direction: row
+          @include slide-handle-close($direction) 
+            left: 16px
+            top: 16px
+          
+          .popup__header 
+            justify-content: center
+            &__handle 
+              transform: rotate(90deg)
+          .popup__body 
+            flex-grow: 1
+      @if ($direction == 'bottom') 
+        &--#{$direction} 
+          background-color: $bg-color
+          border-radius: 20px 20px 0 0
+          bottom: $offset
+          right: 0
+          left: 0
+          height: $space
+          width: 100%
+          @include slide-handle-close($direction) 
+            left: 16px
+            top: 16px
+        &--#{$direction}mauto 
+          border-radius: 20px 20px 0 0
+          bottom: $offset
+          right: 0
+          left: 0
+          width: 100%
+          @include slide-handle-close($direction) 
+            left: 16px
+            top: 16px
+        &--#{$direction}full 
+          bottom: $offset
+          right: 0
+          left: 0
+          height: 100%
+          width: 100%
+          @include slide-handle-close($direction) 
+            left: 16px
+            top: 16px
+      @if ($direction == 'left') 
+        &--#{$direction} 
+          border-radius: 0 20px 20px 0
+          left: $offset
+          top: 0
+          bottom: 0
+          height: 100%
+          width: $space
+          display: flex
+          flex-direction: row-reverse
+          @include slide-handle-close($direction) 
+            right: 16px
+            top: 16px
+          .nav__left 
+            margin-left: auto
+            margin-right: inherit
+          .popup__header 
+            justify-content: center
+            &__handle 
+              transform: rotate(90deg)
+          .popup__body 
+            flex-grow: 1
+    .popup-overlay 
+      z-index: 1900
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      margin: auto
+      background-color: rgba(0, 0, 0, 0.8)
+      display: flex
+      align-items: center
+      justify-content: center
+      opacity: 0
+      visibility: hidden
+      transition: 0.4s
+    &--show 
+      .popup 
+        @if ($direction == 'top') 
+          &--#{$direction} 
+            #{$direction}: 0
+        @if ($direction == 'right') 
+          &--#{$direction} 
+            #{$direction}: 0
+        @if ($direction == 'bottom') 
+          &--#{$direction},
+          &--#{$direction}mauto,
+          &--#{$direction}full 
+            #{$direction}: 0
+        @if ($direction == 'left') 
+          &--#{$direction} 
+            #{$direction}: 0
+      .popup-overlay 
+        opacity: 1
+        visibility: visible
+
+
+//action-sheets
+@mixin action-sheets($direction: $direction, $bg-color: #ffffff, $space: 90%) 
+  .action-sheets 
+    .popup 
+      overflow: hidden
+      background-color: $bg-color
+      position: fixed
+      margin: auto
+      z-index: 2010
+      &__body 
+        padding: 0 $space-lg
+        position: relative
+        z-index: 1
+      @if ($direction == 'bottom') 
+        &--#{$direction} 
+          border-radius: 20px 20px 0 0
+          bottom: 0
+          right: 0
+          left: 0
+          width: 100%
+          transition: 0.4s
+          @include slide-handle-close($direction) 
+            right: $space-lg
+            top: $space-lg
+    .popup-overlay 
+      z-index: 1900
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      margin: auto
+      background-color: rgba(0, 0, 0, 0.8)
+      display: flex
+      align-items: center
+      justify-content: center
+
+@mixin input-title 
+  font-size: 12px
+  color: #3B3538
+  font-weight: 500
+
+@mixin input-placholder 
+  color: #909abb
+  caret-color: #d4bba1
+  font-size: 16px
+  &:-webkit-autofill 
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset
+    background-color: transparent
+  &::-webkit-input-placeholder 
+    color: #b4bacf
+    font-size: 16px
+    @content
+
+  &:-moz-placeholder 
+    color: #b4bacf
+    font-size: 16px
+    @content
+  &::-o-placeholder 
+    color: #b4bacf
+    font-size: 16px
+    @content
+
+  &:-ms-input-placeholder 
+    color: #b4bacf
+    font-size: 16px
+    @content
+
+    

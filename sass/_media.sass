@@ -1,0 +1,45 @@
+@media screen and (min-width: 575px) 
+  body 
+    height: 100vh
+    background-image: url('../images/common/image/soccer-bg.jpg')
+    background-size: cover
+    background-position: center
+  .dropdown.filter 
+    max-width: 300px
+  .popup,
+  .bulletin-popup,
+  .ios-dialog,
+  .transfer-dialog
+    width: auto
+    max-width: 500px
+  .input-popup
+    width: 90%
+    max-width: 540px
+  .dialog,
+  .dialog-ios
+    max-width: 500px
+  .entry-form
+    margin: 0px 32px 32px
+    &__main 
+      padding: 16px 32px
+      .entry-btn-rt,
+      .entry-btn-lf
+        width: 55px
+      .main-reg
+        padding-left: 55px
+        transform: translate(0px, 0px)
+      .main-login
+        padding-right: 55px
+        transform: translate(0px, 0px)
+      .main-reg, .main-login
+        .com-cell
+          padding-top: $space-lg
+          .el-input
+            font-size: 16px
+            &::placeholder
+              font-size: 16px
+      &:before
+        width: 55px
+      &--active 
+        &:before 
+          width: calc(100% - 55px)

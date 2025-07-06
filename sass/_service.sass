@@ -1,0 +1,650 @@
+.wcr-list 
+  display: flex
+  flex-direction: column
+  height: 100%
+  overflow-y: auto
+  padding-bottom: 75px
+  &__item 
+    display: flex
+    margin-top: 8px
+    flex-direction: column
+  
+  &__content 
+    display: flex
+    width: 100%
+  
+
+
+.wcr-system-message 
+  color: white
+  text-align: center
+  font-size: 12px
+  position: relative
+  background-color: #4d8aff
+  border-radius: 16px
+  width: max-content
+  margin: 0 auto 16px
+  padding: 6px 12px
+
+  &.message-divider 
+    display: flex
+    align-items: center
+    &:before,
+    &:after 
+      content: ''
+      display: block
+      width: 50%
+      height: 1px
+      background-color: #a0a0a0
+    
+  
+  .message-text 
+    padding: 0 10px
+    white-space: nowrap
+  
+
+
+.wcr-msg-connect 
+  &__wrapper 
+    position: relative
+    position: sticky
+    top: 0px
+    z-index: 5
+    width: 100%
+    padding-top: 8px
+    margin-top: 14px
+    background-color: #ebedf1
+  
+  &__title 
+    position: relative
+    margin: 0 auto
+    padding: 2px 0
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: #999999
+    border-radius: 16px
+    overflow: hidden
+    font-size: 14px
+    line-height: 28px
+    color: white
+    width: 176px
+    letter-spacing: 1px
+    &:after 
+      content: '.'
+      animation: dots 2s steps(5, end) infinite
+      margin-right: 8px
+    
+  
+  &__message 
+    width: 100%
+    color: #999999
+    text-align: center
+    margin: 4px 0 0 0
+    font-size: 14px
+    line-height: 21px
+    letter-spacing: 0
+    padding: 0 16px
+    animation: fadeIn 300ms ease-out both
+    word-wrap: break-word
+  
+  &__image 
+    width: 20px
+    height: 20px
+    // margin-right: 4px
+  
+
+
+.wcr-msg-backout 
+  color: #333
+  text-align: center
+  font-size: 14px
+  background-color: lighten(#019be5, 45%)
+  border-radius: $bod-default
+  width: max-content
+  margin: 0 auto 16px
+  padding: 4px 12px
+  &__text 
+    padding: 0 10px
+    white-space: nowrap
+  
+
+
+.wcr-msg-ending 
+  color: #333
+  text-align: center
+  font-size: 14px
+  position: relative
+  border-radius: $bod-default
+  width: 100%
+  margin: 0 auto 16px
+  padding: 4px 12px
+  display: flex
+  align-items: center
+  justify-content: center
+  &__text 
+    max-width: 80%
+    word-break: break-all
+    padding: 0 10px
+  
+  &:before,
+  &:after 
+    content: ''
+    display: block
+    width: 100%
+    flex: 1
+    height: 1px
+    background-color: #a0a0a0
+  
+
+
+.wcr 
+  &--left 
+    .list__item__content 
+      margin-left: 8px
+      margin-right: 40px
+      .content-msgtime 
+        padding-left: 15px
+      
+      .stock-user 
+        padding-bottom: 4px
+        &__text 
+          font-size: 12px
+          font-weight: 500
+          color: #b4bacf
+        
+      
+    
+
+    .content 
+      &__message 
+        background-color: #ffffff
+        color: #333
+      
+      &__image 
+        // margin-left: 15px
+        border-radius: 16px
+        overflow: hidden
+      
+    
+  
+  &--right 
+    flex-direction: row-reverse
+    .list__item__content 
+      // margin-right: 15px
+      margin-left: 40px
+      display: flex
+      flex-direction: column
+      align-items: flex-end
+      .content-msgtime 
+        padding-right: 15px
+      
+      .stock-message__time 
+        right: 100%
+        left: auto
+        .time-text 
+          padding-left: 0px
+          padding-right: 4px
+        
+      
+    
+    .content 
+      &__message 
+        a 
+          color: #ffee00
+      
+      &__image 
+        border-radius: 16px
+        overflow: hidden
+        // margin-right: 15px
+      
+    
+  
+  &--left,
+  &--right 
+    .stock-user 
+      font-size: 12px
+      padding-bottom: 4px
+      &__text 
+        font-size: 12px
+        font-weight: 500
+        color: #515561
+      
+    
+    .stock-message 
+      position: relative
+      display: flex
+      align-items: center
+      max-width: 232px
+      padding: 16px
+      margin-bottom: 6px
+      border-radius: $bod-default
+      background-color: #fff
+      box-shadow: 0px 4px 8px 0px hsla(0,3%,7%,0.25)
+      &__time 
+        position: absolute
+        left: 100%
+        bottom: 0px
+        .time-text 
+          font-size: 10px
+          color: #ababab
+          white-space: nowrap
+          padding-left: 4px
+        
+      
+      &__content 
+        width: 100%
+        font-size: 12px
+        line-height: 19px
+        word-wrap: break-word
+
+.list__item 
+  &__avatar 
+    position: relative
+    display: flex
+    width: 40px
+    height: 40px
+    border-radius: $bod-default
+    background: #f4f5f6
+    overflow: hidden
+    &.-round 
+      justify-content: center
+      align-items: center
+      width: 48px
+      height: 48px
+      border-radius: $bod-circle
+    
+    img 
+      display: block
+      width: 100%
+    
+    .avatar-img 
+      display: block
+      width: 100%
+      height: 100%
+    
+  
+  &__content 
+    position: relative
+    max-width: calc(100% - 100px)
+    .content-msgtime 
+      padding-bottom: 4px
+      font-size: 12px
+      color: #999
+    
+  
+
+
+//promote-message
+.promote-message 
+  font-size: 14px
+  padding: 10px 15px
+  margin: 16px 0
+  background-color: white
+  border-radius: $bod-default
+  box-shadow: 0 1px 0 1px darken(#ebedf1, 5%)
+  position: relative
+  line-height: 1.5
+  word-wrap: break-word
+  word-break: break-word
+  margin-bottom: 16px
+  color: #333
+
+  &__text 
+    margin: 0
+    display: inline
+    color: #333
+  
+  &__link 
+    padding: 0 4px
+  
+
+.text-red 
+  color: red
+
+.text-green 
+  color: #dbf8c6
+
+.text-blue 
+  color: lighten(#019be5, 45%)
+
+//promote-message--end
+
+.content 
+  &__message 
+    font-size: 14px
+    color: #ffffff
+    border-radius: 20px
+    position: relative
+    display: flex
+    align-items: center
+    width: 100%
+    max-width: 100%
+    line-height: 1.5
+    word-wrap: break-word
+    white-space: break-spaces
+    margin-bottom: 6px
+    padding: 10px 16px
+    &:last-child 
+      margin-bottom: 0
+    
+    &:before 
+      content: ''
+      width: 10px
+      height: 10px
+      border-radius: 2px
+      transform: rotate(45deg)
+      transform-origin: center
+      position: absolute
+      top: 15px
+
+    a 
+      text-decoration: underline
+  
+  &__control 
+    position: absolute
+    top: 50%
+    left: -64px
+    width: 60px
+    height: 24px
+    padding: 0 4px
+    transform: translate(0, -12px)
+    display: flex
+    justify-content: space-around
+    align-items: flex-end
+    img 
+      width: 16px
+      height: 16px
+      cursor: pointer
+    
+  
+  &__image 
+    position: relative
+    margin-bottom: 20px
+    img 
+      border-radius: $bod-default
+      display: block
+      max-width: 160px
+      width: 100%
+    
+    &--progress 
+      position: absolute !important
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: rgba(black, 0.2)
+      display: flex
+      align-items: center
+      justify-content: center
+    
+    &--uploadError 
+      position: absolute !important
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: rgba(black, 0.6)
+      display: flex
+      align-items: center
+      justify-content: center
+      img 
+        width: 24px
+        height: 24px
+      
+    
+  
+  &__intelligent 
+    font-size: 14px
+    background-color: #fff
+    display: flex
+    flex-direction: column
+    border-radius: 20px
+    position: relative
+    width: 246px
+    line-height: 1.5
+    margin-bottom: 6px
+    overflow: hidden
+
+    .intelligent 
+      &-image 
+        background-image: linear-gradient(rgb(1, 67, 153), rgb(89, 161, 183))
+        img 
+          display: block
+          width: 100%
+        
+      
+      &-header 
+        padding: 4px 16px
+        border-bottom: 1px lighten(#d0d3dd, 10%) solid
+        &__title 
+          margin: 6px 0
+          font-weight: 500
+          font-size: 18px
+          overflow-wrap: break-word
+          color: #45566f
+        
+        &__subtitle 
+          margin: 6px 0
+          font-size: 13px
+          font-weight: 300
+          overflow-wrap: break-word
+          color: lighten(#838ba7, 5%)
+        
+        &__content 
+          margin: 6px 0
+          color: #45566f
+          white-space: pre-wrap
+          overflow-wrap: break-word
+        
+      
+      &-options 
+        display: flex
+        justify-content: space-around
+        padding: 12px 0
+        border-bottom: 1px lighten(#d0d3dd, 10%) solid
+
+        &__item 
+          display: flex
+          justify-content: center
+          align-items: center
+          flex: 1
+
+          &:nth-child(n + 1) 
+            border-left: 1px lighten(#d0d3dd, 10%), solid
+          
+        
+
+        &__text 
+          margin: 0 0 3px
+          font-family: PingFangSC
+          font-size: 14px
+          font-weight: normal
+          font-stretch: normal
+          font-style: normal
+          letter-spacing: normal
+          text-align: center
+          color: #114466
+          position: relative
+          line-height: 1.2
+
+          &::before 
+            content: ''
+            width: 100%
+            height: 1px
+            position: absolute
+            bottom: -4px
+            background-color: #114466
+
+.wcr-input-group 
+  width: 100%
+  display: flex
+  position: relative
+  flex-wrap: wrap
+  align-items: center
+
+  &__textarea 
+    position: relative
+    flex: 1 1 auto
+    width: 1%
+    font-size: 14px
+    color: #515151
+    border: 1px solid transparent
+    overflow-y: auto
+    max-height: 90px
+    border-radius: 18px
+    background-color: #edf1f8
+    [contenteditable='true'] 
+      width: 100%
+      padding: 10px 40px 10px 10px
+      word-wrap: break-word
+      white-space: break-spaces
+      min-height: 40px
+      &:focus 
+        outline: none
+        padding-right: 0
+        & + .btn 
+          display: none
+        
+      
+    
+    [contenteditable='true']:empty:before 
+      color: #a3aab8
+      // font-size: 12px
+      content: attr(placeholder)
+      pointer-events: none
+      display: block
+    
+    .btn-emoji 
+      position: absolute
+      width: auto
+      height: auto
+      top: 0
+      right: 0
+      bottom: 0
+      margin: auto
+      z-index: 100
+    
+  
+
+
+.wcr-input-group-prepend,
+.wcr-input-group-append 
+  display: flex
+
+.wcr-input-group-prepend 
+  align-self: flex-end
+  .btn 
+    width: auto
+    display: none
+    svg 
+      width: 20px
+      height: 20px
+    
+  
+  .btn-add 
+    display: flex
+    width: 40px
+    margin-right: 4px
+    background-color: lighten(#838ba7, 5%)
+    border-radius: $bod-circle
+
+
+.wcr-input-group-append 
+  transform: scale(0) rotate(90deg)
+  align-self: flex-end
+  &--typing 
+    margin-right: -12px
+    transform: scale(1) rotate(0)
+    transition: 0.4s
+
+.wcr-stock 
+  width: 100%
+  white-space: normal
+  line-height: 1
+  &__header 
+    width: 100%
+    .header-title 
+      font-size: 14px
+      color: #d4bba1
+      padding-bottom: 8px
+      @include text-ellipsis
+    
+    .header-subtitle 
+      font-size: 12px
+      color: rgba(255, 255, 255, 0.6)
+      @include text-ellipsis
+    
+  
+  &__content 
+    font-size: 12px
+    line-height: 19px
+    color: #333
+  
+  &__footer 
+    width: 100%
+    padding-top: 16px
+    .stock-btn 
+      display: flex
+      align-items: center
+      &__item 
+        display: flex
+        justify-content: center
+        align-items: center
+        flex: 1
+        min-height: 44px
+        margin-right: 8px
+        padding: 8px
+        background-color: #4d8aff
+        border-radius: $bod-default
+        text-decoration: none
+        overflow: hidden
+        .item-text 
+          font-size: 14px
+          color: #fff
+          text-align: center
+          padding-right: 8px
+          white-space: nowrap
+        
+        &:last-child 
+          margin-right: 0px
+        
+        &--disabled 
+          background-color: #eceef4
+          .item-text 
+            color: #b4bacf
+
+.wcr-footer 
+  display: flex
+  align-items: center
+  width: 100%
+  min-height: 56px
+  padding: 0px 8px
+
+.wcr-input
+  display: flex
+  align-items: center
+  width: 100%
+  padding: 12px 16px
+  margin: 12px 0px
+  border-radius: $bod-round
+  background-color: #eceef4
+  &__text,&__input
+    width: 100%
+    font-size: 14px
+    color: #b4bacf
+    background: transparent
+.wcr-btn
+  width: auto
+  white-space: nowrap
+  padding: 0px 24px
+  margin-left: 12px
+  
+
+.message-close + .wcr-footer 
+  display: none
+   
+      
+    
+  
+

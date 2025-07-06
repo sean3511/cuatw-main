@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover " />
+    <title>cua</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+
+</head>
+
+<body>
+    <div class="layout-main inner-bg">
+        <div class="nav glow-bg">
+            <div class="nav__left">
+                <a class="btn-return" href="index.html">
+                    <div class="img"></div>
+                </a>
+            </div>
+            <div class="nav__logo">
+                <span class="logo-text">活动</span>
+            </div>
+        </div>
+
+        <div class="layout-content">
+            <div class="com-inner">
+                <div class="tab -scrollable">
+                    <a class="tab__item tab__item--active" href="javascript:void(0);"
+                        onclick="openCity(event, 'show1')">
+                        <span class="text">全部优惠</span>
+                    </a>
+                    <a class="tab__item" href="javascript:void(0);" onclick="openCity(event, 'show2')">
+                        <span class="text">限时活动</span>
+                    </a>
+                    <a class="tab__item" href="javascript:void(0);" onclick="openCity(event, 'show3')">
+                        <span class="text">新人活动</span>
+                    </a>
+                    <a class="tab__item" href="javascript:void(0);" onclick="openCity(event, 'show4')">
+                        <span class="text">彩票优惠</span>
+                    </a>
+                    <a class="tab__item" href="javascript:void(0);" onclick="openCity(event, 'show5')">
+                        <span class="text">真人优惠</span>
+                    </a>
+                </div>
+                <div class="com-inner__content">
+                    <div id="show1" class="promo-list">
+                        <a class="promo" href="promo-detail.html">
+                            <img class="promo__img" src="./images/common/demo/promo/promo@2x.png">
+                            <div class="promo__info">
+                                <span class="promo__info__text">2020.01.01 ~ 2020.01.01</span>
+                            </div>
+                        </a>
+                        <a class="promo" href="promo-detail.html">
+                            <img class="promo__img" src="./images/common/demo/promo/promo@2x.png">
+                        </a>
+                        <a class="promo" href="promo-detail.html">
+                            <img class="promo__img" src="./images/common/demo/promo/promo@2x.png">
+                        </a>
+                        <a class="promo" href="promo-detail.html">
+                            <img class="promo__img" src="./images/common/demo/promo/promo@2x.png">
+                            <div class="promo__info">
+                                <span class="promo__info__text">长期活动</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="show2" class="promo-list" style="display: none;">
+                        <!-- 无资料 -->
+                        <div class="empty">
+                            <div class="empty-content">
+                                <div class="empty-icon"></div>
+                                <h3 class="empty-title">无资料</h3>
+                            </div>
+                        </div>
+                        <!-- 无资料 end-->
+                    </div>
+                    <div id="show3" class="promo-list" style="display: none;">
+                        <!-- 无资料 -->
+                        <div class="empty">
+                            <div class="empty-content">
+                                <div class="empty-icon"></div>
+                                <h3 class="empty-title">无资料</h3>
+                            </div>
+                        </div>
+                        <!-- 无资料 end-->
+                    </div>
+                    <div id="show4" class="promo-list" style="display: none;">
+                        <!-- 无资料 -->
+                        <div class="empty">
+                            <div class="empty-content">
+                                <div class="empty-icon"></div>
+                                <h3 class="empty-title">无资料</h3>
+                            </div>
+                        </div>
+                        <!-- 无资料 end-->
+                    </div>
+                    <div id="show5" class="promo-list" style="display: none;">
+                        <!-- 无资料 -->
+                        <div class="empty">
+                            <div class="empty-content">
+                                <div class="empty-icon"></div>
+                                <h3 class="empty-title">无资料</h3>
+                            </div>
+                        </div>
+                        <!-- 无资料 end-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--layout-tabbar-->
+        <div class="layout-tabbar">
+            <!-- ./component/footer -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName('promo-list');
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = 'none';
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName('tab__item');
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(
+                    'tab__item--active',
+                    ''
+                );
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = 'block';
+            evt.currentTarget.className += ' tab__item--active';
+        }
+    </script>
+</body>
+
+</html>

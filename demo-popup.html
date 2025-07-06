@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover " />
+    <title>cua</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+
+</head>
+
+<body>
+    <div class="layout-main inner-bg">
+        <div class="nav glow-bg">
+            <div class="nav__left">
+                <a class="btn-return" href="index.html">
+                    <div class="img"></div>
+                </a>
+            </div>
+            <div class="nav__logo">
+                <span class="logo-text">彈窗demo</span>
+            </div>
+        </div>
+        <!-- 公告中心popup -->
+        <div id="promotions" class="popup" style="display:none">
+            <div class="popup-mask">
+                <!--popup-->
+                <div class="bulletin-popup">
+                    <div class="bulletin-popup__header">
+                        <div class="bulletin-popup__header__top"></div>
+                    </div>
+                    <div class="bulletin-popup__body">
+                        <!-- bulletin-empty(無資料) -->
+                        <div class="bulletin-empty" style="display: none;">
+                            <div class="bulletin-empty__content">
+                                <div class="empty-icon"></div>
+                                <h3 class="empty-title">
+                                    无资料
+                                </h3>
+                            </div>
+                        </div>
+
+                        <!-- bulletin-list(內容) -->
+                        <div class="bulletin-list">
+                            <div class="bulletin__item">
+                                <h3 class="bulletin__title">
+                                    <div class="bulletin__title__text">小心诈骗QQ群组</div>
+                                </h3>
+                                <div class="bulletin__content">
+                                    <p>
+                                        敬请会员留意：近期有不法分子利用官网QQ号码创建QQ群组，假冒官方客服进行诈骗的行为；公司郑重声明：我司所有充值入口都需要登入网站点击线上存款进行查看，绝对不会通过QQ客服窗口提供充值卡号或充值二维码；若因贵宾无视公司温馨提醒导致被骗，造成的一切损失由贵宾自行承担，公司概不负责，如给您带来不便，敬请谅解，谢谢！
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bulletin__item">
+                                <h3 class="bulletin__title">
+                                    <div class="bulletin__title__text">喜讯</div>
+                                </h3>
+                                <div class="bulletin__content">
+                                    开元棋牌业务升级，【炸金花】【德州扑克】两款游戏有效投注计算方式调整为按照单局输赢金额计算，有效投注计算方式大幅度提高，棋牌优惠所需流水更容易达到，欢迎广大贵宾前来体验！
+                                </div>
+                            </div>
+                            <div class="bulletin__item">
+                                <h3 class="bulletin__title">
+                                    <div class="bulletin__title__text">
+                                        ★【约惠春天 非凡“礼”遇】
+                                    </div>
+                                </h3>
+                                <div class="bulletin__content">
+                                    系统将每天随机抽取888名存款成功的幸运贵宾，随机赠送单日入款总额2.0%~10.0%的入款优惠，获得幸运资格的贵宾，系统将通过【站内讯息】告知；同时在美东时间2020.04.06~2020.05.06累计存款1000元+，即可免费领取最高58888元彩金，活动详情请前往优惠专栏查看！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="bulletin-close" href="javascript:void(0);" onclick="showPromotions()">
+                        <img src="./images/common/demo/popup/close_up@2x.png" class="bulletin-close__img" alt="" />
+                    </a>
+                </div>
+                <!--popup-->
+            </div>
+        </div>
+        <!-- 公告中心popup end -->
+
+        <!-- 服務條款popup -->
+        <div id="serviceTerms" class="popup" style="display: none;">
+            <div class="popup-mask">
+                <!--popup-->
+                <div class="bulletin-popup">
+                    <div class="bulletin-popup__header">
+                        <div class="bulletin-popup__header__title">
+                            <h2 class="title-text">服務條款</h2>
+                        </div>
+                    </div>
+                    <div class="bulletin-popup__body">
+                        <!-- bulletin-list(內容) -->
+                        <div class="bulletin-list">
+                            <div class="bulletin__item">
+                                <h3 class="bulletin__title">
+                                    <div class="bulletin__title__text">小心诈骗QQ群组</div>
+                                </h3>
+                                <div class="bulletin__content">
+                                    <ul>
+                                        <li>1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis
+                                            tempora numquam fuga
+                                            modi nisi est odit nulla quidem corrupti aut, necessitatibus, beatae illum
+                                            officia rem optio
+                                            quisquam itaque repellat.</li>
+                                    </ul>
+                                    <p>
+                                        敬请会员留意：近期有不法分子利用官网QQ号码创建QQ群组，假冒官方客服进行诈骗的行为；公司郑重声明：我司所有充值入口都需要登入网站点击线上存款进行查看，绝对不会通过QQ客服窗口提供充值卡号或充值二维码；若因贵宾无视公司温馨提醒导致被骗，造成的一切损失由贵宾自行承担，公司概不负责，如给您带来不便，敬请谅解，谢谢！
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="bulletin-close" href="javascript:void(0);" onclick="showServiceTerms()">
+                        <img src="./images/common/demo/popup/close_up@2x.png" class="bulletin-close__img" alt="" />
+                    </a>
+                </div>
+                <!--popup-->
+            </div>
+        </div>
+        <!-- 服務條款popup end -->
+
+        <!-- 註冊成功popup start -->
+        <div id="regsuccess-popup" class="popup" style="display:none;">
+            <div class="popup-mask">
+                <div class="regsuccess-popup">
+                    <div class="regsuccess-popup__body">
+                        <div class="regsuccess-info">
+                            <div class="regsuccess-info__user">
+                                <div class="user-title">会员账号：</div>
+                                <div class="user-id">BBBBBB1234</div>
+                            </div>
+                            <div class="regsuccess-info__btn">
+                                <a class="btn-item" href="javascript:void(0);">
+                                    <div class="btn-item__icon">
+                                        <img src="./images/common/demo/popup/registration_info@2x.png" alt=""
+                                            class="icon-img">
+                                    </div>
+                                    <div class="btn-item__title">
+                                        <span class="title-text">去完善资料</span>
+                                    </div>
+                                </a>
+                                <a class="btn-item" href="index.html">
+                                    <div class="btn-item__icon">
+                                        <img src="./images/common/demo/popup/registration_home@2x.png" alt=""
+                                            class="icon-img">
+                                    </div>
+                                    <div class="btn-item__title">
+                                        <span class="title-text">前往游戏</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="regsuccess-popup__footer">
+                        <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0);"
+                            onclick="showRegsuccess()">立即充值</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 註冊成功popup end -->
+
+        <!-- 登入成功 start -->
+        <div id="toast" class="toast-popup" style="display: none;">
+            <div class="toast-popup__body">
+                <div class="toast-popup__icon">
+                    <div class="toast-popup__icon__img -success"></div>
+                </div>
+                <div class="toast-popup__text">登录成功</div>
+            </div>
+        </div>
+        <!-- 登入成功 end -->
+        <!-- 登入失敗 start -->
+        <div id="login-fail" class="ios-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <div class="dialog-ios">
+                    <div class="dialog-ios__body">
+                        <h5 class="ios-title">登入失敗</h5>
+                        <span class="ios-text">账号或密码输入错误，请重新输入</span>
+                    </div>
+                    <div class="dialog-ios__footer">
+                        <div class="btn-group">
+                            <button type="button" class="btn-primary" onclick="showLoginfail()">
+                                好
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 登入失敗 end -->
+
+        <!-- 已成功 start-->
+        <div id="showSuccess" class="transfer-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <!--success-->
+                <div class="dialog success">
+                    <div class="dialog__body">
+                        <div class="xfe">
+                            <div class="xfe__icon"></div>
+                            <p class="xfe__title">已成功提交</p>
+                            <p class="xfe__text">请在弹出的网页上完成支付</p>
+                        </div>
+                    </div>
+                    <div class="dialog__body-footer">
+                        <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                            onclick="window.showSuccess();">查看进度</a>
+                    </div>
+                </div>
+                <!--success-->
+                <!--popup-->
+            </div>
+        </div>
+        <!-- 已成功 end-->
+
+        <!-- 警告 start-->
+        <div id="showWarning" class="transfer-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <!--success-->
+                <div class="dialog warning">
+                    <div class="dialog__body">
+                        <div class="xfe">
+                            <div class="xfe__icon"></div>
+                            <p class="xfe__title">已成功提交</p>
+                            <p class="xfe__text">请在弹出的网页上完成支付</p>
+                        </div>
+                    </div>
+                    <div class="dialog__body-footer">
+                        <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                            onclick="window.showWarning();">查看进度</a>
+                    </div>
+                </div>
+                <!--popup-->
+            </div>
+        </div>
+        <!-- 警告 end-->
+
+        <!-- 錯誤或失敗 start-->
+        <div id="showDanger" class="transfer-dialog" style="display: none;">
+            <div class="dialog-mask">
+                <div class="dialog danger">
+                    <div class="dialog__body">
+                        <div class="xfe">
+                            <div class="xfe__icon"></div>
+                            <p class="xfe__title">已成功提交</p>
+                            <p class="xfe__text">请在弹出的网页上完成支付</p>
+                        </div>
+                    </div>
+                    <div class="dialog__body-footer">
+                        <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                            onclick="window.showDanger();">查看进度</a>
+                    </div>
+                </div>
+                <!--popup-->
+            </div>
+        </div>
+        <!-- 錯誤或失敗 end-->
+
+        <div class="layout-content">
+            <div class="com-inner">
+                <div class="com-inner__content">
+                    <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                        onclick="showPromotions()">點擊開啟 公告中心</a>
+                    <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                        onclick="showServiceTerms()">點擊開啟 服務條款</a>
+                    <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                        onclick="showRegsuccess()">點擊開啟 註冊成功</a>
+                    <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                        onclick="window.toast()">點擊開啟 登入成功</a>
+                    <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                        onclick="showLoginfail()">點擊開啟 登入失敗</a>
+                    <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                        onclick="showSuccess()">點擊開啟
+                        已成功</a>
+                    <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                        onclick="showWarning()">點擊開啟
+                        警告</a>
+                    <a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-ripple"
+                        onclick="showDanger()">點擊開啟
+                        錯誤或失敗</a>
+                </div>
+            </div>
+        </div>
+        <!--layout-tabbar-->
+        <div class="layout-tabbar">
+            <!-- ./component/footer -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        function showPromotions() {
+            var popup = document.getElementById('promotions');
+            if (popup.style.display === 'none') {
+                popup.style.display = 'block';
+            } else {
+                popup.style.display = 'none';
+            }
+        }
+        function showServiceTerms() {
+            var x = document.getElementById('serviceTerms');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+        function showRegsuccess() {
+            var x = document.getElementById('regsuccess-popup');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+        function showLoginfail() {
+            var x = document.getElementById('login-fail');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+        function showSuccess() {
+            var x = document.getElementById('showSuccess');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+        function showWarning() {
+            var x = document.getElementById('showWarning');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+        function showDanger() {
+            var x = document.getElementById('showDanger');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

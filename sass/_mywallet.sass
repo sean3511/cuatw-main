@@ -1,0 +1,394 @@
+//mywallet-filter
+.mywallet-filter 
+  padding: $space-sm
+  background-color: hsla(0,0%,100%,0.5)
+  .com-cell__form
+    min-height: 36px
+    padding: 4px 12px
+  //mywallet-select
+  .mywallet-select 
+    width: 100%
+    height: 36px
+    background-color: #ffffff
+    border-radius: 4px
+    display: flex
+    align-items: center
+    padding: 0 $space-lg
+    position: relative
+    display: flex
+    position: relative
+
+    &--disabled 
+      background-color: #eceef4
+      border: none
+      cursor: no-drop
+      &:after 
+        display: none
+      
+    
+    &__title 
+      width: 100%
+      height: 100%
+      .select-text 
+        font-size: 12px
+        color: #ababab
+        padding-bottom: $space-xxs
+        display: block
+      
+    
+    &__sel 
+      width: 100%
+      height: 100%
+      font-size: 12px
+      font-weight: 500
+      background-color: transparent
+      text-align: left
+      color: #515561
+      text-align: left
+      text-align-last: left
+      padding-left: 0
+    
+    &:after 
+      content: ''
+      width: 24px
+      height: 24px
+      mask-image: url('../images/common/image/icon/icon_picker_down@2x.png')
+      mask-size: contain
+      mask-repeat: no-repeat
+      mask-position: center
+      background-color: #515561
+    
+  
+  .btn-tab 
+    width: 100%
+    display: flex
+    padding-top: $space-sm
+    &__item 
+      width: 33.333%
+      height: 26px
+      min-width: 80px
+      color: #909abb
+      border-right: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 12px
+      position: relative
+      white-space: nowrap
+      background-color: hsla(0,0%,100%,0.7)
+      margin-right: $space-sm
+      border-radius: 4px
+      &--active 
+        color: #ffffff
+        background-color: #4d8aff
+        transition: 0.4s
+      
+      &:last-child 
+        margin-right: 0
+      
+      &--disabled 
+        background-color: #eceef4
+        color: #909abb
+        font-weight: normal
+
+//mywallet-common
+.mywallet-range 
+  font-size: 12px
+  font-weight: 500
+  color: #909abb
+  padding-bottom: $space-sm
+  margin-top: -$space-sm
+  text-align: center
+
+//mywallet
+.mywallet 
+  .mywallet-list 
+    &__item 
+      margin-bottom: $space-sm
+      background-color: #ffffff
+      border-radius: $bod-default
+      // box-shadow: 0 2px 4px rgba(black, 0.06)
+      display: block
+      &:last-child 
+        margin-bottom: 0
+      
+    
+    &__content 
+      padding: $space-lg
+      padding-bottom: $space-sm
+    
+  
+  .mywallet-wallet 
+    color: #786464
+    display: flex
+    align-items: center
+    &__img 
+      width: 40px
+      height: 40px
+      display: block
+    
+    &__text 
+      padding: 0 $space-sm
+    
+    &__name 
+      margin: 0
+      padding-bottom: $space-xs
+      font-size: 12px
+      font-weight: normal
+    
+    &__money 
+      font-size: 16px
+      font-weight: 600
+    
+  
+  .mywallet-head 
+    color: #4d8aff
+    font-size: 12px
+    margin: 0 0 $space-sm
+    padding: 0 0 $space-md 0
+    border-bottom: 1px solid #4d8aff
+    text-align: center
+    font-weight: 600
+    line-height: 1.2
+  
+  .mywallet-info 
+    color: #909abb
+    &__title 
+      margin: 0
+      font-size: 14px
+      padding-bottom: $space-sm
+    
+    &__list 
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-start
+      padding-top: $space-sm
+    
+    .list__text 
+      font-size: 12px
+      padding-bottom: $space-sm
+      padding-right: $space-sm
+      line-height: 1.2
+
+//record-cell
+.record-cell 
+  &__item 
+    margin-bottom: $space-sm
+    background-color: #ffffff
+    border-radius: $bod-default
+    // box-shadow: 0 2px 4px rgba(black, 0.06)
+    @include animation-order(bounceInUp, 1s)
+    &:last-child 
+      margin-bottom: 0
+    
+    &--open 
+      .record-header__lf 
+        .record-header-title 
+          color: #4d8aff
+      .record-title 
+        &:before 
+          bottom: 3px
+        .badge 
+          margin-right: 0
+          transition: 0.3s
+      .record-arrow 
+        position: initial
+        background-position: right 0 center
+        transform: rotateX(180deg)
+        pointer-events: auto
+        &:before 
+          right: 0
+        
+        .alert 
+          transform: rotateX(180deg)
+          opacity: 1
+          transition: 0.4s
+  &__content 
+    padding: $space-lg
+    padding-bottom: $space-sm
+    transform: perspective(1000)
+    position: relative
+  
+
+.record-header 
+  display: flex
+  justify-content: center
+  align-items: center
+  border-bottom: 1px solid #eceef4
+  padding: 0px 0px $space-sm
+  margin-bottom: $space-md
+  margin-top: 0
+  &__lf 
+    flex:1
+    margin-right: auto
+      
+  &__rt 
+    display: flex
+    justify-content: flex-end
+    flex:1
+    margin-left: auto
+    .operate-btn 
+      display: flex
+      align-items: center
+      &__item 
+        font-size: 12px
+        line-height: 12px
+        font-weight: 500
+        color: #909abb
+        margin-right: $space-lg
+        text-decoration: underline
+        &:last-child 
+          margin-right: 0px
+  .record-header-title 
+    color: #909abb
+    font-size: 14px
+    font-weight: 600
+    line-height: 1.2
+    margin: 0px
+  .record-header-text
+    color: #909abb
+    font-size: 12px
+    font-weight: 600
+    line-height: 1.2
+    margin: 0px     
+.record-title 
+  margin: 0
+  display: flex
+  align-items: center
+  justify-content: space-between
+  position: relative
+  z-index: 1
+  &__text 
+    font-size: 16px
+    font-weight: 600
+    color: #515561
+    display: flex
+    flex-wrap: wrap
+    overflow: hidden
+    padding-right: $space-xs
+    width: 100%
+  
+  .badge 
+    margin-right: $space-xxxxl
+    transition: 0.4s
+    flex: 0 0 auto
+  
+
+.record-money 
+  overflow: hidden
+  text-overflow: ellipsis
+  padding: 0 $space-sm
+
+.record-description 
+  overflow: hidden
+  font-size: 12px
+  color: #909abb
+  margin: 0
+  transition: all 0.3s
+  overflow-x: auto
+  word-wrap: break-word
+  word-break: break-all
+  line-height: normal
+
+.record-arrow 
+  height: 50px
+  right: 0
+  left: 0
+  bottom: 0
+  z-index: 1
+  transition: transform 0.3s
+  position: absolute
+  // pointer-events: none
+  &:before 
+    content: ''
+    position: absolute
+    bottom: 16px
+    right: $space-lg
+    width: 24px
+    height: 24px
+    mask-image: url('../images/common/image/icon/icon_picker_down@2x.png')
+    mask-size: contain
+    mask-position: center
+    mask-repeat: no-repeat
+    background-color: #515561
+    transition: transform 0.3s
+  
+  .alert 
+    opacity: 0
+  
+
+
+//deposit-details
+.deposit-details 
+  padding-top: $space-sm
+  color: #909abb
+  &__col 
+    width: 100%
+    white-space: nowrap
+    overflow: hidden
+    display: flex
+    align-items: center
+    padding-top: $space-sm
+    &:first-child 
+      padding-top: 0
+    
+    &__title 
+      padding-right: $space-sm
+      font-size: 12px
+      margin: 0
+      font-weight: normal
+    
+    &__money 
+      text-overflow: ellipsis
+      overflow: hidden
+      font-weight: 600
+      font-size: 16px
+      padding-right: $space-xs
+    
+  
+
+.method 
+  display: flex
+  flex-direction: column
+  padding: $space-md 0 $space-xs
+  color: #909abb
+  &__title 
+    font-size: 12px
+    margin: 0
+    font-weight: normal
+  
+  &__content 
+    padding: 0
+    margin: 0
+    font-weight: 600
+    font-size: 16px
+  
+  &__number 
+    font-size: 12px
+    color: #909abb
+  
+
+.card-number 
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  white-space: nowrap
+  overflow: hidden
+  padding: $space-xs 0 $space-xs
+  color: #909abb
+  &__title 
+    font-size: 12px
+    margin: 0
+    font-weight: normal
+  
+  &__content 
+    font-size: 12px
+    padding: $space-xs 0
+    margin: 0
+    text-overflow: ellipsis
+    overflow: hidden
+  
+

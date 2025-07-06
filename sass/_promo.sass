@@ -1,0 +1,82 @@
+//promo-list
+.promo-tab 
+  display: flex
+  flex-direction: column
+  height: 100%
+  .tab 
+    flex: none
+  
+  &__content 
+    height: 100%
+    overflow-y: auto
+    .promo-list 
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: space-between
+      align-items: center
+    
+  
+  &__pane 
+    overflow-y: auto
+    display: flex
+    flex-direction: column
+  
+
+.promo 
+  position: relative
+  display: flex
+  align-items: center
+  width: 100%
+  margin-bottom: $space-lg
+  &:last-child 
+    margin-bottom: 0px
+  
+  &--hide 
+    display: none
+  
+  &__img 
+    width: 100%
+    display: block
+  
+  &__info 
+    position: absolute
+    display: flex
+    overflow: hidden
+    padding: 0 $space-lg 0 0
+    border-radius: 0 $bod-round $bod-round 0
+    background-color: hsla(0,0%,100%,0.5)
+    bottom: $space-lg
+    left: 0
+    align-items: center
+    justify-content: flex-start
+    &:before 
+      content: ''
+      display: block
+      width: 24px
+      height: 24px
+      mask-repeat: no-repeat
+      mask-position: center
+      mask-size: contain
+      mask-image: url('../images/common/image/icon/icon_time@2x.png')
+      background-color: #2c2e34
+    
+    &__text 
+      font-size: 12px
+      color: #2c2e34
+    
+  
+
+.promo-detail 
+  &__editor 
+    background-color: hsla(0,0%,100%,0.3)
+    border: 1px solid #ffffff
+    padding: $space-lg
+    border-radius: $bod-default
+    line-height: normal
+    overflow-x: auto
+  
+  &.show 
+    display: block
+  
+

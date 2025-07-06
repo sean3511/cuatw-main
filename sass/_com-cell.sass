@@ -1,0 +1,617 @@
+.com-cell-list + .cell-list 
+  padding-top: $space-xs
+
+.com-cell-title
+  display: flex 
+  align-items: center
+  &__text
+    margin: 0px
+    font-size: 16px
+    font-weight: 600
+    color: #ffffff
+  .btn
+    width: auto
+    height: auto
+    padding: 8px
+    margin-left: auto
+    font-size: 12px
+
+.com-cell-title + .com-cell
+  padding-top: 8px
+.com-cell + .com-cell-title
+  padding-top: 8px
+
+.com-cell 
+  display: flex
+  flex-direction: column
+  padding: $space-xs 0
+
+  &.-row
+    display: flex
+    flex-direction: row
+    align-items: center
+
+  &__info 
+    font-size: 12px
+    color: #909abb
+    line-height: 18px
+    .text-red 
+      color: #ff3d3d
+  &__lf
+    margin-left: auto
+    .cell-text
+      font-size: 12px
+      color: rgba(255, 255, 255, 0.6)
+
+  &__check
+    display: flex
+    align-items: center
+    .check-text
+      padding-left: 4px
+      font-size: 12px
+      color: rgba(255, 255, 255, 0.6)
+    .check-checkbox
+      position: relative
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-shrink: 0
+      width: 22px
+      height: 22px
+      cursor: pointer
+      border: 1px solid rgba(255, 255, 255, 0.6)
+
+      &:after
+        content: ''
+        display: none
+        position: absolute
+        top: 2px
+        width: 5px
+        height: 10px
+        border: solid white
+        border-width: 0 3px 3px 0
+        transform: rotate(45deg)
+  
+      &:checked
+        background-color: #4d8aff 
+        &:after
+          display: block
+  
+
+.com-cell-info 
+  font-size: 12px
+  font-weight: 500
+  color: #909abb
+  line-height: 18px
+  padding-top: $space-md
+  .text-red 
+    color: #ff3d3d
+  
+
+
+//cell__form component
+.com-cell__form 
+  position: relative
+  background-color: #ffffff
+  min-height: 44px
+  border-radius: $bod-default
+  border: 1px solid transparent
+  padding: $space-md - 3 $space-md
+
+  & + .com-cell__form 
+    margin-top: $space-sm
+  
+
+  //Text fields
+  &.-outlined 
+    background-color: #ffffff
+    border: 1px solid transparent
+  
+
+  &.-filled 
+    padding: $space-md - 3 0
+    background-color: transparent
+    border-radius: 0
+    border-bottom: 1px solid rgba(80,85,98,0.1)
+  
+
+  &--disabled 
+    background-image: none !important
+    background-color: #eceef4
+    color: #b4bacf
+    border: 1px solid transparent
+    cursor: no-drop
+    .el-input 
+      color: #b4bacf !important
+    
+    .el-select input,
+    .el-text p 
+      background-color: transparent !important
+      color: #b4bacf !important
+      @include input-placholder 
+        color: #b4bacf !important
+      
+    
+  
+
+  //form-title
+  .form-title 
+    display: flex
+    align-items: center
+    max-width:70%
+    // padding: $space-md $space-md 0
+    //require狀態紅色*
+    &__require 
+      font-size: 12px
+      font-weight: 500
+      color: #515561
+      margin: 0
+    
+    &__text 
+      font-size: 12px
+      font-weight: 500
+      color: #515561
+      margin: 0
+    
+    & + .form-group,
+    & + .form-select 
+      min-height: 32px
+      padding-top: $space-md
+      .el-value 
+        margin-top: -$space-md * 2
+      
+      .captcha 
+        margin-top: -$space-xxxxl
+      
+      .btn,
+      .btn-event 
+        margin-top: -$space-lg - ($space-md - 3)
+        height: 32px
+      
+    
+    & + .form-select 
+      .form-select__sel 
+        padding-top: $space-md
+      
+  //form-uploader
+  .form-uploader 
+    display: flex
+    align-items: center
+    padding-top: $space-sm
+    padding-bottom: $space-lg
+    &__img 
+      width: 80px
+      height: 80px
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: $bod-default
+      background-color: #f3f4f7
+      overflow: hidden
+      position: relative
+      padding: $space-xs $space-sm
+      .img-default 
+        width: 40px
+        height: 40px
+        padding: $space-md
+        mask-image: url('../images/common/image/icon/icon_updatephoto@2x.png')
+        mask-size: contain
+        mask-position: center
+        mask-repeat: no-repeat
+        background-color: #515561
+      
+      .img-icon,
+      img 
+        width: 100%
+
+    &__img-full  
+      display: none
+      width: 100%
+    
+    &__text 
+      font-size: 14px
+      padding-left: $space-lg
+      color: #515561
+    
+    &__input 
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      overflow: hidden
+      cursor: pointer
+      opacity: 0
+      
+    &--active
+      .form-uploader__img-full
+        display: block
+      .form-uploader__img,
+      .form-uploader__text
+        display: none
+
+
+  //form-group
+  .form-group,
+  .form-select 
+    display: flex
+    align-items: center
+    min-height: 24px
+
+    //**for front-end
+    label 
+      width: 100%
+      height: 100%
+      display: flex
+      align-items: center
+    
+
+    //icon
+    .el-icon 
+      width: 24px
+      height: 24px
+      vertical-align: middle
+      margin-right: $space-xs
+      mask-size: contain
+      mask-position: center
+      mask-repeat: no-repeat
+    
+
+    //input
+    .el-input,
+    .form-password 
+      width: 100%
+      padding: 0
+      box-shadow: none
+      background: none
+      font-size: 16px
+      flex: 1
+      @include input-placholder 
+        line-height: normal
+        letter-spacing: initial
+      
+    
+
+    //select
+    .el-select 
+      width: 100%
+      background-color: transparent
+      position: relative
+      text-align: left
+      text-align-last: left
+      padding: 0
+      font-size: 16px
+      color: #b4bacf
+      input
+        width: 100%
+        margin: 0
+        padding: 0
+        margin-right: $space-md + 18px
+        background-color: #ffffff
+        @include input-placholder
+        color: #b4bacf
+
+      &--active 
+        input 
+          color: #909abb
+        
+      
+    
+
+    .el-text p 
+      width: 100%
+      font-size: 16px
+      color: #909abb
+      margin: 0
+      padding: 0
+      &.-text-red 
+        color: #ff3d3d !important
+      
+    
+
+    //btn
+    .btn-event 
+      width: auto
+      min-width: 96px
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 12px
+      outline: none
+      border: none
+      padding: 0 $space-sm
+      margin-left: auto
+      height: 24px
+      margin-top: 0
+    
+
+    //value
+    .el-value 
+      height: 100%
+      display: flex
+      margin-left: auto
+
+      &__reveal,
+      &__clear 
+        width: 24px
+        height: 24px
+        display: inline-block
+        margin: auto
+        margin-left: $space-md
+      
+      &__reveal 
+        mask-image: url('../images/common/image/icon/icon_eye@2x.png')
+        mask-size: 24px 24px
+        mask-repeat: no-repeat
+        mask-position: center
+        background-color: #909abb
+        position: relative
+        &--off 
+          mask-image: url('../images/common/image/icon/icon_eye_off@2x.png')
+        
+      
+
+      &__clear 
+        mask-image: url('../images/common/image/icon/icon_input_close@2x.png')
+        mask-size: 24px
+        mask-repeat: no-repeat
+        mask-position: center
+        background-color: #909abb
+        &.-searchBar 
+          mask-image: url('../images/common/image/icon/icon_close_s@3x.png')
+          mask-size: 18px
+        
+        &--active 
+          display: none
+        
+      
+      &--show 
+        display: flex
+      
+    
+    //captcha
+    .captcha 
+      display: flex
+      align-items: center
+      padding-left: $space-sm
+      margin-top: 0
+      &__img 
+        height: 24px
+      
+    
+  
+
+  //form-select
+  .form-select 
+    position: relative
+    &__sel 
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      margin: auto
+      background-color: transparent
+      padding-top: 0
+      padding-left: 0
+      padding-right: $space-md + $space-xxxxl + $space-sm
+      font-size: 16px
+      color: #b4bacf
+      @include text-ellipsis
+      &--active 
+        color: #909abb
+      
+    
+    &:before 
+      content: ''
+      position: absolute
+      top: 0px
+      right: 0px
+      width: 24px
+      height: 24px
+      mask-image: url('../images/common/image/icon/icon_picker_down@2x.png')
+      mask-repeat: no-repeat
+      mask-position: center
+      mask-size: contain
+      background-color: #515561
+    
+  
+
+  & + .com-cell__verify 
+    padding-top: $space-sm
+  
+  //清除input自動完成背景色
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active 
+    box-shadow: 0 0 0 30px white inset !important
+  
+
+  .input-custom 
+    width: 100%
+    height: 24px
+    padding: 0
+    box-shadow: none
+    background: none
+    font-size: 16px
+    padding-right: $space-sm
+    display: flex
+    align-items: center
+    @include text-ellipsis
+    &__text 
+      width: 100%
+      color: #909abb
+      @include text-ellipsis
+    
+    &__text-red 
+      color: #ff3d3d
+    
+  
+
+  //form-p
+  .form-text 
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin-top: -$space-lg
+    &__title,
+    &__txt 
+      margin: 0
+    
+    &__title 
+      @include input-title
+    
+    &__txt 
+      padding-top: $space-sm
+      @include input-placholder
+    
+  
+
+  //invalid錯誤
+  &--invalid 
+    // border-color: #ff3d3d
+    &.-filled 
+      // border: 0
+      // border-bottom: 1px solid #ff3d3d
+    
+  
+
+  //only單一選項規則
+  &--only 
+    background-color: #eceef4
+    .form-select 
+      background-image: none
+      &:before 
+        display: none
+      
+      .el-select 
+        input 
+          margin-right: 0 !important
+          background-color: #eceef4
+        
+      
+    
+  
+
+
+//cell__verify component
+.com-cell__verify 
+  font-size: 14px
+  color: #909abb
+  display: flex
+  align-items: center
+
+  .verify-icon 
+    background-size: contain
+    width: 16px
+    height: 16px
+    mask-repeat: no-repeat
+    mask-position: center
+    position: relative
+    margin: 0
+    flex: 0 0 auto
+  
+  .verify-text 
+    font-size: 12px
+    color: black
+    padding-left: $space-xs
+  
+
+  //正確反饋
+  &--correct 
+    .verify-text 
+      color: #909abb
+    
+    .verify-icon 
+      mask: url('../images/common/image/icon/icon_success@2x.png') no-repeat center center
+      mask-size: contain
+      background-color: #909abb
+    
+  
+
+  //強反饋
+  &--error 
+    .verify-text 
+      color: #ff3d3d !important
+    
+    .verify-icon 
+      mask: url('../images/common/image/icon/icon_mistake@2x.png') no-repeat center center
+      mask-size: contain
+      background-color: #ff3d3d !important
+    
+  
+
+  //中反饋
+  &--medium 
+    .verify-text 
+      color: #fc0
+    
+    .verify-icon 
+      mask: url('../images/common/image/icon/icon_mistake@2x.png') no-repeat center center
+      mask-size: contain
+      background-color: #fc0
+    
+  
+
+
+//cell__remind component
+.com-cell__remind 
+  display: flex
+  align-items: center
+  font-size: 12px
+  margin: 0
+  padding-top: $space-lg
+  .remind-title 
+    color: #ff3d3d
+    font-weight: 400
+    line-height: 19px
+    white-space: nowrap
+  
+  .remind-text 
+    color: rgba(255, 255, 255, 0.6)
+  
+
+//alert
+.inner-alert 
+  display: flex
+  align-items: center
+  flex: none
+
+  &:first-child 
+    padding-bottom: $space-xs
+  
+
+  &.-danger 
+    color: #ff3d3d
+    .inner-alert__img__icon 
+      mask-image: url('../images/common/image/icon/icon_warning@2x.png')
+      background-color: #ff3d3d
+    
+  
+  &__img 
+    margin-right: $space-xs $space-sm
+    &__icon 
+      display: block
+      width: 24px
+      height: 24px
+      mask-size: contain
+      mask-position: center
+      mask-repeat: no-repeat
+    
+  
+  &__text 
+    font-size: 14px
+    color: #515561
+    font-weight: 500
+  
+
+  &__text-info 
+    font-size: 12px
+    line-height: normal
+    color: #ff3d3d
+    padding-left: $space-sm
+  
+

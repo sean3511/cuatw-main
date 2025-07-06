@@ -1,0 +1,186 @@
+.bind 
+  width: 100%
+  .bind-card 
+    width: 100%
+    &__item 
+      margin-bottom: $space-lg
+      &:last-child 
+        margin-bottom: 0px
+      
+      .bank-card 
+        position: relative
+        min-height: 200px
+        padding: $space-lg 0px
+        border-radius: 6px
+        border: 1px solid #eceef4
+        background-color: #ffffff
+        overflow: hidden
+        &__order 
+          position: absolute
+          top: 0px
+          right: 0px
+          width: 50px
+          height: 50px
+          &::before 
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            border-style: solid
+            border-width: 0 50px 50px 0
+            border-color: transparent #4d8aff transparent transparent
+          
+          .order-number 
+            position: absolute
+            top: 6px
+            right: 6px
+            font-size: 16px
+            color: #ffffff
+              
+        &__bank 
+          display: flex
+          align-items: center
+          padding: 0px $space-xxxxl
+          .bank-lf
+            display: flex
+            align-items: center
+            width: 70%
+          .bank-rt
+            width: 30%
+            margin-left: auto
+          .detail-uploader
+            width: fit-content
+            height: fit-content
+            margin-left: auto
+            padding: 4px
+            font-size: 12px
+          .bank-icon 
+            flex-shrink: 0
+            width: 36px
+            height: 36px
+            &__img 
+              display: block
+              width: 100%
+                    
+          .bank-name 
+            font-size: 22px
+            color: #515561
+            margin: 0px
+            padding: 0px $space-xs
+          
+        
+        &__detail 
+          display: flex
+          align-items: end
+          min-height: 90px
+          padding: $space-lg $space-xxxxl
+          .detail-rt
+            display: flex
+            align-items: end
+            margin-left: auto
+          .detail-lf
+            display: flex
+            flex-direction: column
+          .detail-item 
+            display: flex
+            padding-bottom: $space-md
+            &:last-child 
+              padding-bottom: 0px
+            
+            &__title 
+              font-size: 14px
+              color: #909abb
+              white-space: nowrap
+            
+            &__text 
+              font-size: 14px
+              color: #909abb
+            
+        &__account 
+          display: flex
+          justify-content: space-between
+          align-items: center
+          width: 100%
+          padding: $space-xs $space-xxxxl
+          background-color: #eceef4
+          .account-number 
+            font-size: 16px
+            color: #515561
+            padding-right: $space-xs
+            &:last-child 
+              padding-right: 0px
+             
+        .card-switch 
+          position: relative
+          display: inline-block
+          width: 67px
+          height: 24px
+          &__input 
+            opacity: 0
+            width: 0
+            height: 0
+          
+          &__slider 
+            position: absolute
+            cursor: pointer
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: $bod-round
+            background-color: #06c170
+            transition: 0.4s
+            .slider-text 
+              font-size: 12px
+              color: #ffffff
+              transition: 0.4s
+            &.-warning
+              background-color: #fc0
+            &.-danger
+              background-color: #ff3d3d
+            
+             
+  .alert 
+    padding-top: 0px
+  
+
+.add-card-btn 
+    display: block
+    width: 100%
+    margin-bottom: $space-lg
+    background-color: #ffffff
+    border: 1px solid #eceef4
+    border-radius: 6px
+    &__content 
+      min-height: 76px
+      display: flex
+      justify-content: center
+      align-items: center
+      padding:$space-lg
+      .btn-icon 
+        flex-shrink: 0
+        width: 36px
+        height: 36px
+        mask-image: url('../images/common/image/icon/icon_addcard@2x.png')
+        mask-size: contain
+        mask-position: center
+        mask-repeat: no-repeat
+        background-color: #4d8aff
+      
+      .btn-text 
+        font-size: 16px
+        color: #515561
+        padding-left: $space-sm
+        margin: 0px
+         
+    &--disabled 
+      background-color: #eceef4
+      .btn-icon 
+        mask-image: url('../images/common/image/icon/icon_nocard@2x.png')
+        background-color: rgba(255, 255, 255, 0.6)
+      
+      .btn-text 
+        color: rgba(255, 255, 255, 0.6)

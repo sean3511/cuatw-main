@@ -1,0 +1,383 @@
+.news
+  &-title
+    font-size: 50px
+    color: #E4E4E4
+    border-bottom: solid 1px #E4E4E4
+    font-weight: 700
+    .more
+      cursor: pointer
+      font-size: 22px
+  &-text
+    color: #E4E4E4
+  &-carousel-btns
+    color: white
+    font-size: 30px
+    cursor: pointer
+    .fa-angle-left,.fa-angle-right
+      padding: 0px 5px
+      background: #116E50
+      &:hover
+        opacity: .7
+
+.function-box
+  margin: 0 auto
+  overflow: hidden
+  border-radius: 8px
+  border: 1px solid transparent
+  background: linear-gradient(to right, #FDEED1 0%, #F5CB9B 100%) border-box
+  &__content
+    padding: 8px 12px
+    background-image: linear-gradient(to bottom,#25366D 0%,#314BA4 50%,#25366D 100%)
+    box-shadow: #00000050 0px 4px 4px 0px
+.core-functional 
+  display: flex
+  position: relative
+  background-size: 100% 100%
+  background-position: bottom
+  background-repeat: no-repeat
+  &__lf 
+    display: flex
+    width: 40%
+  
+  &__rt 
+    width: 60%
+  
+  //user-info
+  .user-info 
+    height: 54px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin: auto 0
+    &__id 
+      font-size: 14px
+      font-weight: 600
+      color: rgba(255,255,255,0.6)
+      padding-bottom: 6px
+    
+    &__wallet 
+      min-height: 24px
+      background-image: linear-gradient(to right,#FDEED1 0%,#F9DCB5 50%,#D1924B 100%)
+      width: max-content
+      max-width:100%
+      padding: 0 $space-sm
+      border-radius: 12px
+      display: flex
+      align-items: center
+      font-size: 12px
+      font-weight: 500
+      color: #3B3538
+    
+    .icon 
+      flex-shrink: 0
+      width: 22px
+      height: 22px
+      margin-left: -$space-sm
+      mask-image: url('../images/common/image/icon_money@3x.png')
+      mask-repeat: no-repeat
+      mask-position: center
+      mask-size: contain
+      background-color: #3B3538
+    
+    .text 
+      margin: 0
+      @include text-ellipsis
+      color: inherit
+      font-weight: 500
+
+      &__symbol 
+        padding: 0 5px
+      
+    
+  
+
+  //functional-list
+  .functional-list 
+    display: flex
+    flex: 1
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    &__item 
+      min-width: 48px
+      display: flex
+      flex-direction: column
+      align-items: center
+      position: relative
+      .item-icon 
+        width: 36px
+        height: 28px
+        margin-top: $space-xs
+        &__img 
+          width: 100%
+          display: block
+          vertical-align: middle
+        
+      
+      .item-text 
+        padding-top: 12px
+        font-size: 12px
+        color: #EBE4C1
+        margin: 0
+        font-weight: 600
+        line-height: 12px
+      
+      // &:after 
+      //   content: ''
+      //   width: 1px
+      //   height: 14px
+      //   background-color: white
+      //   margin: 0 auto
+      // 
+      // &:last-child:after 
+      //   display: none
+      // 
+    
+  
+
+      
+.notice 
+  min-height: 34px
+  position: relative
+  text-decoration: none
+  display: flex
+  align-items: center
+  &__outer 
+    padding-left: 32px
+    overflow: hidden
+    position: relative
+    background-color: #4763C3
+    border-radius: 8px
+    box-shadow: inset #00000050 2px 2px 4px 0px
+    .outer-icon 
+      position: absolute
+      top: 0
+      right: auto
+      bottom: 0
+      left: 8px
+      margin: auto
+      width: 18px
+      height: 18px
+      background-image: url('../images/common/demo/index/ic_bulletin@3x.png')
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+    
+    .quick-tips 
+      position: relative
+      overflow: hidden
+      white-space: nowrap
+      &__item 
+        display: inline-block
+        font-size: 12px
+        color: #ffffff
+        margin: 0
+        padding-bottom: (18px - 13px)
+      
+.sidebar 
+  display: flex
+  flex-direction: column
+  &__list 
+    height: 100%
+    .list-item 
+      width: 74px
+      height: 74px
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      margin-bottom: 8px
+      border-radius: 12px
+      overflow: hidden
+      background-clip: padding-box, border-box
+      background-origin: padding-box, border-box
+      background-image: linear-gradient(to bottom, #314BA4 0, #131D3E 100%)
+      border: 2px #ffffff70 solid
+
+      &:last-child 
+        margin-bottom: 0
+      
+      &__icon 
+        height: 40px
+        display: block
+        vertical-align: middle
+        &--active 
+          display: none
+        
+      
+      &__text 
+        width:100%
+        font-size: 12px
+        color: #EBE4C1
+        padding:0px $space-sm $space-sm
+        font-weight: 500
+        text-align: center
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+      
+      &.active 
+        background: url('../images/common/demo/index/sidebar/icon/download_shadow_active@2x.png') no-repeat center
+        background-size: cover
+        border: 2px #FDEED1 solid
+        box-shadow: #D89E5B 2px 2px 0px 0px
+        .list-item__icon 
+          display: none
+          @include animation-order(zoomIn, 400ms, both, ease-in-out, 30ms)
+          &--active 
+            display: block
+          
+        
+        .list-item__text 
+          color: white
+        
+//channel-list
+.channel-list 
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  margin-bottom: 4px
+  animation: fadeInTop 0.4s
+  animation-fill-mode: forwards
+  &::-webkit-scrollbar 
+    display: none /* 不顯示滾動條 */
+  
+
+  &__item 
+    width: 50%
+    max-width: 49%
+    position: relative
+    border-radius: 8px
+    overflow: hidden
+    position: relative
+    border:1px solid transparent
+    background: linear-gradient(to right, #FDEED1 0%, #F5CB9B 100%) border-box
+    background-image: url('../images/common/demo/index/channel/channel-bg@2x.png')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+    // border: 1px transparent solid
+    // box-shadow: 0 2px 12px #ffc9a3
+    margin-bottom: 4px
+
+    &:nth-child(odd) 
+      margin-left: 0
+    
+    &:last-child,
+    &:nth-last-child(2) 
+      margin-bottom: 0
+    
+
+    .item-mask 
+      @include position-v(0, 0, 0, 0)
+      background-color: rgba(0, 0, 0, 0.5)
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      border-radius: 8px
+      z-index: 30
+      &__title,
+      &__text 
+        margin: 0
+        color: white
+        font-size: 12px
+      
+      &__text 
+        padding-top: $space-xxs
+        font-size: 10px
+      
+    .item-brand
+      position: absolute
+      top: 11px
+      left: 11px
+      z-index: 100
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+      margin: auto
+      
+      &__img
+        height: 20px
+      &__title
+        font-size: 12px
+        color: #EBE4C1
+        font-weight: 500
+        padding-top: 4px
+
+    .item-text 
+      font-size: 12px
+      color: #EBE4C1
+      font-weight: 500
+      position: absolute
+      top: 11px
+      left: 11px
+      margin: auto
+      z-index: 100
+    
+    .item-bg 
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      z-index: 20
+      // @include position-v(0, 0, 0, 0)
+      &__img-bg 
+        width: 78px
+      
+      &__img 
+        width: 100%
+        display: block
+      
+    
+    .item-icon 
+      width: 30%
+      max-width: 50%
+      position: absolute
+      bottom: 8px
+      left: 8px
+      margin: auto
+      z-index: 30
+      &__img 
+        width: 100%
+        display: block
+        vertical-align: middle
+  &.-row-1
+    .channel-list__item
+      width: 100%
+      max-width: 99%
+      margin-bottom: 0px
+      background-image: url('../images/common/demo/index/channel/channel-bg_r@2x.png')
+      .item-brand
+        align-items: center
+        &__img
+          height: 24px
+    
+  
+
+.channel-list-empty 
+  width: 100%
+  padding: 0px $space-xs $space-sm
+  &__content 
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 44px
+    padding: $space-sm
+    border-radius: 8px
+    background-image: linear-gradient(to bottom, #314BA4 0, #131D3E 100%)
+    .content-text 
+      font-size: 12px
+      color: #ffffff
+    
+  
+
+
+  
+
+
+
+
+
+

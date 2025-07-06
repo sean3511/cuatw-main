@@ -1,0 +1,638 @@
+.vip-swiper
+  width: 100%
+  padding: 20px 0px
+  .carousel-inner
+    background: transparent
+  .swiper-slide
+    position: relative
+    width: 100%
+    margin: auto
+    &__card
+    position: relative
+    height: 150px
+    padding: 25px 36px 15px
+    background-image: url('../images/common/demo/vip/card-bg.png')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    .card-title
+      font-size: 30px
+      font-weight: 900
+      font-style: italic
+      color: #fff
+    .card-level
+      position: absolute
+      top: 0
+      right: 25px
+      width: 54px
+    .card-info
+      position: absolute
+      left: 36px
+      bottom: 25px
+      right: 36px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      &__item
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        .item-title
+          font-size: 14px
+          font-weight: 600
+          color: white
+          padding-bottom: 4px
+        .item-text
+          font-size: 12px
+          color: white
+    &__status
+      position: absolute
+      top: 0
+      left: 3px
+      width: 56px
+      height: 15px
+      background-image: url('../images/common/demo/vip/lock.png')
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+      &--unlock
+        background-image: url('../images/common/demo/vip/unlock.png')
+    &__img
+      display: block
+      width: 100%
+    &__info
+      position: absolute
+      top: 90px
+      left: 30px
+      .info-item
+        font-size: 12px
+        color: white
+        margin-top: 4px
+        &:first-child
+          margin-top: 0px
+.vip-content
+  padding: 6px
+.vip-progress
+  width: 100%
+  height: 83px
+  padding: 0px 15px
+  border-radius: 8px
+  background-color: white
+  &__content
+    position: relative
+    display: flex
+    justify-content: center
+    width: 100%
+    height: 100%
+    .progress-pre,
+    .progress-next
+      display: flex
+      align-items: center
+      &__icon
+        width: 24px
+        height: 24px
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+      &__title
+        font-size: 12px
+        color: #3f5075
+        padding-left: 4px
+    .progress-pre__icon
+      background-image: url('../images/common/demo/vip/progress-pre.png')
+    .progress-next__icon
+      background-image: url('../images/common/demo/vip/progress-next.png')
+    .progress-bar
+      position: relative
+      align-self: center
+      flex: 1
+      height: 10px
+      margin: 0px 4px
+      background-image: url('../images/common/demo/vip/progress.png')
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      &__bar
+        width: 20%
+        height: 100%
+        border-radius: 5px
+        background-image: url('../images/common/demo/vip/progress-bar.png')
+        // background-size: auto 100%;
+        background-image: linear-gradient(45deg,#1d3d74 25%,#2f56bd 25%,#2f56bd 50%,#1d3d74 50%,#1d3d74 75%,#2f56bd 75%,#2f56bd)
+        background-size: 12px 12px
+        animation: progress 5s linear infinite
+        transition: all 0.6s
+      &__number
+        position: absolute
+        top: -20px
+        left: 0px
+        font-size: 12px
+        color: #98a3b1
+    .progress-info
+      position: absolute
+      bottom: 10px
+      &__text
+        font-size: 12px
+        color: #98a3b1
+
+.vip-detail
+  width: 100%
+  margin-top: 16px
+  &__header
+    min-height: 40px
+    padding: 12px 0px 8px
+    border-radius: 12px 12px 0px 0px
+    background-color: #f7fafc
+    .header-title
+      position: relative
+      font-size: 14px
+      font-weight: 600
+      color: #3f5075
+      padding-left: 16px
+  &__content
+    border-radius: 0px 0px 12px 12px
+    background-color: white
+  .quota-list
+    display: flex
+    padding: 15px 10px
+    &__item
+      display: flex
+      align-items: center
+      flex: 1
+      padding: 12px
+      margin-right: 8px
+      background-color: #f6f8ff
+      animation: fadeInDown 1s ease-out 1
+      .item-icon
+        width: 30px
+        height: 30px
+        &__img
+          display: block
+          width: 100%
+      .item-info
+        padding-left: 8px
+        &__title
+          color: #3f5075
+          .title-text
+            font-size: 16px
+            font-weight: 600
+          .title-small
+            font-size: 12px
+        &__dec
+          font-size: 12px
+          color: #98a3b1
+          padding-top: 4px
+      &:last-child
+        margin-right: 0px
+  .vip-promo
+    display: flex
+    flex-wrap: wrap
+    overflow: hidden
+    animation: flipInX 0.8s ease-out 1
+    &__item
+      width: 33.3333%
+      min-height: 53px
+      padding: 16px
+
+      .item-title
+        text-align: center
+        &__text
+          font-size: 24px
+          color: #4d8aff
+          font-family: DINAlternate-Bold, -apple-system, Hiragino Sans GB,Monospaced Number, Helvetica Neue, Helvetica, Arial, sans-serif
+      .item-dec
+        padding-top: 12px
+        text-align: center
+        &__text
+          font-size: 12px
+          color: #3f5075
+    &--active
+      height: 100%
+      animation: pulse 0.8s ease-out 1
+  .btn-more
+    width: 100%
+    padding: 0px 12px
+    cursor: pointer
+    &__item
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 36px
+      .item-text
+        font-size: 12px
+        color: #dee0e8
+        padding-right: 4px
+      .item-arrow
+        display: block
+        width: 12px
+        height: 12px
+        transition: 0.3s
+  .vip-award
+    padding: 8px
+    &__item
+      display: flex
+      align-items: center
+      background-color: #f5f8ff
+      padding: 8px
+      margin-bottom: 8px
+      animation: flipInX 0.8s ease-out 1
+      &:last-child
+        margin-bottom: 0px
+        animation: flipInX 0.8s ease-out 0.4s 1
+      .item-lf
+        display: flex
+        align-items: center
+        &__icon
+          width: 48px
+          height: 48px
+          .icon-img
+            display: block
+            width: 100%
+        &__info
+          padding-left: 8px
+          .info-title
+            font-size: 12px
+            color: #3f5075
+          .info-money
+            font-size: 14px
+            font-weight: 600
+            color: #3f5075
+      .item-rt
+        margin-left: auto
+        &__text
+          font-size: 14px
+          font-weight: 600
+          color: #4d8aff
+        &__btn
+          display: flex
+          justify-content: center
+          align-items: center
+          width: 82px
+          height: 32px
+          cursor: pointer
+          .btn-text
+            font-size: 12px
+            font-weight: 600
+            color: white
+  .vip-editor
+    padding: 8px
+  .bob-vip-table
+    table-layout: fixed
+    width: 100%
+    overflow-x: auto
+    border-spacing: 0px
+    padding: 8px
+    .thead
+      .tr
+        background-color: #aeb6c2
+        .td
+          height: 34px
+          padding: 4px
+          text-align: center
+          &:first-child
+            background-color: #d7967f
+      .table-text
+        font-size: 12px
+        color: white
+        white-space: nowrap
+    .tbody
+      .tr
+        background-color: white
+        .td
+          &:first-child
+            background-color: rgba(152,163,177,.8)
+        &:nth-child(even)
+          background-color: rgba(152,163,177,.1)
+          .td
+            &:first-child
+              background-color: #98a3b1
+        .td
+          height: 34px
+          padding: 8px
+          text-align: center
+          &.-level
+            position: relative
+            &::before
+              content: ''
+              position: absolute
+              top: 0
+              left: 0
+              z-index: 0
+              width: calc(100% + 6px)
+              height: 100%
+              background-image: url('../images/common/demo/vip/vip-table-active.png')
+              background-size: cover
+              background-position: center
+              background-repeat: no-repeat
+          .vip-level
+            position: relative
+            display: flex
+            justify-content: center
+            align-items: center
+            &__icon
+              width: 20px
+              height: 20px
+              flex-shrink: 0
+              .icon-img
+                display: block
+                width: 100%
+            &__text
+              font-size: 12px
+              color: white
+      .table-text
+        font-size: 12px
+        color: #98a3b1
+        &.-hightlight
+          color: #d7967f
+  .rule-remind
+    padding: 0px 8px 16px
+    &__text
+      font-size: 12px
+      color: #ccd2e1
+  .vip-rule
+    width: 100%
+    padding: 16px
+    &__item
+      display: flex
+      padding-top: 8px
+      .item-number
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 20px
+        height: 20px
+        flex-shrink: 0
+        border-radius: 50%
+        background-image: url('../images/common/demo/vip/rule-title-bg.png')
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+        &__text
+          font-size: 12px
+          color: white
+      .item-rule
+        padding-left: 8px
+        &__title
+          font-size: 14px
+          color: #414655
+        &__text
+          font-size: 12px
+          color: #ccd2e1
+          padding-top: 8px
+          line-height: 20px
+        &__table
+          width: 100%
+          margin-top: 8px
+          border-spacing: 0px
+          border-radius: 8px
+          border: 1px solid #dee0e8
+          overflow: hidden
+          .thead
+            .tr
+              background-color: #dee0e8
+              .td
+                height: 36px
+                padding: 4px
+                text-align: center
+                .td-text
+                  font-size: 12px
+                  color: #b1bccc
+          .tbody
+            .tr
+              .td
+                height: 36px
+                padding: 4px
+                text-align: center
+                border-right: 1px solid #dee0e8
+                .td-text
+                  font-size: 12px
+                  color: #3f5075
+                &:last-child
+                  border-right: 0px
+      &:first-child
+        padding-top: 0px
+    &__remind
+      font-size: 12px
+      color: #4993de
+      padding: 8px 16px 8px 24px
+
+.b-vip-detail
+  margin-bottom: 8px
+  &__header
+    position: relative
+    display: flex
+    align-items: center
+    padding: 12px
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 12px)
+      left: 0px
+      width: 3px
+      height: 24px
+      background: linear-gradient(90deg, #62b3ff 0, #3d72fa 100%, #3d72fa 0)
+    .header-title
+      &__text
+        font-size: 18px
+        font-weight: 500
+        color: #ffffff
+    .header-btn
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 14px
+      height: 14px
+      margin-left: 4px
+      border-radius: 50%
+      border: 1px solid #a7b0ca
+      &__text
+        font-size: 12px
+        color: #a7b0ca
+  &__content
+    padding-bottom: 8px
+  .vip-descript
+    display: flex
+    flex-wrap: wrap
+    padding: 0px 16px
+    &__item
+      display: flex
+      align-items: center
+      width: 50%
+      height: 60px
+      .item-icon
+        flex-shrink: 0
+        width: 36px
+        height: 36px
+        &__img
+          display: flex
+          width: 100%
+      .item-info
+        padding: 0px 8px
+        padding-right: 20px
+        &__value
+          font-size: 18px
+          font-weight: 500
+          color: #414655
+        &__dec
+          font-size: 12px
+          color: #ccd2e1
+          padding: 8px 0px
+  .rule-remind
+    padding: 8px 8px 0px
+    &__text
+      font-size: 12px
+      color: #ccd2e1
+  .vip-advance
+    display: flex
+    flex-wrap: wrap
+    &__item
+      display: flex
+      flex-direction: column
+      align-items: center
+      width: 33.33333%
+      padding: 8px
+      .item-value
+        display: flex
+        height: 24px
+        &__number
+          font-size: 20px
+          color: #3d72fa
+        &__small
+          font-size: 12px
+          color: #3d72fa
+          line-height: 20px
+          align-self: flex-end
+      .item-dec
+        font-size: 12px
+        color: #ccd2e1
+        padding-top: 12px
+        margin-top: auto
+  .advance-venu
+    padding: 0px 16px
+    margin-top: 4px
+    &__content
+      display: flex
+      align-items: center
+      padding: 16px
+      background-image: linear-gradient(270deg,#f6fcff,#edf8ff)
+    .venu-title
+      font-size: 14px
+      color: #414655
+      padding-right: 4px
+    .venu-select
+      min-width: 118px
+      min-height: 26px
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 4px
+      border: 1px solid #3d72fa
+      &__text
+        font-size: 12px
+        color: #3d72fa
+    .venu-btn
+      display: flex
+      justify-content: center
+      align-items: center
+      min-width: 82px
+      min-height: 32px
+      margin-left: auto
+      border-radius: 4px
+      background-image: linear-gradient(90deg,#62b3ff 0,#3d72fa,#3d72fa)
+      &__text
+        font-size: 12px
+        color: white
+  .b-vip-table
+    table-layout: fixed
+    min-width: 100%
+    overflow-x: auto
+    border-spacing: 0px
+    .thead
+      .tr
+        height: 40px
+        background-color: #e1e5ee
+        &:first-child
+            background-color: #6aa3f0
+        .td
+          text-align: center
+          .table-text
+            font-size: 12px
+            color: #414655
+          
+    .tbody
+      .tr
+        height: 40px
+        &:nth-child(even)
+          background: rgba(240,245,251,.6)
+          .td:first-child
+            background-color: #e1e5ee
+        &:nth-child(odd)
+          background: #fff
+          .td:first-child
+            background-color: #f6f9fd
+        .td
+          text-align: center
+        .vip-level
+          display: flex
+          justify-content: center
+          align-items: center
+          &__icon
+            width: 22px
+            height: 22px
+            flex-shrink: 0
+            .icon-img
+              display: block
+              width: 100%
+          &__text
+            font-size: 12px
+            color: #414655
+
+        .table-text
+          font-size: 12px
+          color: #414655
+        &.-hightlight
+          .vip-level
+            &__icon
+              width: 28px
+              height: 28px
+            &__text
+              color: #3d72fa
+
+          .table-text
+            color: #3d72fa
+
+  .vip-rule
+    width: 100%
+    padding: 0px 16px
+    &__item
+      display: flex
+      padding-top: 8px
+      .item-number
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 16px
+        height: 16px
+        flex-shrink: 0
+        border-radius: 50%
+        background-color: #3d72fa
+        &__text
+          font-size: 12px
+          color: white
+      .item-rule
+        padding-left: 8px
+        &__title
+          font-size: 14px
+          color: #ffffff
+        &__text
+          font-size: 12px
+          color: #ccd2e1
+          padding-top: 8px
+          line-height: 20px
+      &:first-child
+        padding-top: 0px
+    &__remind
+      font-size: 12px
+      color: #4993de
+      padding: 8px 16px 8px 24px

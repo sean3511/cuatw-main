@@ -1,0 +1,655 @@
+//new alert scss
+.transfer-dialog,
+.swiper-dialog,
+.ios-dialog,
+.cardboard-dialog 
+  z-index: 2001
+
+
+.dialog-mask 
+  background-color: rgba(0,0,0,0.8)
+  display: flex
+  align-items: center
+  justify-content: center
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
+  z-index: 1900
+
+
+//dialog
+.dialog 
+  width: 90%
+  max-height: 90%
+  display: flex
+  flex-direction: column
+  background-color: #ffffff
+  border-radius: $bod-default
+  animation: zoomIn 0.4s
+  animation-fill-mode: forwards
+
+  &__close 
+    width: 30px
+    height: 30px
+    position: absolute
+    right: -8px
+    top: -8px
+    margin: auto
+    border-radius: $bod-round
+    background-color: #ffffff
+    &__img 
+      width: 100%
+      height: 100%
+      mask-image: url('../images/common/image/icon/icon_close_popup@2x.png')
+      mask-position: center
+      mask-size: contain
+      mask-repeat: no-repeat
+      background-color: #4d8aff
+    
+  
+
+  &__header 
+    display: flex
+    flex-direction: column
+    &:after 
+      content: ''
+      display: block
+      width: 95%
+      height: 1px
+      margin: 0 auto
+      background-color: #eceef4
+    
+
+    &__top 
+      display: flex
+      justify-content: center
+      padding: $space-md
+    
+  
+
+  &__body 
+    min-width: 100%
+    overflow-y: auto
+    overflow-x: hidden
+  
+  .xfe,
+  .xfe-reg 
+    display: flex
+    flex-direction: column
+    justify-content: center
+    text-align: center
+    &__icon 
+      width: 78px
+      height: 78px
+      margin: $space-sm + $space-md auto $space-sm
+      mask-position: center
+      mask-repeat: no-repeat
+      mask-size: contain
+    
+    &__title 
+      font-size: 22px
+      margin: 0
+      padding:0px $space-md
+      line-height: normal
+      font-weight: 500
+      color: #515561
+    
+    &__text 
+      font-size: 15px
+      color: #909abb
+      line-height: 22px
+      margin: 0
+      padding: $space-sm $space-md $space-md
+    
+  
+  .xfe-reg 
+    padding-top: $space-md
+  
+  &__body-footer 
+    width: 100%
+    padding: $space-md
+
+    .btn-group 
+      width: 100%
+      display: flex
+      align-items: center
+    
+
+    .btn + .btn-group 
+      padding-top: $space-sm
+    
+
+    .btn 
+      border-radius: 4px
+      margin-right: $space-sm
+      padding:0px $space-sm
+      font-size: 14px
+      flex: 1
+      &:last-child 
+        margin-right: 0
+      
+    
+    .btn-primary,
+    .btn-secondary 
+      width: 100%
+      height: 44px
+      line-height: 44px
+      color: #ffffff
+      font-size: 14px
+      //border-radius: 4px
+      border-radius: $bod-round
+      border: 0
+      outline: 0
+      margin-right: $space-sm
+      display: block
+      flex: auto
+      &:last-child 
+        margin-right: 0
+  .ui-tableviewcell
+    margin: 0
+    background: transparent
+    &__text 
+      flex-direction: row
+      align-items: center
+      border-bottom: 1px solid #eceef4
+      .title
+        width: 30%
+        color: #515561
+      .text
+        font-size: 12px
+        margin: 0px
+        &.-danger
+          color: #ff3d3d
+    .form-textarea
+      resize: none
+      border: 0
+      appearance: none
+    .com-cell
+      width: 70%
+
+.converting 
+  .xfe__icon 
+    background-image: url('../images/common/image/gif_transform.gif')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+  
+  .xfe__title 
+    color: #06c170
+  
+
+.success 
+  .xfe__icon,
+  .xfe-reg__icon 
+    background-image: url('../images/common/image/gif_done.gif')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+  
+  .xfe__title 
+    color: #06c170
+  
+
+.danger 
+  .xfe__icon 
+    mask-image: url('../images/common/image/icon_fail@2x.png')
+    background-color: #ff3d3d
+  
+  .xfe__title 
+    color: #ff3d3d
+  
+
+.warning 
+  .xfe__icon 
+    mask-image: url('../images/common/image/icon_mistake@2x.png')
+    background-color: #fc0
+  
+  .xfe__title 
+    color: #fded72
+  
+
+.reg-dialog 
+  .dialog-mask 
+    z-index: 2001
+  
+
+
+//dialog-alert
+.dialog-alert 
+  display: flex
+  align-items: center
+  padding: $space-sm 0
+  &__img 
+    flex-shrink: 0
+    width: 24px
+    height: 24px
+    margin-right: $space-xs
+  
+  &__text 
+    font-size: 12px
+    color: #909abb
+  
+
+  &__text-info 
+    font-size: 12px
+    line-height: 19px
+    color: #ff3d3d
+  
+  //狀態
+  &--success 
+    .dialog-alert__img 
+      mask-image: url('../images/common/image/icon/icon_success@2x.png')
+      mask-repeat: no-repeat
+      mask-size: 20px
+      mask-position: center
+      background-color: #06c170
+    
+  
+  &--danger 
+    .dialog-alert__img 
+      mask-image: url('../images/common/image/icon/icon_fail@2x.png')
+      mask-repeat: no-repeat
+      mask-size: 20px
+      mask-position: center
+      background-color: #ff3d3d
+    
+  
+  &--loading 
+    .dialog-alert__img 
+      background-image: url('../images/common/image/gif_loading.gif')
+      background-repeat: no-repeat
+      background-size: 20px
+      background-position: center
+    
+  
+
+
+//transfer-引用
+.amount-title 
+  font-size: 22px
+  color: #515561
+  font-weight: 500
+  margin: 0
+
+//amount-info
+.dialog-amount-info 
+  padding: $space-md $space-md 0
+  border-radius: $bod-default
+  display: flex
+  align-items: center
+  position: relative
+  &__item 
+    width: 100%
+    max-width: 50%
+    display: flex
+    align-items: center
+
+    &:before 
+      content: ''
+      width: 24px
+      height: 24px
+      mask-image: url('../images/common/image/icon/icon_go@2x.png')
+      mask-size: contain
+      mask-repeat: no-repeat
+      mask-position: center
+      background-color: #ffc861
+      padding: 0 $space-sm
+      @include position-v($space-lg, 0, 0, 0)
+    
+    .item-select 
+      width: 100%
+      height: 64px
+      background-color: #ffffff
+      padding: 0 $space-md
+      border-radius: $bod-default
+      border: 1px solid #eceef4
+      display: flex
+      flex-direction: column
+      align-items: start
+      justify-content: center
+      text-decoration: none
+      position: relative
+      &:before 
+        content: ''
+        position: absolute
+        right: 8px
+        width: 24px
+        height: 24px
+        mask-image: url('../images/common/image/icon/icon_picker_down@2x.png')
+        mask-position: center
+        mask-size: contain
+        mask-repeat: no-repeat
+        background-color: #515561
+      
+      &__sel 
+        width: 100%
+        color: #515561
+        padding-bottom: $space-lg
+        padding-left: $space-md
+        padding-right:$space-xxxxl
+        font-size: 14px
+        font-weight: 500
+        white-space: normal
+        background-color: transparent
+        @include position-v(0, 0, 0, 0)
+      
+      &__txt 
+        width: 100%
+        max-width: 120px
+        font-size: 12px
+        font-weight: 500
+        color: #909abb
+        padding-top: $space-xxxxl
+        margin: 0
+        @include text-ellipsis 
+    
+    &:first-child 
+      margin-right: $space-lg
+      &:before 
+        display: none
+      
+    &:last-child 
+      margin-left: $space-lg
+      .item-select 
+        &:before 
+          background-color: transparent
+          mask-image: none
+
+  &__icon 
+    height: 20px
+    margin: 0 $space-sm
+    transform: rotate(-90deg)
+  
+//amount-list
+.dialog-amount-list 
+  padding: $space-md $space-md 0
+  &__title 
+    font-size: 16px
+    color: #515561
+    margin: 0
+    padding-bottom: $space-xs
+  
+  &__input 
+    width: 100%
+    .com-cell__form 
+      border: 1px solid #eceef4
+      font-size: 14px
+    .el-radio
+      padding: 12px 8px
+      .el-radio-label
+        padding-left: 8px
+  
+  &__segmentedcontrol 
+    width: 100%
+    background-color: transparent
+    padding: 0
+    border-radius: 6px
+  
+
+  .msg 
+    font-size: 12px
+    margin: 0
+    padding: $space-xs 0
+    color: #ff3d3d
+  
+  &__selection 
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    padding-top: $space-sm
+    padding-bottom: $space-sm
+    margin-top: -2%
+    .selection-item 
+      width: 23.333%
+      max-width: 23.333%
+      height: 34px
+      line-height: 34px
+      background-color: #eceef4
+      border-radius: 4px
+      margin: 2% 2% 0 0
+      text-align: center
+
+      &:nth-child(4n) 
+        margin-right: 0
+
+      &__text 
+        font-size: 12px
+        color: #909abb
+        margin: 0
+      
+      &--active 
+        background-color: #d4bba1
+        .selection-item__text 
+          color: #ffffff
+        
+//swipe-dialog
+.swipe-dialog 
+  position: relative
+  width: 90%
+  max-height: 90%
+  display: flex
+  flex-direction: column
+  background-color: #ffffff
+  border-radius: $bod-default
+  animation: fade 0.4s
+  animation-fill-mode: forwards
+  &__close 
+    width: 24px
+    height: 24px
+    position: absolute
+    right: -8px
+    top: -8px
+    margin: auto
+    border-radius: $bod-round
+    background-color: #ffffff
+    &__img 
+      width: 100%
+      height: 100%
+      mask-image: url('../images/common/image/icon/icon_close_popup@2x.png')
+      mask-position: center
+      mask-size: contain
+      mask-repeat: no-repeat
+      background-color: #d4bba1
+
+  &__header 
+    display: flex
+    flex-direction: column
+    &__top 
+      display: flex
+      justify-content: center
+      padding: $space-md
+      .dialog-title 
+        font-size: 22px
+        color: #d4bba1
+        font-weight: 600
+        margin: 0
+        &.-title-primay 
+          color: #d4bba1
+        
+        &.-title-secondary 
+          color: #ffc861
+  
+  &__body 
+    min-width: 100%
+    overflow-y: auto
+    overflow-x: hidden
+  
+  &__body-footer 
+    width: 100%
+    padding: $space-sm
+
+    .btn-group 
+      width: 100%
+      display: flex
+      align-items: center
+    
+    .btn + .btn-group 
+      padding-top: $space-sm 
+
+    .btn 
+      border-radius: 4px
+      margin-right: $space-sm
+      padding:0px $space-sm
+      font-size: 14px
+      flex: 1
+      &:last-child 
+        margin-right: 0
+  
+  .swipe-slider 
+    &__content 
+      display: flex
+      align-items: center
+      .swipe-slider-prev,
+      .swipe-slider-next 
+        display: flex
+        flex-shrink: 0
+        width: 40px
+        height: 96px
+        &:before 
+          content: ''
+          display: block
+          width: 20px
+          height: 20px
+          margin: auto
+          mask-size: contain
+          mask-position: center
+          mask-repeat: no-repeat
+        
+      
+      .swipe-slider-prev 
+        &:before 
+          mask-image: url('../images/common/image/icon/icon_picker_left@2x.png')
+          background-color: #515561
+        
+      
+      .swipe-slider-next 
+        &:before 
+          mask-image: url('../images/common/image/icon/icon_picker_right@2x.png')
+          background-color: #515561
+        
+      
+      .swipe-slider-track 
+        display: flex
+        width: 100%
+        overflow-x: auto
+        &__item 
+          display: flex
+          justify-content: center
+          align-items: center
+          min-width: 100%
+          text-align: center
+          .item-text 
+            font-size: 14px
+            line-height: 22px
+            color: #909abb
+            .text-danger 
+              color: #ff3d3d
+            
+            .text-primary 
+              color: #d4bba1
+            
+            .text-secondary 
+              color: #ffc861
+        
+    &__pages 
+      width: 100%
+      text-align: center
+      font-size: 12px
+      color: #909abb
+      padding: $space-md 0px $space-xs
+      .pages-text 
+        padding: 0px $space-xs
+      
+//ios
+.dialog-ios 
+  width: 72%
+  background-color: #f8f8f8
+  padding: 0
+  border-radius: 14px
+  text-align: center
+  box-shadow: none
+  overflow: hidden
+
+  &__header 
+    display: flex
+    flex-direction: column
+    &:after 
+      content: ''
+      display: block
+      width: 95%
+      height: 1px
+      margin: 0 auto
+      background-color: #dbdbdb
+    
+
+    &__top 
+      display: flex
+      justify-content: space-between
+      padding: $space-sm
+    
+  
+
+  &__body 
+    padding: $space-lg
+    min-width: 100%
+    overflow-y: auto
+    overflow-x: hidden
+
+    .ios-title 
+      font-size: 17px
+      font-weight: 500
+      color: black
+      margin: 0 0 $space-sm 0
+    
+
+    .ios-text 
+      color: black
+      font-size: 13px
+    
+  
+
+  &__footer 
+    width: 100%
+    display: flex
+    justify-content: center
+    border-top: 1px solid #00000026
+
+    .btn-group 
+      width: 100%
+      display: flex
+      align-items: center
+      .btn-primary,
+      .btn-secondary 
+        width: 100%
+        font-size: 17px
+        color: #007aff
+        margin-right: 0
+        background-color: transparent
+        background-image: none
+        border: transparent
+        padding: $space-md 0
+        font-weight: normal
+        outline: 0
+        border-right: 1px solid #00000026
+        flex: auto
+        &:last-child 
+          border-right: 0
+          margin-right: 0
+    
+//cardboard
+.cardboard-dialog
+  .cardboard
+    width: 100%
+    padding: 12px
+    &__img
+      display: block
+      width: 100%
+      margin-bottom: 8px
+      &:last-child
+        margin-bottom: 0px
+

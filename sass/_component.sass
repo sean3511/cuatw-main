@@ -1,0 +1,423 @@
+.tab
+    .tab-content
+        overflow-x: auto
+        height: 50px
+        display: flex
+        flex-direction: row
+        align-items: center
+        border-bottom: 1px solid #116E50
+        &.nav
+            flex-wrap: nowrap
+    .tab-item
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 14px
+        color: #cecece
+        cursor: pointer
+        height: 100%
+        white-space: nowrap
+        &.-active
+            font-weight: 700
+            color: #fff
+            position: relative
+            border-bottom: 2px solid #58d7af
+.nav-pills 
+    .nav-link
+        border-radius: 0px
+        &.active
+            font-weight: 600
+            border-bottom: 2px solid #54E5B5
+            background-color: transparent
+
+.-member
+    .tab
+        .tab-content
+            border-bottom: 1px solid #D4D4D4
+        .tab-item
+            color: #404040
+            &.-active
+                border-bottom: 2px solid #54E5B5
+    .cell-info
+        background-color: transparent
+        border-bottom:1px solid #D4D4D4
+        &__title
+          color: #404040
+        &__text
+          color: #404040
+        .dropdown-toggle
+          &.btn
+            color: #000
+          &::after
+            background-image: url('../images/member-icon-calendar_search.png')
+    .pagination-wrap
+        .pagination
+          *
+            color: #666666
+        .page-btn
+            &.-left
+              background-image: url('../images/member-icon-arrow_left.png')
+            &.-right
+              background-image: url('../images/member-icon-arrow_right.png')
+    .table 
+        .thead 
+            border-bottom: 1px solid #d4d4d4
+            background: #F3F5F4
+            th
+                color: #585858
+        .tbody
+            background: #FAFAFA
+            td
+                border: none
+                color: #585858
+    .invest-list
+      &__title
+        color: #404040
+      &__text
+        color: #585858
+    .investment-list
+      background: #FAFAFA
+      &__text
+          color: #666666
+      &__header
+          border-bottom: none
+      &__number
+          color: #000
+      &__body
+        background: #FAFAFA
+        border-top: 1px solid #d4d4d4
+      &__icon
+        background-image: url('../images/member-icon-arrow_down.png')
+    .-trade 
+        .investment-list
+            background: #FAFAFA
+            &__text
+                color: #666666
+            &__header
+                border-bottom: none
+            &__number
+                color: #000
+    .no-data
+      &__title
+        color: #666666
+    .match-list
+      &__item
+        border-bottom: 1px solid #d4d4d4
+      .item-title
+        border-bottom: 1px solid #d4d4d4
+        background: #F3F5F4
+        color: #585858
+      .table .tbody td.-highlight
+        color: #116E50
+    .account-pill
+      border-bottom: 1px solid #D4D4D4 !important
+      &__title
+        color: #585858
+    .card
+      background: #FAFAFA
+      .card-text
+        color: #585858
+    .card-info
+      color: #585858
+    .rule
+      color: #585858
+    .promotions-join .title, .announcement-join .title
+      color: #584848
+.cell-info
+  display: flex
+  align-items: center
+  width: 100%
+  min-height: 44px
+  background-color: #383838
+  border-bottom:1px solid #54E5B5
+  &.-center
+    justify-content: center
+  &__title
+    font-size: 24px
+    font-weight: 600
+    color: #E4E4E4
+  &__text
+    font-size: 14px
+    color: #E4E4E4
+    font-weight: 600
+    padding-right: 8px
+    &:last-child  
+      padding-right: 0px
+  &__icon
+    width: 20px
+    margin-left: auto
+    .icon-img
+        display: block
+        width: 100%
+  .dropdown-toggle
+    width: 100%
+    padding-left: 0px
+    padding-right: 0px
+    &.btn
+      font-size: 14px
+      font-weight: 600
+      color: #E4E4E4
+    &::after
+      width: 20px
+      height: 20px
+      background-image: url('../images/icon-calendar_search.png')
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+      border: none
+    &.filter::after
+      width: 20px
+      height: 20px
+      background-image: url('../images/member-icon-arrow_down.png')
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+      border: none
+.fixed-footer
+  position: sticky
+  bottom: 62px
+  left: 0
+  right: 0
+  z-index: 10
+  background-color: #585858
+  .fixed-list
+    display: flex
+    &__item
+        display: flex
+        justify-content: center
+        align-items: center
+        flex: 1
+        padding: 16px 8px  
+        border-right: 1px solid #717171
+        .item-text
+            font-size: 14px
+            font-weight: 600
+            color: #f0f0f0
+        &:last-child
+          border-right: 0px
+.dropdown
+    .btn
+      background: #FAFAFA
+      color:#585858
+      font-weight: 300
+      font-size: 13px
+      padding: 10px 8px
+      border-radius: 0px
+      border-bottom: 2px solid #D4D4D4
+.no-data
+  width: 100%
+  &__content
+    padding: 40px
+  &__img
+    display: block
+    width: 100%
+    height: auto
+  &__title
+    font-size: 28px
+    color: #26FFBE
+
+.alert 
+  display: flex
+  align-items: center
+  padding: $space-md 0
+  &.alert-danger 
+    color: #ff3d3d
+    .alert__img__icon 
+      mask-image: url('../images/common/image/icon/icon_warning@2x.png')
+      background-color: #ff3d3d
+    
+  
+  &.alert-warning 
+    .alert__img__icon 
+      mask-image: url('../images/common/image/icon/icon_mistake@2x.png')
+      background-color: #fc0
+    
+  
+  &__img 
+    margin-right: $space-xs
+    &__icon 
+      display: block
+      width: 24px
+      height: 24px
+      mask-size: contain
+      mask-position: center
+      mask-repeat: no-repeat
+    
+  
+  &__text 
+    font-size: 14px
+    color: #515561
+    font-weight: 600
+  
+
+  &__text-info 
+    font-size: 12px
+    line-height: normal
+    color: #ff3d3d
+  
+//無資料
+.empty 
+  width: 100%
+  .empty-content 
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 50px $space-lg 0
+    .empty-icon 
+      width: 100px
+      height: 100px
+      display: block
+      mask-image: url('../images/common/image/icon/icon_nodata@2x.png')
+      mask-size: contain
+      mask-position: center
+      mask-repeat: no-repeat
+      background-color: rgba(255, 255, 255, 0.6)
+    
+    .empty-title 
+      text-align: center
+      font-size: 14px
+      font-weight: 400
+      color: rgba(255, 255, 255, 0.6)
+      line-height: 1.5
+
+//出款充值狀態
+.badge 
+  display: flex
+  align-items: center
+  font-size: 12px
+  font-weight: 500
+  border-radius: $bod-round
+  min-width: 76px
+  height: 20px
+  padding-left: $space-xxs
+  padding-right: $space-sm
+  &:before 
+    content: ''
+    width: 14px
+    height: 14px
+    display: block
+    mask-repeat: no-repeat
+    mask-size: contain
+    mask-position: center
+  
+  &__text 
+    margin: 0 auto
+  
+  &--success 
+    color: #06c170
+    background-color: rgba(6,193,112,0.1)
+    &:before 
+      mask-image: url('../images/common/image/icon/icon_success@2x.png')
+      background-color: #06c170
+    
+  
+  &--danger 
+    color: #ff3d3d
+    background-color: rgba(255,61,61,0.1)
+    &:before 
+      mask-image: url('../images/common/image/icon/icon_fail@2x.png')
+      background-color: #ff3d3d
+    
+  
+  &--warning 
+    color: #fc0
+    background-color: rgba(255,204,0,0.1)
+    &:before 
+      mask-image: url('../images/common/image/icon/icon_mistake@2x.png')
+      background-color: #fc0
+    
+  
+  &--transfer 
+    color: #3d8eff
+    background-color: rgba(61,142,255,0.1)
+    &:before 
+      mask-image: url('../images/common/image/icon/icon_success@2x.png')
+      background-color: #3d8eff
+
+.editor-content 
+  word-wrap: break-word
+  word-break: break-all
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 
+    margin: 0px 0px 8px 0px
+    // color: #ad0522
+  
+  h4 
+    font-size: 16px
+    font-weight: normal
+    margin: 8px 0
+  
+  hr 
+    border: 0
+    // border-top: 1px solid #e8c7ae
+    margin: 0
+    height: 0px
+  
+  p,
+  div 
+    font-size: 12px
+    line-height: 19px
+    margin-top: 0
+
+    &:last-child 
+      margin-bottom: 0
+    
+  
+  img 
+    width: 100%
+    display: block
+  
+  ul
+    padding-left: 16px
+    li  
+      list-style: none 
+
+.float-side
+  position: absolute
+  left: 8px
+  top: 50px
+  z-index: 2100
+  &__btn
+    display: block
+    width: 44px
+    height: 44px
+    .btn-icon
+      display: block
+      width: 100%
+ 
+.btn-tab 
+    width: 100%
+    display: flex
+    padding-top: $space-sm
+    overflow-x: auto
+    &__item 
+      width: 33.333%
+      height: 26px
+      min-width: 80px
+      color: #909abb
+      border-right: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 12px
+      position: relative
+      white-space: nowrap
+      background-color: hsla(0,0%,100%,0.7)
+      margin-right: $space-sm
+      border-radius: 4px
+      &--active 
+        color: #ffffff
+        background-color: #4d8aff
+        transition: 0.4s
+      
+      &:last-child 
+        margin-right: 0
+      
+      &--disabled 
+        background-color: #eceef4
+        color: #909abb
+        font-weight: normal

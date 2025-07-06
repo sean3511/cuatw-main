@@ -1,0 +1,89 @@
+* 
+  box-sizing: border-box
+  -webkit-tap-highlight-color: transparent
+  // user-select:
+  //none 禁止用户选中
+  //text 对用户的选择没有限制
+  //all 目标元素将整体被选中，在你用鼠标选中部分文字时，浏览器会自动选中整个元素里的内容
+
+html,
+body 
+  -webkit-text-size-adjust: 100%
+  touch-action: none
+  -webkit-user-drag: none
+  overflow: hidden
+
+
+body 
+  margin: 0
+  font-size: var(--bs-body-font-size)
+  font-weight: var(--bs-body-font-weight)
+  line-height: 1.15
+  background-color: #262626
+  font-family: PingFang SC, -apple-system, BlinkMacSystemFont, Roboto,Helvetica Neue, Helvetica, Segoe UI, Hiragino Sans GB, Microsoft Yahei,Arial, sans-serif
+
+
+a 
+  text-decoration: none
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover 
+  color: inherit
+  text-decoration: none
+
+
+button 
+  flex: none
+
+
+input,
+select 
+  outline-color: invert
+  outline-style: none
+  outline-width: 0px
+  border: none
+  border-style: none
+  text-shadow: none
+  appearance: none
+  user-select: text
+  outline-color: transparent
+  box-shadow: none
+  font-size: 16px
+
+/* 去除webkit中input的type="number"時出現的上下圖標 */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none
+
+input[type='number'] 
+  -moz-appearance: textfield
+
+// input:-webkit-autofill 
+//   -webkit-box-shadow: 0 0 0px 1000px white inset !important //关于解决输入框背景颜色
+//   -webkit-text-fill-color: #6a3a3a-txt !important //关于接输入框文字颜色
+// 
+
+input, textarea 
+  font-size: 16px
+
+
+div 
+  -webkit-user-drag: none
+  &::-webkit-scrollbar 
+    display: none /* 不顯示滾動條 */
+  
+
+
+//---蘋方字體---//
+//蘋方-簡 常規體
+//__font-family: PingFangSC-Regular
+//蘋方-簡 極細體
+//__font-family: PingFangSC-Ultralight
+//蘋方-簡 細體
+//__font-family: PingFangSC-Light
+//蘋方-簡 纖細體
+//__font-family: PingFangSC-Thin
+//蘋方-簡 中黑體
+//__font-family: PingFangSC-Medium
+//蘋方-簡 中粗體
+//__font-family: PingFangSC-Semibold

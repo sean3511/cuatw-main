@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover " />
+    <title>cua</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+
+</head>
+
+<body>
+    <!-- 複製成功 start -->
+    <div id="toast" class="toast-popup" style="display: none;">
+        <div class="toast-popup__body">
+            <div class="toast-popup__icon">
+                <div class="toast-popup__icon__img -success"></div>
+            </div>
+            <div class="toast-popup__text">複製成功</div>
+        </div>
+    </div>
+    <!-- 複製成功 end -->
+    <!-- 顯示二維條碼 start -->
+    <div id="show1" class="cardboard-dialog" style="display: none;">
+        <div class="dialog-mask">
+            <div class="dialog success">
+                <div class="dialog__header">
+                    <div class="dialog__header__top">
+                        <p class="amount-title">二維碼產生</p>
+                    </div>
+                </div>
+                <div class="dialog__body">
+                    <div class="ui-tableviewcell -default -value1 -subtitle">
+                        <div class="ui-tableviewcell__text">
+                            <p class="title">連結名稱：</p>
+                            <p class="text">aa</p>
+                        </div>
+                    </div>
+                    <div class="ui-tableviewcell -default -value1 -subtitle">
+                        <div class="ui-tableviewcell__text">
+                            <p class="title">層級：</p>
+                            <p class="text">代理</p>
+                        </div>
+                    </div>
+                    <div class="cardboard">
+                        <img class="cardboard__img" src="./images/common/demo/member/qrcode.png" alt="">
+                    </div>
+                </div>
+                <div class="dialog__body-footer">
+                    <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                        onclick="show1()">關閉</a>
+                </div>
+            </div>
+            <!--popup-->
+        </div>
+    </div>
+    <!-- 顯示二維條碼 end -->
+    <!-- 新增推廣連結 start -->
+    <div id="show2" class="cardboard-dialog" style="display: none;">
+        <div class="dialog-mask">
+            <div class="dialog success">
+                <a href="javascript:void(0);" class="dialog__close" onclick="show2()">
+                    <div class="dialog__close__img"></div>
+                </a>
+                <div class="dialog__header">
+                    <div class="dialog__header__top">
+                        <p class="amount-title">新增推廣連結</p>
+                    </div>
+                </div>
+                <div class="dialog__body">
+                    <div class="dialog-amount-list">
+                        <div class="dialog-amount-list__input">
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">名稱設定</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="el-input" placeholder="请输入" />
+                                        <div class="el-value">
+                                            <span class="el-value__reveal el-value__reveal--off"></span>
+                                            <span class="el-value__clear"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">分層設定</p>
+                                    </div>
+                                    <div class="form-select">
+                                        <select class="form-select__sel">
+                                            <option value="">會員</option>
+                                            <option value="">代理</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <span class="form-title__require">＊</span>
+                                        <p class="form-title__text">返水設定</p>
+                                    </div>
+                                    <div class="pay-group -row">
+                                        <div class="pay-group__item">
+                                            <div class="el-radio">
+                                                <input type="radio" class="el-radio-input" id="radio1" name="radio"
+                                                    value="option" checked="">
+                                                <label class="el-radio-style" for="radio1"></label>
+                                                <label class="el-radio-label" for="radio1">
+                                                    <div class="el-radio-label__title">全退</div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="pay-group__item pay-group__item--disabled">
+                                            <div class="el-radio">
+                                                <input type="radio" class="el-radio-input" id="radio2" name="radio"
+                                                    value="option">
+                                                <label class="el-radio-style" for="radio2"></label>
+                                                <label class="el-radio-label" for="radio2">
+                                                    <div class="el-radio-label__title">全不退</div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <p class="form-title__text">統一占成-統一占成</p>
+                                    </div>
+                                    <div class="form-select">
+                                        <select class="form-select__sel">
+                                            <option value="">0%</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <p class="form-title__text">棋牌遊戲館-棋牌遊戲館 返點</p>
+                                    </div>
+                                    <div class="form-select">
+                                        <select class="form-select__sel">
+                                            <option value="">0%</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <p class="form-title__text">體育館-體育館 返點</p>
+                                    </div>
+                                    <div class="form-select">
+                                        <select class="form-select__sel">
+                                            <option value="">0%</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <p class="form-title__text">電子遊戲-電子遊戲 返點</p>
+                                    </div>
+                                    <div class="form-select">
+                                        <select class="form-select__sel">
+                                            <option value="">0%</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-cell">
+                                <div class="com-cell__form">
+                                    <div class="form-title">
+                                        <p class="form-title__text">真人百家-真人百家 返點</p>
+                                    </div>
+                                    <div class="form-select">
+                                        <select class="form-select__sel">
+                                            <option value="">0%</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog__body-footer">
+                    <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                        onclick="show2()">產生推廣連結</a>
+                </div>
+            </div>
+            <!--popup-->
+        </div>
+    </div>
+    <!-- 新增推廣連結 end -->
+
+    <div class="layout-main inner-bg">
+        <div class="nav glow-bg">
+            <div class="nav__left">
+                <a class="btn-return" href="member.html">
+                    <div class="img"></div>
+                </a>
+            </div>
+            <div class="nav__logo">
+                <span class="logo-text">推廣</span>
+            </div>
+        </div>
+
+        <div class="layout-content">
+            <div class="com-inner">
+                <div class="com-inner__content">
+                    <div class="share">
+                        <a href="javascript:void(0)" class="add-card-btn" onclick="show2()">
+                            <div class="add-card-btn__content">
+                                <div class="btn-icon"></div>
+                                <p class="btn-text">新增推廣連結</p>
+                            </div>
+                        </a>
+                        <div class="share-list accordion" id="accordionExample">
+                            <div class="share-list__item">
+                                <div class="share-list__content">
+                                    <h4 class="share-head" id="headingOne">
+                                        时間：2020年3月11日 09:52:31
+                                    </h4>
+                                    <div class="arrow-btn accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <span class="arrow-btn__text">詳細</span>
+                                        <img src="././images/common/image/icon/icon_picker_down@2x.png" alt=""
+                                            class="arrow-btn__icon">
+                                    </div>
+                                    <div class="share-info">
+                                        <ul class="share-info__list">
+                                            <li class="list__text col-50">
+                                                <span class="list__text__title">連結名稱：</span><span
+                                                    class="list__text__result">aaa</span>
+                                            </li>
+                                            <li class="list__text col-50">
+                                                <span class="list__text__title">層級：</span><span
+                                                    class="list__text__result">代理</span>
+                                            </li>
+                                            <li class="list__text">
+                                                <span class="list__text__title">連結：</span><span
+                                                    class="list__text__result">https://www.cua99407jw.com/?TWIyMTNfYWVhNjNlNzcxOTgxNzlh&nT=1729685883&c=H9VKaiSvXIDikQu8zIbN8fRcl2%2BK7MfG8qzSH1zUdNBI6FoUXaZnvCZTesmtNTZmEd%2B0pSrlcpAySVQ7EU2pAw%3D%3D&run_page=1</span>
+                                            </li>
+                                            <div class="accordion-collapse collapse" id="collapseOne"
+                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <ul class="list__collapse accordion-body">
+                                                    <li class="list__text">
+                                                        <span class="list__text__title">統一占成-統一占成：</span>
+                                                        <span class="list__text__result">0%</span>
+                                                    </li>
+                                                    <li class="list__text">
+                                                        <span class="list__text__title">棋牌遊戲館-棋牌遊戲館 返點：</span>
+                                                        <span class="list__text__result">0%</span>
+                                                    </li>
+                                                    <li class="list__text">
+                                                        <span class="list__text__title">體育館-體育館 返點：</span>
+                                                        <span class="list__text__result">0%</span>
+                                                    </li>
+                                                    <li class="list__text">
+                                                        <span class="list__text__title">電子遊戲-電子遊戲 返點：</span>
+                                                        <span class="list__text__result">0%</span>
+                                                    </li>
+                                                    <li class="list__text">
+                                                        <span class="list__text__title">真人百家-真人百家 返點：</span>
+                                                        <span class="list__text__result">0%</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <li class="btn-group">
+                                                <a href="javascript:void" class="btn btn-secondary"
+                                                    onclick="window.toast()">複製連結</a>
+                                                <a href="javascript:void" class="btn btn-secondary"
+                                                    onclick="show1()">二維碼產生</a>
+                                                <a href="javascript:void" class="btn btn-secondary">刪除</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="share-list__item">
+                                <div class="share-list__content">
+                                    <h4 class="share-head" id="headingTwo">
+                                        时間：2020年3月11日 09:52:31
+                                    </h4>
+                                    <div class="arrow-btn accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        <span class="arrow-btn__text">詳細</span>
+                                        <img src="././images/common/image/icon/icon_picker_down@2x.png" alt=""
+                                            class="arrow-btn__icon">
+                                    </div>
+                                    <div class="share-info">
+                                        <ul class="share-info__list">
+                                            <li class="list__text col-50">
+                                                <span class="list__text__title">連結名稱：</span><span
+                                                    class="list__text__result">aaa</span>
+                                            </li>
+                                            <li class="list__text col-50">
+                                                <span class="list__text__title">層級：</span><span
+                                                    class="list__text__result">代理</span>
+                                            </li>
+                                            <li class="list__text">
+                                                <span class="list__text__title">連結：</span><span
+                                                    class="list__text__result">https://www.cua99407jw.com/?TWIyMTNfYWVhNjNlNzcxOTgxNzlh&nT=1729685883&c=H9VKaiSvXIDikQu8zIbN8fRcl2%2BK7MfG8qzSH1zUdNBI6FoUXaZnvCZTesmtNTZmEd%2B0pSrlcpAySVQ7EU2pAw%3D%3D&run_page=1</span>
+                                            </li>
+                                            <div class="accordion-collapse collapse" id="collapseTwo"
+                                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <ul class="list__collapse accordion-body">
+                                                    <li class="list__text">
+                                                        <span class="list__text__title">統一占成-統一占成：</span>
+                                                        <span class="list__text__result">0%</span>
+                                                    </li>
+                                                    <li class="list__text">
+                                                        <span class="list__text__title">棋牌遊戲館-棋牌遊戲館 返點：</span>
+                                                        <span class="list__text__result">0%</span>
+                                                    </li>
+                                                    <li class="list__text">
+                                                        <span class="list__text__title">體育館-體育館 返點：</span>
+                                                        <span class="list__text__result">0%</span>
+                                                    </li>
+                                                    <li class="list__text">
+                                                        <span class="list__text__title">電子遊戲-電子遊戲 返點：</span>
+                                                        <span class="list__text__result">0%</span>
+                                                    </li>
+                                                    <li class="list__text">
+                                                        <span class="list__text__title">真人百家-真人百家 返點：</span>
+                                                        <span class="list__text__result">0%</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <li class="btn-group">
+                                                <a href="javascript:void" class="btn btn-secondary"
+                                                    onclick="window.toast()">複製連結</a>
+                                                <a href="javascript:void" class="btn btn-secondary"
+                                                    onclick="show1()">二維碼產生</a>
+                                                <a href="javascript:void" class="btn btn-secondary">刪除</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--layout-tabbar-->
+        <div class="layout-tabbar">
+            <!-- ./component/footer -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        //popup-show/hide
+        function show1() {
+            var x = document.getElementById('show1');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+        //popup-show/hide
+        function show2() {
+            var x = document.getElementById('show2');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

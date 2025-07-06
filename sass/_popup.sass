@@ -1,0 +1,2202 @@
+.popup,
+.img-popup,
+.poster-popup,
+.bulletin-popup,
+.prompt-popup,
+.transfer-popup,
+.grab-popup,
+.regsuccess-popup 
+  z-index: 2001
+
+.popup
+  width: 90%
+
+.popup-mask,
+.dialog-mask 
+  width: 100%
+
+//inquire-popup
+.inquire-popup 
+  z-index: 1900
+  .popup__body 
+    padding: $space-lg
+    .checkbox-list 
+      overflow-y: auto
+      max-height: 50vh
+    
+  
+
+
+//rule-popup
+.rule-popup,
+.data-popup 
+  .popup-mask 
+    padding: 0 $space-lg
+    .popup__body 
+      font-size: 14px
+      padding: 0 $space-lg
+      .rule-list 
+        overflow-y: auto
+        max-height: 55vh
+      
+    
+  
+
+
+.popup-mask 
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+  background-color: #00000080
+  display: flex
+  align-items: center
+  justify-content: center
+  animation: fade 0.4s
+  animation-fill-mode: forwards
+  > div 
+    animation: zoomIn 0.4s
+    animation-fill-mode: forwards
+  
+  .grabHb-popup 
+    &--active 
+      animation: grabHb 0.4s
+      @keyframes grabHb 
+        0% 
+          transform: translateY(0) scale(1) rotateY(0deg)
+        
+        100% 
+          transform: translateY(400px) scale(0.1) rotateY(360deg)
+        
+      
+    
+  
+
+
+.data-popup 
+  .popup__header__top 
+    justify-content: center
+    .header-close 
+      position: absolute
+      z-index: 1
+      right: 30px
+    
+  
+  .popup-mask .popup__body 
+    padding: $space-lg
+  
+  .data-table 
+    border: 1px solid #c3c3c3
+    .tr 
+      &:nth-child(odd) 
+        background-color: #e5e5e5
+      
+      &:nth-child(2n) 
+        background-color: #ffffff
+      
+      .td 
+        font-size: 16px
+        color: #1d1d1f
+      
+    
+  
+
+
+.img-popup 
+  background-color: #ffe1c3
+  width: 100%
+  border-radius: $bod-default * 2
+  margin-left: $space-lg
+  margin-right: $space-lg
+  .img-popup-icon-bg 
+    width: 318px
+    height: 318px
+    margin-top: -110px
+    position: relative
+    margin-bottom: -90px
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    margin-left: auto
+    margin-right: auto
+    .img-popup-icon 
+      background-image: url('../images/common/demo/login/popupIconBg@2x.png')
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      width: 318px
+      height: 318px
+      margin: auto
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      &:before 
+        content: ''
+        display: block
+        background-position: center
+        background-repeat: no-repeat
+        background-size: contain
+        width: 44px
+        height: 44px
+      
+    
+  
+  .img-popup 
+    &__header 
+      display: flex
+      flex-direction: column
+
+      &__img 
+        display: block
+        width: 100%
+      
+      &__top 
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        padding: 0
+        margin-top: -40px
+        position: relative
+        z-index: 1
+        padding: 0 $space-sm
+      
+
+      &__bottom 
+        position: relative
+        .header-info 
+          text-align: center
+          justify-content: center
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
+          background: none
+          .info-text 
+            color: #ad0522
+            font-size: 20px
+            margin: 0
+          
+        
+      
+    
+
+    &__body 
+      padding: $space-lg
+      position: relative
+      z-index: 1
+
+      .info-item 
+        margin: 0
+        &__title 
+          font-weight: 600
+          padding-bottom: $space-xs
+        
+        &__text 
+          padding-bottom: 0
+          font-size: 16px
+          color: #786464
+          line-height: 1.5
+        
+      
+    
+
+    &__footer 
+      padding: $space-lg
+      padding-bottom: $space-xxxxl
+      .btn-group 
+        display: flex
+        justify-content: space-between
+        align-items: center
+      
+      .btn-secondary 
+        background-color: #EBE4C1
+        color: #ffffff
+        height: 36px
+        width: 96px
+        border-radius: $bod-round
+        outline: none
+        border: none
+        display: flex
+        justify-content: center
+        align-items: center
+
+        &.btn-ghost 
+          background: none
+          border: 1px solid #EBE4C1
+          color: #EBE4C1
+        
+      
+.bulletin-popup 
+  width: 90%
+  border-radius: 12px
+  padding-bottom: $space-lg
+  background-image: linear-gradient(to bottom,#25366D 0%,#314BA4 50%,#25366D 100%)
+  position: relative
+  .bulletin-popup 
+    &__header 
+      height: 80px
+      display: flex
+      margin-top: -$space-xxxxl
+      &__title
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        margin-top: 32px
+        .title-text
+          margin: 0
+          color: #EBE4C1
+      &__top 
+        display: flex
+        justify-content: space-between
+        width: 100%
+        background-image: url('../images/common/demo/popup/popup_announcement@2x.png')
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        position: relative
+        padding: 0
+        &.-notice 
+          background-image: url('../images/common/demo/popup/popup_news@2x.png') 
+    
+    &__body 
+      margin: 0 $space-lg
+      border-radius: 12px
+      max-height: 47vh
+      overflow: hidden
+      overflow-y: auto
+  
+  .bulletin-close 
+    display: block
+    position: absolute
+    left: 50%
+    bottom: -12px
+    transform: translate(-50%, 100%)
+    &__img 
+      width: 34px
+      height: 34px
+      display: block
+    
+  
+  .bulletin 
+    &__item 
+      background-color: rgba(#ffffff,0.9)
+      padding: $space-md
+      margin-bottom: $space-sm
+      position: relative
+      border-radius: 12px
+    
+    &__title 
+      margin: 0
+      padding-bottom: $space-xs
+      &__text 
+        // padding-top: 4px
+        line-height: normal
+        font-size: 16px
+        font-weight: 600
+        word-wrap: break-word
+        word-break: break-all
+        overflow-x: auto
+      
+    
+    &__content 
+      // color: #3B3538
+      font-size: 12px
+      line-height: 1.7
+      margin: 0
+      text-align: justify
+      overflow-x: auto
+      @include editor-setting
+      ul
+        padding-left: 0px
+    
+  
+  .bulletin-empty 
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    min-height: 47vh
+    background-color: #ffffff
+    border-radius: 12px
+    &__content 
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      padding-top: 90px
+    
+    .empty-icon 
+      width: 88px
+      height: 88px
+      display: block
+      mask-image: url('../images/common/image/icon/icon_nodata@2x.png')
+      mask-size: contain
+      mask-position: center
+      mask-repeat: no-repeat
+      background-color: #3B3538
+    
+    .empty-title 
+      color: #3B3538
+      font-size: 14px
+      padding: $space-lg 0
+      margin: auto
+    
+  .com-cell
+      padding: 8px 16px 4px 
+    
+  
+
+
+//grab-popup
+.grab-popup 
+  background-color: #ffe1c3
+  width: 100%
+  border-radius: $bod-default * 2
+  margin-left: 16px
+  margin-right: 16px
+  .grab-popup 
+    &__header 
+      display: flex
+      flex-direction: column
+
+      &__img 
+        display: block
+        width: 100%
+      
+      &__top 
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        padding: 0
+        margin-top: -40px
+        position: relative
+        z-index: 1
+        padding: 0 8px
+      
+
+      &__bottom 
+        position: relative
+        .header-info 
+          text-align: center
+          justify-content: center
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
+          background: none
+          .info-text 
+            color: #ad0522
+            font-size: 20px
+            margin: 0
+          
+        
+      
+      //grab
+      &--success,
+      &--failed,
+      &--reload,
+      &--signin 
+        .grab-bg 
+          &__icon 
+            @include position-v(-24px, 0, auto, 0)
+            background-repeat: no-repeat
+            background-size: contain
+            background-position: center
+          
+          &__img 
+            height: 140px
+            @include position-v(-72px, 0, auto, 0)
+            background-repeat: no-repeat
+            background-size: contain
+            background-position: center
+          
+        
+      
+      &--success 
+        .grab-bg 
+          &__icon 
+            background-image: url('../images/common/demo/popup/cute1@2x.png')
+          
+          &__img 
+            background-image: url('../images/common/demo/popup/cute1bg@2x.png')
+          
+        
+      
+      &--failed 
+        .grab-bg 
+          &__icon 
+            background-image: url('../images/common/demo/popup/cute2@2x.png')
+          
+          &__img 
+            background-image: url('../images/common/demo/popup/cute2bg@2x.png')
+          
+        
+      
+      &--reload 
+        .grab-bg 
+          &__icon 
+            background-image: url('../images/common/demo/popup/cute3@2x.png')
+          
+          &__img 
+            background-image: url('../images/common/demo/popup/cute3bg@2x.png')
+          
+        
+      
+      &--signin 
+        .grab-bg 
+          &__icon 
+            background-image: url('../images/common/demo/popup/cute4@2x.png')
+          
+          &__img 
+            background-image: url('../images/common/demo/popup/cute4bg@2x.png')
+          
+        
+      
+    
+
+    &__body 
+      padding: 16px
+      position: relative
+      z-index: 1
+      .info-title 
+        font-size: 16px
+        color: #ad0522
+        margin: 0
+        padding: 16px 0
+        text-align: center
+        font-weight: 600
+      
+
+      .info-item 
+        margin: 0
+        &__title 
+          font-weight: 600
+          padding-bottom: 4px
+        
+        &__text 
+          margin: 0
+          padding-bottom: 0
+          font-size: 16px
+          color: #786464
+          line-height: 1.5
+          &.center 
+            text-align: center
+          
+        
+      
+    
+
+    &__footer 
+      padding: 16px
+      padding-bottom: 32px
+      .btn-group 
+        display: flex
+        justify-content: center
+        align-items: center
+        &.space-between 
+          justify-content: space-between
+        
+      
+      .btn-secondary 
+        width: 96px
+      
+    
+  
+
+  //grab
+  .grab-bg 
+    width: 100%
+    height: 96px
+    background-repeat: no-repeat
+    background-size: contain
+    background-image: url('../images/common/demo/popup/imgHolder@2x.png')
+    position: relative
+    animation: in 0.6s
+    animation-fill-mode: forwards
+
+    @keyframes in 
+      from 
+        top: -32px
+      
+      to 
+        top: 0
+      
+    
+    &__icon 
+      height: 108px
+      @include position-v(-16px, 0, auto, 0)
+      animation: zoomIn 0.6s
+      animation-fill-mode: forwards
+    
+  
+
+  .info-input 
+    padding-top: 16px
+    .cell-form 
+      position: relative
+      background-color: #ffffff
+      display: flex
+      align-items: center
+      border-radius: $bod-default
+      overflow: hidden
+      &__icon 
+        width: 24px
+        height: 24px
+        background-repeat: no-repeat
+        background-position: center
+        position: absolute
+        left: 10px
+        top: 10px
+        background-size: contain
+      
+
+      &__input 
+        width: 100%
+        height: 44px
+        padding: 6px 10px
+        padding-left: 16px + 24px
+        font-size: 16px
+         
+          line-height: normal
+        
+      
+
+      &--invalid 
+        border: 1px solid #ff3b3b
+      
+    
+    .cell 
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+
+      &__verify 
+        width: 96px
+        height: 36px
+        background-color: #2b2b2b
+        color: white
+        font-size: 14px
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-left: 8px
+      
+      &__prompt 
+        display: none
+        width: 100%
+        font-size: 14px
+        color: #e02020
+        padding-top: 6px
+        &--active 
+          display: block
+        
+      
+    
+    .msg 
+      font-size: 12px
+      margin: 0
+      padding: 4px 0
+      color: #ff3b3b
+    
+  
+
+
+//poster-popup
+.poster-popup 
+  border-radius: $bod-default * 2
+  display: flex
+  flex-direction: column
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  background-image: url('../images/common/demo/login/popupPoster@2x.png')
+  width: 343px
+  height: 540px
+  .poster-popup 
+    &__header 
+      display: flex
+      flex-direction: column
+      flex: 1
+      &__img 
+        display: block
+        width: 100%
+      
+      &__top 
+        display: flex
+        justify-content: space-between
+        padding: 0
+        margin-top: -40px
+        position: relative
+        z-index: 1
+        padding: 0 $space-sm
+      
+
+      &__bottom 
+        position: relative
+        .header-info 
+          text-align: center
+          justify-content: center
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
+          background: none
+          .info-text 
+            color: #ad0522
+            font-size: 20px
+            margin: 0
+          
+        
+      
+    
+
+    &__body 
+      padding: $space-lg
+      position: relative
+      z-index: 1
+      flex: 2
+      .info-item 
+        margin: 0
+        text-align: center
+        &__title 
+          font-weight: 600
+          padding-bottom: $space-xs
+        
+        &__text 
+          padding-bottom: 0
+          font-size: 20px
+          color: #ffffff
+          line-height: 1.5
+        
+      
+    
+
+    &__footer 
+      padding: $space-lg
+      padding-bottom: $space-xxxxl
+      flex: 0
+      text-align: center
+      display: flex
+      justify-content: center
+      .btn-secondary,
+      .btn-primary 
+        color: #ffffff
+        border-radius: $bod-round
+        outline: none
+        border: none
+        height: 44px
+        display: flex
+        align-items: center
+        justify-content: center
+      
+      .btn-secondary 
+        &.btn-gradient 
+          box-shadow: 0 2px 0 rgba(#cb3d3d, 0.9), inset 0 0 2px 0px white
+          width: 200px
+          background: linear-gradient(180deg,#ffba89 0%,#ffb43f 50%,#ff9100 50%,#ffbf01 100%)
+        
+      
+      .btn-primary 
+        &.btn-gradient 
+          width: 200px
+          background-image: linear-gradient(180deg, #f39d9b 50%, #e45b57 50%)
+          box-shadow: 0 2px 12px rgba(#c30d23, 0.25), inset 0 0 1px 0px white
+        
+      
+    
+  
+
+.poster-popup-large 
+  display: flex
+  border-radius: 20px
+  flex-direction: column
+  background-repeat: no-repeat
+  background-size: cover
+  background-image: url('../images/common/demo/popup/indexPopupPoster@2x.png')
+  width: 343px
+  height: 80vh
+  background-position: top center
+  &__header 
+    flex: 0 1 45%
+  
+  &__body 
+    padding: 0
+    flex: 0 1 35%
+    max-height: 35%
+    .info-item 
+      border-radius: $bod-default
+      background-color: #ad0522
+      width: 244px
+      margin: auto
+      overflow: hidden
+      overflow-y: auto
+      max-height: 100%
+      display: flex
+      &__text 
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        font-size: 14px
+        color: white
+        line-height: 1.5
+        padding: $space-lg
+        margin: 0 auto
+        width: 100%
+      
+    
+  
+  &__footer 
+    padding: $space-lg
+    padding-bottom: $space-xxxxl
+    flex: 0 1 20%
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    .btn-secondary,
+    .btn-primary 
+      font-size: 14px
+      color: #ffffff
+      border-radius: $bod-round
+      outline: none
+      border: none
+      height: 44px
+      display: flex
+      align-items: center
+      justify-content: center
+    
+    .btn-secondary 
+      &.btn-gradient 
+        box-shadow: 0 2px 0 rgba(#cb3d3d, 0.9), inset 0 0 2px 0px white
+        width: 200px
+        background: linear-gradient(180deg,#ffba89 0%,#ffb43f 50%,#ff9100 50%,#ffbf01 100%)
+      
+    
+    .btn-primary 
+      &.btn-gradient 
+        width: 200px
+        background-image: linear-gradient(180deg, #f39d9b 50%, #e45b57 50%)
+        box-shadow: 0 2px 12px rgba(#c30d23, 0.25), inset 0 0 1px 0px white
+      
+    
+    .btn-secondary 
+      &.btn-gradient 
+        width: 160px
+      
+    
+    .btn-primary 
+      &.btn-gradient 
+        width: 110px
+      
+.prompt-popup 
+  .turn-img 
+    width: 300px
+    height: 300px
+  
+
+
+.popup-content 
+  .category__head 
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    padding: $space-lg
+    padding-left: 0
+    position: relative
+
+    .title-icon 
+      width: 54px
+      height: 54px
+      margin-right: 8px
+    
+    .header-title 
+      display: block
+      overflow: hidden
+      margin: 0
+      .title-text 
+        font-size: 24px
+        color: #6a3a3a
+        font-weight: 600
+        padding-bottom: $space-sm
+        margin: 0
+        white-space: nowrap
+        @include text-ellipsis
+      
+      .sub-text 
+        font-size: 13px
+        color: #786464
+        font-weight: 600
+        margin: 0
+        white-space: nowrap
+        @include text-ellipsis
+      
+    
+  
+  .divider-line 
+    width: 100%
+    height: 1px
+    background-color: rgba(#196a3a, 0.2)
+  
+  .empty-content 
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 50px $space-lg 0
+    .empty-icon 
+      width: 100px
+      height: 100px
+      display: block
+      mask-image: url('../images/common/image/icon/icon_nodata@2x.png')
+      mask-size: contain
+      mask-position: center
+      mask-repeat: no-repeat
+      background-color: #ffffff
+    
+    .empty-title 
+      text-align: center
+      font-size: 14px
+      color: #786464
+      line-height: 1.5
+    
+  
+
+.game-record 
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  padding: $space-lg 0
+  margin-left: -$space-xs
+  margin-right: -$space-xs
+  overflow-y: auto
+  height: 80vh
+  &__item 
+    flex: 1 0 50%
+    padding-left: $space-xs
+    padding-right: $space-xs
+    margin-bottom: $space-sm
+    max-width: 50%
+  
+  .record__item-border 
+    padding: 1px
+    border-radius: $bod-default
+    background-image: linear-gradient(170deg,#ffffff 0%,rgba(#ffffff, 0) 20%,#ffffff 40%,rgba(#ffffff, 7) 60%,rgba(#ffffff, 0) 80%,#ffffff 100%)
+    overflow: hidden
+  
+  .record__item 
+    background-image: linear-gradient(170deg, #f5e7da 40%, #f0d9c2 40%)
+    display: flex
+    align-items: center
+    padding: $space-sm
+  
+  .record-img-wrap 
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    .record-img-img 
+      width: 64px
+      height: 64px
+      display: block
+    
+    &:after 
+      content: ''
+      display: block
+      background-image: url('../images/common/demo/popup/gamePlate@2x.png')
+      height: 0
+      width: 74px
+      padding-bottom: 20%
+      background-repeat: no-repeat
+      background-position: 50%
+      background-size: contain
+      position: relative
+      margin-top: -6px
+    
+  
+  .record-text 
+    flex-grow: 1
+    padding-left: $space-sm
+    overflow: hidden
+    &__title 
+      font-size: 14px
+      color: #6a3a3a
+      margin: 0
+      @include text-ellipsis
+    
+    &__subtitle 
+      font-size: 12px
+      color: #786464
+      margin: 0
+      padding-top: $space-xs
+      @include text-ellipsis
+    
+    &__link 
+      font-size: 12px
+      color: #ff8800
+      padding: $space-md 0 0
+      margin: 0
+      display: flex
+      align-items: center
+      &:after 
+        content: ''
+        display: block
+        height: 14px
+        width: 14px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
+        margin-left: $space-xs
+      
+    
+  
+
+@include slide-popup(top)
+@include slide-popup(right)
+@include slide-popup(bottom)
+@include slide-popup(left)
+
+//action-sheets
+@include action-sheets(bottom)
+
+//額度轉換
+.transfer-popup 
+  width: 100%
+  background-color: #ffffff
+  border-radius: $bod-default * 2
+  margin-left: $space-lg
+  margin-right: $space-lg
+  background-color: rgba(black, 0.5)
+  border: 1px solid #916a0d
+  position: relative
+  box-shadow: 0 2px 4px rgba(black, 0.5)
+  .transfer-popup 
+    &__header 
+      display: flex
+      position: relative
+      justify-content: space-between
+      flex-direction: column
+      align-items: center
+      padding: $space-lg
+      padding-bottom: 0
+      &:after 
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        margin: 0 auto
+        background-color: #ffcc00
+        opacity: 0.3
+      
+      &__top 
+        display: flex
+        justify-content: space-between
+        width: 100%
+        padding: 0 0 $space-lg
+        .header-title 
+          display: flex
+          align-items: center
+          margin: 0
+          font-size: 20px
+          font-weight: normal
+          .title-icon 
+            width: 20px
+            height: 20px
+          
+
+          .title-text 
+            font-weight: 600
+            padding-left: $space-xs
+            margin: 0
+            white-space: nowrap
+            color: #ffcc00
+            margin: 0
+            font-size: 20px
+            font-weight: normal
+          
+        
+
+        .refresh 
+          background-color: #6a3a3a
+          width: 88px
+          height: 24px
+          font-size: 12px
+          text-align: center
+          color: #ffffff
+          border-radius: $bod-round
+          display: flex
+          align-items: center
+          justify-content: center
+          outline: none
+          border: none
+          padding: 0 $space-sm
+        
+
+        .refresh__icon 
+          width: 24px
+          height: 24px
+        
+
+        .refresh__text 
+          font-size: 12px
+          color: white
+        
+      
+    
+    &__body 
+      padding: $space-lg
+      padding-bottom: 0
+      overflow-y: auto
+      overflow-x: hidden
+    
+    &__footer 
+      padding: $space-lg
+      display: flex
+      flex-direction: column
+      &:before 
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        margin: 0 auto $space-lg
+        background-color: #fc0
+        opacity: 0.3
+      
+    
+  
+  .wallet-list 
+    &__item 
+      margin-bottom: $space-sm
+      &:before 
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        margin: $space-lg auto
+        background-color: #fc0
+        opacity: 0.3
+      
+      &:first-child 
+        &:before 
+          display: none
+        
+      
+    
+  
+
+  .wallet-select 
+    width: 100%
+    height: 54px
+    background-color: white
+    border-radius: 4px
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    padding: $space-sm $space-lg
+    position: relative
+    display: flex
+    & + .wallet-select 
+      margin-top: $space-sm
+    
+    .wallet-text 
+      font-size: 12px
+      color: #6a3a3a
+      padding-bottom: $space-xxs
+      display: block
+    
+    &__title 
+      width: 100%
+    
+    .wallet-sel 
+      outline: none
+      border: none
+      width: 100%
+      height: 100%
+      font-size: 14px
+      background-color: transparent
+      text-align: left
+      text-align-last: left
+      padding-left: 0
+    
+
+    &:after 
+      content: ''
+      width: 15px
+      height: 14px
+      // background-image: url('../images/common/demo/popup/iconsSelect@2x.png')
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: center
+      position: absolute
+      right: $space-lg
+      top: 50%
+      transform: translateY(-50%)
+    
+  
+  .wallet-form 
+    width: 100%
+    height: 54px
+    background-color: white
+    border-radius: 4px
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    padding: $space-sm $space-lg
+    position: relative
+    display: flex
+    .wallet-text 
+      font-size: 12px
+      padding-bottom: $space-xxs
+      display: block
+      
+    
+    &__title 
+      width: 100%
+    
+    .wallet-input 
+      outline: none
+      border: none
+      width: 100%
+      height: 100%
+      font-size: 14px
+      background-color: transparent
+      color: #060606
+      text-align: left
+      text-align-last: left
+      padding-left: 0
+    
+  
+  .money-list 
+    // overflow-y: auto
+    // max-height: 55vh
+    // min-height: 50vh
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+    align-content: flex-start
+    flex-wrap: wrap
+    margin-left: -$space-xs
+    margin-right: -$space-xs
+    padding-top: $space-sm
+    &__item 
+      width: 33.3333%
+      height: 40px
+      margin-bottom: $space-sm
+      display: flex
+      padding-left: $space-xs
+      padding-right: $space-xs
+      .money-text 
+        color: #060606
+        display: flex
+        font-size: 14px
+        width: 100%
+        height: 100%
+        align-items: center
+        justify-content: center
+        background-color: #ababab
+        border-radius: 4px
+        text-align: center
+        margin: 0
+      
+      &--active 
+        .money-text 
+          border: 2px solid #ad0522
+          background-color: #ffffff
+        
+      
+    
+  
+
+  .btn-refresh 
+    background-color: #6a3a3a
+    width: 88px
+    height: 24px
+    font-size: 12px
+    text-align: center
+    color: #ffffff
+    border-radius: $bod-round
+    display: flex
+    align-items: center
+    justify-content: center
+    outline: none
+    border: none
+  
+  .btn 
+    height: 40px
+    font-size: 14px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    color: #ffffff
+    border-radius: 4px
+    outline: none
+    border: none
+  
+  .btn-secondary 
+    background-color: #EBE4C1
+  
+  .btn-primary 
+    background-color: #ad0522
+  
+  .transfer-close 
+    position: absolute
+    left: 50%
+    bottom: -20px
+
+    transform: translate(-50%, 100%)
+    width: 34px
+    height: 34px
+    display: block
+  
+  .row 
+    display: flex
+    flex-wrap: wrap
+    margin-left: -$space-xs
+    margin-right: -$space-xs
+    .col-50 
+      padding-left: $space-xs
+      padding-right: $space-xs
+    
+  
+  .success-message,
+  .danger-message,
+  .warning-message,
+  .info-message 
+    min-height: 42px
+    display: flex
+    align-items: start
+    justify-content: center
+    padding: $space-lg 0
+    padding-bottom: 0
+    &__icon 
+      width: 24px
+      height: 24px
+      display: block
+    
+    &__text 
+      font-size: 12px
+      line-height: 20px
+      color: #ffffff
+      padding-left: $space-sm
+      padding-top: $space-xxs
+    
+  
+  .mt-loading 
+    height: 42px
+    line-height: 42px
+    text-align: center
+    &__icon 
+      height: 32px
+      vertical-align: middle
+    
+    &__text 
+      padding-right: 10px
+      display: inline-block
+      font-size: 14px
+      color: #393939
+      vertical-align: middle
+    
+  
+
+
+.transfer-landscape 
+  margin-top: 16px
+  width: 100%
+  max-width: 80%
+  background-color: #ffffff
+  border-radius: $bod-default * 2
+  margin-left: $space-sm
+  margin-right: $space-sm
+  background-color: rgba(black, 0.5)
+  border: 1px solid #916a0d
+  position: relative
+  box-shadow: 0 2px 4px rgba(black, 0.5)
+  .transfer-landscape 
+    &__header 
+      display: flex
+      position: relative
+      justify-content: space-between
+      align-items: center
+      padding: 0
+
+      &__top 
+        display: flex
+        justify-content: flex-start
+        width: 100%
+        padding: $space-xs $space-lg
+        position: absolute
+        bottom: 6px
+        left: 0
+        right: 0
+        .header-title 
+          display: flex
+          align-items: center
+          margin: 0
+          font-size: 20px
+          font-weight: normal
+          margin-right: $space-lg
+          .title-icon 
+            width: 20px
+            height: 20px
+          
+
+          .title-text 
+            font-weight: 600
+            padding-left: $space-xs
+            margin: 0
+            white-space: nowrap
+            color: #ffcc00
+            margin: 0
+            font-size: 20px
+            font-weight: normal
+          
+        
+
+        .refresh 
+          background-color: #6a3a3a
+          width: 88px
+          height: 24px
+          font-size: 12px
+          text-align: center
+          color: #ffffff
+          border-radius: $bod-round
+          display: flex
+          align-items: center
+          justify-content: center
+          outline: none
+          border: none
+          padding: 0 $space-sm
+        
+
+        .refresh__icon 
+          width: 24px
+          height: 24px
+        
+
+        .refresh__text 
+          font-size: 12px
+          color: white
+        
+      
+    
+    &__body 
+      padding: $space-md
+      // height: 220px
+      // height: 65vh
+      padding-bottom: 0
+      overflow-y: auto
+      overflow-x: hidden
+      @media screen and (orientation: portrait) 
+        height: 50vw
+      
+      @media screen and (orientation: landscape) 
+        height: 50vh
+      
+    
+    &__footer 
+      padding: $space-sm
+      padding-top: 0
+      display: flex
+      flex-direction: column
+      .btn 
+        width: 248px
+        margin: auto
+      
+      &:before 
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        margin: 0 auto $space-sm
+        background-color: #fc0
+        opacity: 0.3
+      
+    
+  
+  .wallet-list 
+    &__item 
+      margin-bottom: $space-sm
+      display: flex
+      flex-direction: column
+      &:before 
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        margin: 0 0 $space-sm
+        background-color: #fc0
+        opacity: 0.3
+      
+      &:first-child 
+        flex-direction: row
+        &:before 
+          display: none
+        
+      
+    
+  
+
+  .wallet-select 
+    width: 50%
+    height: 50px
+    background-color: white
+    border-radius: 4px
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    padding: $space-sm $space-lg
+    position: relative
+    display: flex
+    margin-right: $space-sm
+    &:last-child 
+      margin-right: 0
+    
+    // & + .wallet-select 
+    //   margin-top: 8px
+    // 
+    .wallet-text 
+      padding-bottom: $space-xxs
+      display: block
+      @include input-title
+    
+    &__title 
+      width: 100%
+    
+    .wallet-sel 
+      outline: none
+      border: none
+      width: 100%
+      height: 100%
+      background-color: transparent
+      text-align: left
+      text-align-last: left
+      padding-left: 0
+      
+    
+
+    &:after 
+      content: ''
+      width: 15px
+      height: 14px
+      // background-image: url('../images/common/demo/popup/iconsSelect@2x.png')
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: center
+      position: absolute
+      right: $space-lg
+      top: 50%
+      transform: translateY(-50%)
+    
+  
+  .wallet-form 
+    width: 100%
+    height: 40px
+    background-color: white
+    border-radius: 4px
+    display: flex
+    align-items: center
+    flex-direction: row
+    padding: $space-sm $space-lg
+    position: relative
+    display: flex
+    justify-content: space-between
+    .wallet-text 
+      padding-bottom: $space-xxs
+      display: block
+      width: 100%
+      @include input-title
+    
+    &__title 
+      width: 100%
+    
+    .wallet-input 
+      outline: none
+      border: none
+      width: 100%
+      height: 100%
+      font-size: 14px
+      background-color: transparent
+      text-align: right
+      text-align-last: right
+      padding-left: 0
+      
+    
+  
+  .money-list 
+    // overflow-y: auto
+    // max-height: 55vh
+    // min-height: 50vh
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+    align-content: flex-start
+    flex-wrap: nowrap
+    margin-left: -$space-xs
+    margin-right: -$space-xs
+    padding-top: $space-sm
+    &__item 
+      width: 33.3333%
+      height: 30px
+      display: flex
+      padding-left: $space-xs
+      padding-right: $space-xs
+      .money-text 
+        color: #060606
+        display: flex
+        font-size: 14px
+        width: 100%
+        height: 100%
+        align-items: center
+        justify-content: center
+        background-color: #ababab
+        border-radius: 4px
+        text-align: center
+        margin: 0
+      
+      &--active 
+        .money-text 
+          border: 2px solid #ad0522
+          background-color: #ffffff
+        
+      
+    
+  
+
+  .btn-refresh 
+    background-color: #6a3a3a
+    width: 88px
+    height: 24px
+    font-size: 12px
+    text-align: center
+    color: #ffffff
+    border-radius: $bod-round
+    display: flex
+    align-items: center
+    justify-content: center
+    outline: none
+    border: none
+  
+  .btn 
+    height: 40px
+    font-size: 14px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    color: #ffffff
+    border-radius: 4px
+    outline: none
+    border: none
+  
+  .btn-secondary 
+    background-color: #EBE4C1
+  
+  .btn-primary 
+    background-color: #ad0522
+  
+  .transfer-close 
+    position: absolute
+    right: -16px
+    top: -16px
+    display: block
+    // transform: translate(-50%, 100%)
+    &__img 
+      width: 34px
+      height: 34px
+      display: block
+    
+  
+  .row 
+    display: flex
+    flex-wrap: wrap
+    margin-left: -$space-xs
+    margin-right: -$space-xs
+    .col-50 
+      padding-left: $space-xs
+      padding-right: $space-xs
+    
+  
+  .success-message,
+  .danger-message,
+  .warning-message,
+  .info-message 
+    min-height: 42px
+    display: flex
+    align-items: start
+    justify-content: center
+    padding: $space-sm 0
+    padding-bottom: 0
+    &__icon 
+      width: 24px
+      height: 24px
+      display: block
+    
+    &__text 
+      font-size: 12px
+      line-height: 20px
+      color: #ffffff
+      padding-left: $space-sm
+      padding-top: $space-xxs
+    
+  
+  .mt-loading 
+    height: 42px
+    line-height: 42px
+    text-align: center
+    &__icon 
+      height: 32px
+      vertical-align: middle
+    
+    &__text 
+      padding-right: 10px
+      display: inline-block
+      font-size: 14px
+      color: #393939
+      vertical-align: middle
+    
+
+
+
+.layout-popup,
+.layout-alert 
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+  z-index: 1900
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  &.mask-a 
+    background-color: rgba(0, 0, 0, 0.6)
+  
+
+
+.popup-a 
+  width: 75%
+  background-color: white
+  padding: 16px 16px 8px 16px
+  border-radius: 5px
+  box-shadow: 0px 45px 50px 0px rgba(0, 0, 0, 0.4)
+
+  &__body 
+    padding-bottom: 24px
+
+    .popup-a-title 
+      font-size: 17px
+      font-weight: 500
+      color: black
+      margin: 0 0 8px 0
+    
+
+    span 
+      color: black
+      font-size: 13px
+    
+  
+
+  &__footer 
+    display: flex
+    justify-content: flex-end
+  
+
+  &.ios 
+    width: 72%
+    background-color: #f2f2f2
+    padding: 0
+    border-radius: 14px
+    text-align: center
+    box-shadow: none
+
+    .popup-a__body 
+      margin-bottom: 16px
+      padding: 0 16px
+
+      .popup-a-title 
+        margin: 16px 0 8px 0
+        color: black
+      
+
+      span 
+        font-size: 13px
+        color: black
+      
+    
+
+    .popup-a__footer 
+      justify-content: center
+      border-top: 1px solid rgba(60, 60, 67, 0.29)
+      .btn 
+        width: 100%
+        font-size: 18px
+        color: #007aff
+        margin-right: 0
+        background-color: transparent
+        border: transparent
+        padding: 12px 0
+        font-weight: normal
+      
+      .btn-group 
+        width: 100%
+        display: flex
+        align-items: center
+        .btn 
+          width: 50%
+          &:first-child 
+            border-right: 1px solid rgba(60, 60, 67, 0.29)
+          
+        
+      
+    
+  
+
+
+//download
+.download-popup 
+  background-color: #ffffff
+  width: 100%
+  border-radius: $bod-default * 2
+  min-height: 470px
+  margin-left: $space-lg
+  margin-right: $space-lg
+  &__body 
+    padding: $space-lg
+    position: relative
+    z-index: 1
+    .info-title 
+      text-align: center
+      font-size: 14px
+      color: #6a3a3a
+      margin: 0
+      padding: $space-lg 0
+    
+    .info-img 
+      width: 200px
+      margin: auto
+      display: block
+      margin-bottom: $space-lg
+    
+    .info-item 
+      margin: 0
+      text-align: center
+      &__text 
+        padding-bottom: 0
+        font-size: 12px
+        color: #786464
+        line-height: 1.5
+      
+    
+  
+
+  &__footer 
+    padding: $space-lg
+    padding-bottom: $space-xxxxl
+    .btn-group 
+      display: flex
+      justify-content: space-between
+      align-items: center
+    
+    .btn-secondary 
+      background-color: #EBE4C1
+      color: #ffffff
+      height: 36px
+      width: 96px
+      border-radius: $bod-round
+      outline: none
+      border: none
+      display: flex
+      justify-content: center
+      align-items: center
+
+      &.btn-ghost 
+        background: none
+        border: 1px solid #EBE4C1
+        color: #EBE4C1
+      
+    
+  
+
+
+.input-popup 
+  background-color: #ffffff
+  width: 90%
+  border-radius: $bod-default
+  &__header 
+    display: flex
+    flex-direction: column
+
+    &__img 
+      display: block
+      width: 100%
+    
+    &__top 
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      padding: 0
+      position: relative
+      z-index: 1
+      padding: $space-lg
+      padding-bottom: 0
+      .header-title 
+        display: flex
+        align-items: center
+
+        .title-icon 
+          width: 24px
+          height: 24px
+          margin-right: $space-sm
+        
+
+        .title-text 
+          font-size: 20px
+          color: #4d8aff
+          font-weight: 500
+          margin: 0
+          white-space: nowrap
+        
+        .sub-text 
+          padding-left: $space-sm
+          padding-top: $space-xs
+          font-size: 14px
+          color: #4d8aff
+        
+    &__bottom 
+      position: relative
+      .header-info 
+        text-align: center
+        justify-content: center
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        background: none
+        .info-text 
+          color: #ad0522
+          font-size: 20px
+          margin: 0
+        
+  &__body 
+    padding: $space-sm $space-md
+    position: relative
+    z-index: 1
+    .cell-list 
+      .com-cell__form 
+        border: 1px solid #4d8aff
+      
+      .cell 
+        border: 1px solid #4d8aff
+        border-radius: $bod-default
+        padding: 0
+        & + .cell 
+          margin-top: $space-sm
+        
+        .cell__form 
+          padding-top: $space-sm
+          padding-right: $space-sm
+          padding-left: $space-sm
+          min-height: inherit
+          .form-input 
+            height: 32px
+            flex: 1
+            padding: 0
+            max-width: inherit
+            margin-left: -$space-xs
+            margin-top: -$space-xs
+            color: #4d8aff
+            &[type='datetime-local'] 
+              flex: 1 1 70%
+              max-width: 70%
+              &::-webkit-inner-spin-button 
+                display: none
+              
+              &::-webkit-calendar-picker-indicator 
+                opacity: 0
+              
+              & + .btn-select 
+                flex: 1 0 30%
+                max-width: 30%
+              
+            
+          
+          .btn-select 
+            justify-content: center
+            transform: translateY(-40%)
+            font-size: 12px
+            color: #686868
+            display: flex
+            align-items: center
+            background: none
+            background-color: #f0ebeb
+            outline: none
+            border: none
+            width: 96px
+            height: 30px
+            border-radius: $bod-round
+          
+  &__footer 
+    padding: $space-sm $space-md
+    border-top: 1px solid #4d8aff
+    .row 
+      display: flex
+      flex-wrap: wrap
+      margin-left: -$space-xs
+      margin-right: -$space-xs
+      .col-50 
+        padding-left: $space-xs
+        padding-right: $space-xs
+      
+    
+    .btn 
+      height: 40px
+      font-size: 14px
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 100%
+      border-radius: 4px
+      outline: none
+      border: none
+    
+  
+  .btn-tab 
+    width: 100%
+    display: flex
+    padding-top: $space-sm
+    &__item 
+      width: 100%
+      height: 28px
+      border-right: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 12px
+      position: relative
+      white-space: nowrap
+      background-color: #eceef4
+      margin-right: $space-sm
+      border-radius: 4px
+      color: #909abb
+      &--active 
+        color: #ffffff
+        background-color: #4d8aff
+        transition: 0.4s
+      
+      &:last-child 
+        margin-right: 0
+      
+      &--disabled 
+        background-color: #eceef4
+        color: #909abb
+        font-weight: normal
+      
+    
+  
+
+
+.toast-popup 
+  position: absolute
+  top: 44px
+  right: 0
+  bottom: 60px
+  left: 0
+  z-index: 2001
+  pointer-events: none
+  animation: fade 0.4s
+
+  display: flex
+  align-items: center
+  justify-content: center
+  &__body 
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background-color: rgba(black, 0.8)
+    border-radius: $bod-default * 2
+    padding: $space-sm
+    width: 140px
+    min-height: 140px
+  
+  &__text 
+    color: #ffffff
+    font-size: 14px
+  
+  &__icon 
+    margin-bottom: $space-lg
+    &__img 
+      width: 60px
+      height: 60px
+      display: block
+      mask-size: contain
+      mask-position: center
+      mask-repeat: no-repeat
+      &.-success 
+        mask-image: url('../images/common/image/icon/icon_exclamation@2x.png')
+        background-color: #ffffff
+      
+      &.-warning 
+        mask-image: url('../images/common/image/icon/icon_exclamation_1@2x.png')
+        background-color: #ffffff
+      
+
+.popup 
+  .layout-content 
+    padding-bottom: 0
+  
+  .rule 
+    @include position-v(0, 0, 0, 0)
+    overflow-y: auto
+    padding: 0px
+    .rule-tab 
+      width: 100%
+      display: flex
+      justify-content: space-around
+      align-items: center
+      padding: 0px $space-xxxxl
+      @include position-v(294px, 0, auto, 0)
+      &__item 
+        width: 160px
+        height: 36px
+        display: flex
+        background: url('../images/common/demo/popup/select@2x.png')
+        background-size: cover
+        background-position: 100%
+        background-repeat: no-repeat
+        border-radius: $bod-default
+        box-shadow: 0px 2px 12px 0px #c30d2340
+        margin-right: 8px
+        &:nth-child(2n) 
+          margin-right: 0px
+        
+        .item-title 
+          font-size: 12px
+          color: #786464
+          margin: auto
+        
+        &--active 
+          width: 160px
+          height: 36px
+          display: flex
+          background: url('../images/common/demo/popup/selected@2x.png')
+          background-size: cover
+          background-position: 100%
+          background-repeat: no-repeat
+          border-radius: $bod-default
+          box-shadow: 0px 2px 12px 0px #c30d2340
+          margin-right: $space-sm
+          .item-title 
+            color: #ad0522
+            font-weight: 600
+          
+        
+      
+    
+    .rule-bg 
+      width: 100%
+    
+    .rule-close 
+      width: 36px
+      height: 36px
+      color: white
+      @include position-v(20px, 20px, auto, auto)
+      &__icon 
+        width: 36px
+        height: 36px
+      
+    
+  
+
+
+.regsuccess-popup 
+  &__body 
+    position: relative
+    width: 261px
+    min-height: 372px
+    margin-bottom: $space-md
+    background-image: url('../images/common/demo/popup/img_registration_success@2x.png')
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+    margin-top: -32px
+  
+  .regsuccess-info 
+    position: absolute
+    right: $space-md
+    bottom: 0
+    left: $space-md
+    padding: $space-xl $space-lg
+    &__user 
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-wrap: wrap
+      padding-bottom: $space-md
+      overflow: hidden
+      .user-title 
+        font-size: 14px
+        color: #ffffff
+        white-space: nowrap
+      
+      .user-id 
+        font-size: 14px
+        color: #ffffff
+      
+    
+    &__btn 
+      display: flex
+      justify-content: center
+      .btn-item 
+        display: flex
+        flex-direction: column
+        align-items: center
+        flex:1
+        min-width: 66px
+        margin-right: $space-xl
+        &__icon 
+          width: 53px
+          height: 53px
+          margin-bottom: $space-sm
+          .icon-img 
+            display: block
+            width: 100%
+          
+        
+        &__title 
+          text-align: center
+          .title-text 
+            font-size: 12px
+            color: #ffffff
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 2
+            overflow: hidden
+          
+        
+        &:last-child 
+          margin-right: 0px
+        
+      
+    
+  
+  &__footer 
+    display: flex
+    justify-content: center
+    padding: 0px $space-md
+    .btn 
+      max-width: 178px
+      height: 33px
+      margin-right: $space-sm
+      &:last-child 
+        margin-right: 0px
+      
+    
+  
+
