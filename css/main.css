@@ -15389,6 +15389,34 @@ textarea {
 .member-list .table .btn:last-child {
   margin-bottom: 0px;
 }
+.table-wrapper #table tfoot{
+    position: sticky !important;
+    bottom: 0 !important;
+    background-color: #2A3F84 !important;
+    z-index: 1 !important;
+    border-spacing: 0 !important;
+}
+.table-wrapper #table tfoot tr:first-child {
+    box-shadow: inset 0 2px 0 #ffffff !important;
+}
+.table-wrapper #table tfoot tr{
+    background-color: #2A3F84 !important;
+}
+.table-wrapper #table thead{
+    position: sticky !important;
+    top: 0 !important;
+    background-color: #2A3F84 !important;
+    box-shadow: inset 0 -2px 0 #ffffff !important;
+}
+.responsive-table {
+  font-size: 12px !important;
+}
+.table-wrapper #table > :not(caption) > * > * {
+  padding: .5rem 4px !important;
+}
+#table .btn-primary{
+  font-size: 12px !important;
+}
 
 @keyframes bounceIn {
   from,
