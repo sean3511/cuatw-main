@@ -129,3 +129,66 @@ document.addEventListener('DOMContentLoaded', () => {
   // }
 });
 
+// 統計數額
+/* ───────────────────────────────────────────────
+   ① 公用：計算當前可見金額
+   ─────────────────────────────────────────────── */
+function updateMoneySum() {
+  const moneyBox = document.querySelector('.mywallet-money');   // 顯示總額的盒子
+  const listBox  = document.querySelector('.mywallet-list');    // 列表外層
+  if (!moneyBox || !listBox) return;
+
+  let total = 0;
+
+  /* 只遍歷「還在畫面上」的 .mywallet-list__item */
+  listBox.querySelectorAll('.mywallet-list__item')
+    .forEach(item => {
+      if (item.style.display === 'none') return;                // 隱藏則跳過
+
+      /* 找標題含「金额」的欄位，抓該行數字 */
+      item.querySelectorAll('.list__text').forEach(li => {
+        const title = li.querySelector('.list__text__title')?.textContent.trim();
+        if (title?.startsWith('金额')) {
+          const numStr = li.querySelector('.list__text__result')?.textContent || '';
+          const num = parseFloat(numStr.replace(/[, ]/g, ''));
+          if (!isNaN(num)) total += num;
+        }
+      });
+    });
+
+  moneyBox.textContent = `加总金额：${total.toLocaleString()}`; // 更新文字
+}
+
+/* ───────────────────────────────────────────────
+   ② 綁定觸發：頁面載入 / 下拉選單 / 分頁點擊
+   ─────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  /* a. 首次載入先結算一次 */
+  updateMoneySum();
+
+  /* b. 下拉選單變更（class 可同時有 .select_num 與 .mywallet-select__sel） */
+  document.querySelectorAll('.select_num, .mywallet-select__sel')
+    .forEach(sel => sel.addEventListener('change', () => {
+      /* 延一個微任務，等分頁邏輯處理完再算 */
+      setTimeout(updateMoneySum, 0);
+    }));
+
+  /* c. 分頁容器內的 click & change 都再算一次
+        （包含 Prev/Next 按鈕與 label/radio 切換） */
+  const pager = document.getElementById('pagination');
+  if (pager) {
+    ['click', 'change'].forEach(ev =>
+      pager.addEventListener(ev, () => setTimeout(updateMoneySum, 0))
+    );
+  }
+});
+
+/* ───────────────────────────────────────────────
+   ③ （可選）如你的程式會動態新增 / 移除項目，
+       開啟 MutationObserver 讓列表變動也自動重算
+   ─────────────────────────────────────────────── */
+const list = document.querySelector('.mywallet-list');
+if (list) {
+  new MutationObserver(() => setTimeout(updateMoneySum, 0))
+    .observe(list, { childList: true });
+}
