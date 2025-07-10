@@ -11958,8 +11958,11 @@ textarea {
 }
 
 .mywallet-filter {
+  position: fixed;
+  top: 0;
+  z-index: 1;
   padding: 8px;
-  background-color: hsla(0, 0%, 100%, 0.5);
+  background-color: #929CBA;
 }
 .mywallet-filter .com-cell__form {
   min-height: 36px;
@@ -15403,22 +15406,43 @@ textarea {
 .member-list .table .btn:last-child {
   margin-bottom: 0px;
 }
+
 .table-wrapper #table tfoot{
     position: sticky !important;
     bottom: 0 !important;
     background-color: #2A3F84 !important;
     z-index: 1 !important;
     border-spacing: 0 !important;
+
 }
-.table-wrapper #table tfoot tr:first-child {
+
+.table-wrapper tfoot td {
+  border: none !important; 
+  background-color: #2A3F84 !important;
+  height: 40px;  /* 或你想要的高度 */
+}
+
+.table-wrapper #table tfoot tr {
     box-shadow: inset 0 2px 0 #ffffff !important;
 }
-.table-wrapper #table tfoot tr{
-    background-color: #2A3F84 !important;
+.table-wrapper #table tfoot tr:last-child td {
+  position: relative; /* 讓 after 定位可用 */
 }
+
+.table-wrapper #table tfoot tr:last-child td::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white; /* 真正顯示顏色 */
+}
+
 .table-wrapper #table thead{
+    z-index: 1;
     position: sticky !important;
-    top: 0 !important;
+    top: 120px !important;
     background-color: #2A3F84 !important;
     box-shadow: inset 0 -2px 0 #ffffff !important;
 }
