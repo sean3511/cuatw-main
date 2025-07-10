@@ -12072,7 +12072,13 @@ textarea {
   padding-bottom: 8px;
   text-align: center;
 }
-
+.myrecord-money{
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  padding-bottom: 8px;
+  text-align: center;
+}
 
 .mywallet .mywallet-list__item {
   margin-bottom: 8px;
