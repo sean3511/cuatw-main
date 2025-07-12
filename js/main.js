@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// 統計數額
+// 交易紀錄統計數額
 /* ===== 只統計「金额」欄位的數值 ===== */
 function updateMoneySum() {
   const moneyBox = document.querySelector('.mywallet-money');
@@ -237,7 +237,6 @@ class Pagination2 {
     return b;
   }
 }
-
 /* ---------- 單一 DOMContentLoaded ---------- */
 document.addEventListener('DOMContentLoaded', () => {
   const listEl = document.querySelector('.record-list');
@@ -260,11 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// 計算金額
 
-// 加總 .record-money 的數值，顯示到 .mywallet-money
+// 充值紀錄統計金額
+// 加總 .record-money 的數值，顯示到 .myrecord-money
 function updateMyRecordMoney() {
-  const moneyBox = document.querySelector('.mywallet-money'); // 顯示總額的區塊
+  const moneyBox = document.querySelector('.myrecord-money'); // 顯示總額的區塊
   if (!moneyBox) return;
 
   let total = 0;
