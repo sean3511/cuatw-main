@@ -64,6 +64,8 @@ class Pagination {
   _buildUI() {
     this.pagerEl.innerHTML = '';
     this.prevBtn = this._btn('prevBtn', '&laquo;');
+    // 先隱藏
+    this.prevBtn.style.display = 'none'; 
     this.pagerEl.appendChild(this.prevBtn);
 
     for (let i = 1; i <= this.pageCnt; i++) {
@@ -76,6 +78,8 @@ class Pagination {
     }
 
     this.nextBtn = this._btn('nextBtn', '&raquo;');
+    // 先隱藏
+    this.nextBtn.style.display = 'none';
     this.pagerEl.appendChild(this.nextBtn);
 
     this.pagerEl.onchange = e => e.target.name === 'page' && this._showPage(this._current());
@@ -190,6 +194,8 @@ class Pagination2 {
   _buildUI() {
     this.pagerEl.innerHTML = '';
     this.prevBtn = this._btn('prevBtn', '&laquo;');
+    // 先隱藏
+    this.prevBtn.style.display = 'none'; 
     this.pagerEl.appendChild(this.prevBtn);
 
     for (let i = 1; i <= this.pageCnt; i++) {
@@ -202,6 +208,8 @@ class Pagination2 {
     }
 
     this.nextBtn = this._btn('nextBtn', '&raquo;');
+        // 先隱藏
+    this.nextBtn.style.display = 'none';
     this.pagerEl.appendChild(this.nextBtn);
 
     this.pagerEl.onchange = e => e.target.name === 'page' && this._showPage(this._current());
