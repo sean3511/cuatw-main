@@ -132,12 +132,31 @@ document.addEventListener('DOMContentLoaded', () => {
     perPage      : 'all'
   });
 
-  // 確保有成功建立 pager 才監聽 select（防止 undefined）
   if (pager && pager.updatePerPage) {
+    // 筆數與類型變更
     document.querySelectorAll('.select_num, .mywallet-select__sel')
-      .forEach(sel => sel.addEventListener('change', () => pager.updatePerPage(sel.value)));
+      .forEach(sel => sel.addEventListener('change', () => {
+        pager.updatePerPage(sel.value);
+        pager.update();
+      }));
+
+    // 日期快捷按鈕
+    document.querySelectorAll('.btn-tab__item').forEach(item => {
+      item.addEventListener('click', () => {
+        const input = document.getElementById('search-range');
+        if (input) input.value = item.dataset.range;
+        pager.update();
+      });
+    });
+
+    // 日期欄位選擇器變更（補上這個 ✅）
+    const rangeInput = document.getElementById('search-range');
+    if (rangeInput) {
+      rangeInput.addEventListener('input', () => pager.update());
+    }
   }
 });
+
 
 
 // 交易紀錄統計數額
@@ -169,8 +188,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 預防載入中插入資料 → 延遲補跑一次
   setTimeout(updateMoneySum, 200);
-});
 
+  // 監聽 .mywallet-list 內容變動
+  const listEl = document.querySelector('.mywallet-list');
+  if (listEl) {
+    const observer = new MutationObserver(() => {
+      // DOM 有增減就重新計算
+      updateMoneySum();
+    });
+
+    observer.observe(listEl, {
+      childList: true, // 監聽新增/移除子元素
+      subtree: false   // 只監聽第一層
+    });
+  }
+});
 // 充提紀錄部分
 /* ---------- Pagination 類 ---------- */
 class Pagination2 {
@@ -245,25 +277,48 @@ class Pagination2 {
     return b;
   }
 }
-/* ---------- 單一 DOMContentLoaded ---------- */
 document.addEventListener('DOMContentLoaded', () => {
   const listEl = document.querySelector('.record-list');
   const pagerEl = document.querySelector('#pagination2');
+  let pager = null;
 
   if (listEl && pagerEl) {
-    /* 1. 建立分頁：預設顯示全部 */
-    const pager = new Pagination2({
+    // 建立分頁
+    pager = new Pagination2({
       listSelector : '.record-list',
       itemSelector : '.record-list__item',
       pagerSelector: '#pagination2',
       perPage      : 'all'
     });
 
-    /* 2. 監聽所有可調筆數的 <select> */
+    // 監聽筆數選單
     document.querySelectorAll('.select_num, .mywallet-select__sel')
-      .forEach(sel => sel.addEventListener('change', () => pager.updatePerPage(sel.value)));
-  } else {
-    // console.warn('Pagination2 初始化失敗：找不到 .record-list 或 #pagination2');
+      .forEach(sel => sel.addEventListener('change', () => {
+        pager.updatePerPage(sel.value);
+        handleFilterChange(); // ✅ 每次變更條件時觸發篩選
+      }));
+  }
+
+  // 監聽快速日期按鈕
+  document.querySelectorAll('.btn-tab__item').forEach(item => {
+    item.addEventListener('click', () => {
+      const input = document.getElementById('search-range');
+      if (input) input.value = item.dataset.range;
+      handleFilterChange(); // ✅ 點選時也觸發篩選
+    });
+  });
+
+  // ✅ 統一的觸發點（你可以在這裡做過濾 / 重新請求 / 重設分頁）
+  function handleFilterChange() {
+    const type = document.getElementById('search-type')?.value;
+    const status = document.getElementById('search-status')?.value;
+    const range = document.getElementById('search-range')?.value;
+
+    console.log('🔍 條件變更：', { type, status, range });
+
+    // 這裡你可以依條件過濾 DOM 或重新撈資料
+    // 假設你有篩選邏輯，資料變更後可以呼叫 pager.update()
+    if (pager) pager.update();
   }
 });
 
@@ -288,7 +343,23 @@ function updateMyRecordMoney() {
 }
 
 // 頁面載入完成時執行
-document.addEventListener('DOMContentLoaded', updateMyRecordMoney);
+document.addEventListener('DOMContentLoaded', () => {
+  // 初始執行一次
+  updateMyRecordMoney();
+
+  // 設定監聽 .record-list 的子元素變動
+  const listEl = document.querySelector('.record-list');
+  if (listEl) {
+    const observer = new MutationObserver(() => {
+      updateMyRecordMoney();
+    });
+
+    observer.observe(listEl, {
+      childList: true, // 監聽子元素新增/刪除
+      subtree: false   // 只監聽第一層
+    });
+  }
+});
 
 
 // 首頁
