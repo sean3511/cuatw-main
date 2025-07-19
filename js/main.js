@@ -158,51 +158,86 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-// 交易紀錄統計數額
-/* ===== 只統計「金额」欄位的數值 ===== */
+// ===== 交易紀錄統計數額（只統計「金额」欄位） =====
 function updateMoneySum() {
+  console.log('🚀 有成功執行');
+
   const moneyBox = document.querySelector('.mywallet-money');
   const listBox  = document.querySelector('.mywallet-list');
   if (!moneyBox || !listBox) return;
 
   let total = 0;
 
+  // ⬇️ 遍歷所有交易項目
   listBox.querySelectorAll('.mywallet-list__item').forEach(item => {
-    item.querySelectorAll('.list__text').forEach(li => {
-      const title = li.querySelector('.list__text__title')?.textContent.trim();
-      if (title?.includes('金额')) {
-        const result = li.querySelector('.list__text__result')?.textContent.trim() || '';
-        const num = parseFloat(result.replace(/[, ]/g, ''));
-        if (!isNaN(num)) total += num;
+    const results = item.querySelectorAll('.list__text__result');
+    if (results.length >= 2) {
+      const value = results[1].textContent.trim().replace(/[, ]/g, '');
+      const num = parseFloat(value);
+      if (!isNaN(num)) {
+        total += num;
+        console.log('✅ 加總這筆金額:', num);
       }
-    });
+    }
   });
 
+  console.log(`💰 總金額加總：${total}`);
   moneyBox.textContent = `加总金额：${total.toLocaleString()}`;
 }
-/* ===== 頁面載入時立即結算一次 ===== */
-document.addEventListener('DOMContentLoaded', () => {
-  // 第一次跑
-  updateMoneySum();
 
-  // 預防載入中插入資料 → 延遲補跑一次
-  setTimeout(updateMoneySum, 200);
-
-  // 監聽 .mywallet-list 內容變動
+// ===== 直接執行，不等 DOMContentLoaded =====
+(function waitForTarget() {
   const listEl = document.querySelector('.mywallet-list');
-  if (listEl) {
+  const moneyEl = document.querySelector('.mywallet-money');
+  const rangeEl = document.getElementById('search-range');
+  const typeEl = document.getElementById('search-type');
+
+  if (listEl && moneyEl) {
+    // 初始跑
+    updateMoneySum();
+    setTimeout(updateMoneySum, 300); // 延遲補一刀
+
+    // 監聽列表變化
     const observer = new MutationObserver(() => {
-      // DOM 有增減就重新計算
+      // console.log('🔄 DOM 變更觸發更新');
       updateMoneySum();
     });
+    observer.observe(listEl, { childList: true, subtree: false });
 
-    observer.observe(listEl, {
-      childList: true, // 監聽新增/移除子元素
-      subtree: false   // 只監聽第一層
+    // 監聽快速日期點擊
+    document.querySelectorAll('.btn-tab__item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // console.log('📅 快速日期被點擊');
+        setTimeout(updateMoneySum, 500);
+      });
     });
+
+    // 監聽類型篩選
+    if (typeEl) {
+      typeEl.addEventListener('change', () => {
+        // console.log('📂 類型篩選改變');
+        setTimeout(updateMoneySum, 500);
+      });
+    }
+
+    // 監聽日期輸入欄變更（非 flatpickr 事件）
+    if (rangeEl) {
+      let lastVal = rangeEl.value;
+      setInterval(() => {
+        const nowVal = rangeEl.value;
+        if (nowVal !== lastVal) {
+          lastVal = nowVal;
+          // console.log('📆 search-range 變動:', nowVal);
+          updateMoneySum();
+        }
+      }, 500); // 還是保留觀察欄位文字是否變動（不算每秒跑邏輯，只針對日期）
+    }
+
+  } else {
+    setTimeout(waitForTarget, 300);
   }
-});
+})();
+
 // 充提紀錄部分
 /* ---------- Pagination 類 ---------- */
 class Pagination2 {
@@ -324,42 +359,80 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // 充值紀錄統計金額
-// 加總 .record-money 的數值，顯示到 .myrecord-money
+// ===== 充值紀錄統計金額 =====
 function updateMyRecordMoney() {
-  const moneyBox = document.querySelector('.myrecord-money'); // 顯示總額的區塊
-  if (!moneyBox) return;
+  console.log('🚀 [updateMyRecordMoney] 執行中');
+
+  const moneyBox = document.querySelector('.myrecord-money');
+  const listBox  = document.querySelector('.record-list');
+  if (!moneyBox || !listBox) return;
 
   let total = 0;
 
-  // 統計所有 .record-money 元素的內容數字
-  document.querySelectorAll('.record-money').forEach(el => {
-    const numStr = el.textContent || '';
-    const num = parseFloat(numStr.replace(/[, ]/g, '')); // 去除逗號與空格
-    if (!isNaN(num)) total += num;
+  listBox.querySelectorAll('.record-money').forEach(el => {
+    const numStr = el.textContent.trim().replace(/[, ]/g, '');
+    const num = parseFloat(numStr);
+    if (!isNaN(num)) {
+      total += num;
+      console.log('✅ 加總這筆金額:', num);
+    }
   });
 
-  // 顯示加總結果
+  console.log(`💰 總金額加總：${total}`);
   moneyBox.textContent = `加总金额：${total.toLocaleString()}`;
 }
 
-// 頁面載入完成時執行
-document.addEventListener('DOMContentLoaded', () => {
-  // 初始執行一次
-  updateMyRecordMoney();
+// ===== 啟動定時器，每 3 秒更新一次金額 =====
+(function waitForMyRecordReady() {
+  const listEl  = document.querySelector('.record-list');
+  const moneyEl = document.querySelector('.myrecord-money');
+  const rangeEl = document.getElementById('search-range');
+  const typeEl  = document.getElementById('search-type');
 
-  // 設定監聽 .record-list 的子元素變動
-  const listEl = document.querySelector('.record-list');
-  if (listEl) {
+  if (listEl && moneyEl) {
+    updateMyRecordMoney();
+    setTimeout(updateMyRecordMoney, 300); // 延遲補一刀
+
+    // 監聽列表變化
     const observer = new MutationObserver(() => {
+      console.log('🔄 [MutationObserver] 列表變更');
       updateMyRecordMoney();
     });
+    observer.observe(listEl, { childList: true, subtree: false });
 
-    observer.observe(listEl, {
-      childList: true, // 監聽子元素新增/刪除
-      subtree: false   // 只監聽第一層
+    // 監聽快速日期按鈕
+    document.querySelectorAll('.btn-tab__item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        console.log('📅 快速日期點擊');
+        setTimeout(updateMyRecordMoney, 500);
+      });
     });
+
+    // 監聽 select 類型改變
+    if (typeEl) {
+      typeEl.addEventListener('change', () => {
+        console.log('📂 類型下拉選單變更');
+        setTimeout(updateMyRecordMoney, 500);
+      });
+    }
+
+    // 監聽日期欄變動（非 flatpickr）
+    if (rangeEl) {
+      let lastVal = rangeEl.value;
+      setInterval(() => {
+        const nowVal = rangeEl.value;
+        if (nowVal !== lastVal) {
+          lastVal = nowVal;
+          console.log('📆 日期輸入框變更:', nowVal);
+          updateMyRecordMoney();
+        }
+      }, 500);
+    }
+
+  } else {
+    setTimeout(waitForMyRecordReady, 300);
   }
-});
+})();
 
 
 // 首頁
