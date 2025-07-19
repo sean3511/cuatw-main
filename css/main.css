@@ -15471,7 +15471,7 @@ textarea {
 .table-wrapper #table thead{
     z-index: 1;
     position: sticky !important;
-    top: 120px !important;
+    /* top: 120px !important; */
     background-color: #2A3F84 !important;
     box-shadow: inset 0 -2px 0 #ffffff !important;
 }
