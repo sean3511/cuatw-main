@@ -15490,6 +15490,7 @@ textarea {
  .pagination {
       margin-top: 12px;
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
@@ -15502,7 +15503,7 @@ textarea {
 
   /* 頁碼樣式 */
   .pagination label {
-    padding: 8px 4px;
+    padding: 4px 4px;
     background: gba(255, 255, 255, 0.1);
     color: #fff;
     border-radius: 4px;
