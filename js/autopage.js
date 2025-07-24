@@ -87,40 +87,41 @@ class Pagination {
   }
 }
 
-/* ---------- 單一 DOMContentLoaded ---------- */
-document.addEventListener('DOMContentLoaded', () => {
-  const pager = new Pagination({
-    listSelector : '.mywallet-list',
-    itemSelector : '.mywallet-list__item',
-    pagerSelector: '#pagination',
-    perPage      : 'all'
-  });
+(function waitForPagerReady() {
+  const listEl  = document.querySelector('.mywallet-list');
+  const pagerEl = document.querySelector('#pagination');
 
-  if (pager && pager.updatePerPage) {
-    // 筆數與類型變更
+  if (listEl && pagerEl) {
+    const pager = new Pagination({
+      listSelector : '.mywallet-list',
+      itemSelector : '.mywallet-list__item',
+      pagerSelector: '#pagination',
+      perPage      : 'all'
+    });
+
+    // 監聽筆數與類型選單變更
     document.querySelectorAll('.select_num, .mywallet-select__sel')
       .forEach(sel => sel.addEventListener('change', () => {
         pager.updatePerPage(sel.value);
         pager.update();
       }));
 
-    // 日期快捷按鈕
+    // 監聽快捷日期按鈕
     document.querySelectorAll('.btn-tab__item').forEach(item => {
-      item.addEventListener('click', () => {
-        const input = document.getElementById('search-range');
-        if (input) input.value = item.dataset.range;
-        pager.update();
-      });
+      item.addEventListener('click', () => pager.update());
     });
 
-    // 日期欄位選擇器變更（補上這個 ✅）
-    const rangeInput = document.getElementById('search-range');
-    if (rangeInput) {
-      rangeInput.addEventListener('input', () => pager.update());
-    }
-  }
-});
+    // 監聽列表內容變更，自動更新分頁
+    const observer = new MutationObserver(() => {
+      // console.log('🔄 DOM 變更觸發更新');
+      pager.update();
+    });
+    observer.observe(listEl, { childList: true, subtree: false });
 
+  } else {
+    setTimeout(waitForPagerReady, 300);
+  }
+})();
 
 // 充提紀錄分頁
 
@@ -198,47 +199,37 @@ class Pagination2 {
     return b;
   }
 }
-document.addEventListener('DOMContentLoaded', () => {
-  const listEl = document.querySelector('.record-list');
+(function waitForRecordPagerReady() {
+  const listEl  = document.querySelector('.record-list');
   const pagerEl = document.querySelector('#pagination2');
-  let pager = null;
 
   if (listEl && pagerEl) {
-    // 建立分頁
-    pager = new Pagination2({
+    const pager = new Pagination2({
       listSelector : '.record-list',
       itemSelector : '.record-list__item',
       pagerSelector: '#pagination2',
       perPage      : 'all'
     });
 
-    // 監聽筆數選單
+    // 監聽筆數選單變更
     document.querySelectorAll('.select_num, .mywallet-select__sel')
       .forEach(sel => sel.addEventListener('change', () => {
         pager.updatePerPage(sel.value);
-        handleFilterChange(); // ✅ 每次變更條件時觸發篩選
+        pager.update();
       }));
-  }
 
-  // 監聽快速日期按鈕
-  document.querySelectorAll('.btn-tab__item').forEach(item => {
-    item.addEventListener('click', () => {
-      const input = document.getElementById('search-range');
-      if (input) input.value = item.dataset.range;
-      handleFilterChange(); // ✅ 點選時也觸發篩選
+    // 快速日期按鈕觸發更新
+    document.querySelectorAll('.btn-tab__item').forEach(item => {
+      item.addEventListener('click', () => pager.update());
     });
-  });
 
-  // ✅ 統一的觸發點（你可以在這裡做過濾 / 重新請求 / 重設分頁）
-  function handleFilterChange() {
-    const type = document.getElementById('search-type')?.value;
-    const status = document.getElementById('search-status')?.value;
-    const range = document.getElementById('search-range')?.value;
+    // 監聽 .record-list DOM 子元素變化，自動更新分頁
+    const observer = new MutationObserver(() => {
+      pager.update();
+    });
+    observer.observe(listEl, { childList: true, subtree: false });
 
-    console.log('🔍 條件變更：', { type, status, range });
-
-    // 這裡你可以依條件過濾 DOM 或重新撈資料
-    // 假設你有篩選邏輯，資料變更後可以呼叫 pager.update()
-    if (pager) pager.update();
+  } else {
+    setTimeout(waitForRecordPagerReady, 300);
   }
-});
+})();
