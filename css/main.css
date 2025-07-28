@@ -9269,16 +9269,14 @@ textarea {
   background-size: 100% 100%;
   background-position: bottom;
   background-repeat: no-repeat;
+  width: 100%;
 }
 .core-functional__lf {
-  display: flex;
-  /* width: 40%; */
+ display: flex;
+ flex: 1 1 100%;
 }
 .core-functional__rt {
-  flex: 1 1 0;
-  display: flex;
-  justify-content: center;
-  /* width: 60%; */
+  flex: 1 0 auto;
 }
 .core-functional .user-info {
   height: 54px;
@@ -9339,13 +9337,13 @@ textarea {
   padding: 0 5px;
 }
 .core-functional .functional-list {
-  gap: 8px;
   display: flex;
   flex: 1 1 0;
+  gap: 8px;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 .core-functional .functional-list__item {
   min-width: 48px;
