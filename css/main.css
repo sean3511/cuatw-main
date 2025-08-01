@@ -15485,51 +15485,68 @@ textarea {
 .page_filter{
   margin-top: 8px;
 }
- .pagination {
-      margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-  }
 
-  /* 隱藏 radio 按鈕本體 */
-  .pagination input[type="radio"] {
-    display: none;
-  }
+.pagination {
+  margin-top: 12px;
+  position: relative; /* 給箭頭定位依據 */
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  align-items: center;
+}
 
-  /* 頁碼樣式 */
-  .pagination label {
-    padding: 4px 4px;
-    background: gba(255, 255, 255, 0.1);
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.2s ease;
-  }
+/* 隱藏 radio 本體 */
+.pagination input[type="radio"] {
+  display: none;
+}
 
-    .pagination button {
-    all: unset; /* 清除所有預設樣式 */
-    padding: .5rem .8rem;
-    height: 12px;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.2s ease;
-  }
+/* 基本頁碼樣式：無底色 */
+.pagination label {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
 
+/* 被選中的頁碼：白底黑字 */
+.pagination input[type="radio"]:checked + label {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
 
+/* 上一頁 / 下一頁按鈕 */
+.pagination button {
+  all: unset;
+  padding: .5rem .8rem;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
 
-  /* 被選中的頁碼 */
-  .pagination input[type="radio"]:checked + label {
-    background: rgba(255, 255, 255, 0.5);
-    color: #000;
-  }
+/* hover 效果（不改變底色，只淡化字） */
+.pagination label:hover,
+.pagination button:hover {
+  color: #ccc;
+}
+
+/* 省略號樣式 */
+.pagination .ellipsis {
+  padding: 4px 0px;
+  color: #666;
+  user-select: none;
+  pointer-events: none;
+}
+
 @keyframes bounceIn {
   from,
   20%,
