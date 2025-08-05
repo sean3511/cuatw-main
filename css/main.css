@@ -9273,10 +9273,9 @@ textarea {
 }
 .core-functional__lf {
  display: flex;
- flex: 1 1 100%;
 }
 .core-functional__rt {
-  flex: 1 0 auto;
+  flex: 1 1 0;
 }
 .core-functional .user-info {
   height: 54px;
