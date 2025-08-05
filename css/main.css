@@ -9272,12 +9272,11 @@ textarea {
   width: 100%;
 }
 .core-functional__lf {
-   display: flex;
+ display: flex;
+ flex: 1 1 100%;
 }
 .core-functional__rt {
-    flex: 1 1 0;
-    display: flex;
-    justify-content: center;
+  flex: 1 0 auto;
 }
 .core-functional .user-info {
   height: 54px;
@@ -9338,14 +9337,15 @@ textarea {
   padding: 0 5px;
 }
 .core-functional .functional-list {
-    gap: 8px;
-    display: flex;
-    flex: 1 1 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex: 1 1 0;
+  gap: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 .core-functional .functional-list__item {
   min-width: 48px;
   display: flex;
@@ -9501,6 +9501,21 @@ textarea {
   border: 1px solid transparent;
   background: linear-gradient(to right, #fdeed1 0%, #f5cb9b 100%) border-box;
   background-image: url('../images/common/demo/index/channel/channel-bg@2x.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-bottom: 4px;
+}
+.channel-list__item.Commingsoon {
+  width: 50%;
+  max-width: 49%;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid transparent;
+  background: linear-gradient(to right, #fdeed1 0%, #f5cb9b 100%) border-box;
+  background-image: url('../images/common/demo/index/channel/channel-bg-non@2x.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
