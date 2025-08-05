@@ -9504,21 +9504,7 @@ textarea {
   background-size: contain;
   margin-bottom: 4px;
 }
-.channel-list__item.Commingsoon {
-  width: 50%;
-  max-width: 49%;
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  border: 1px solid transparent;
-  background: linear-gradient(to right, #fdeed1 0%, #f5cb9b 100%) border-box;
-  background-image: url('../images/common/demo/index/channel/channel-bg-non@2x.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  margin-bottom: 4px;
-}
+
 .channel-list__item:nth-child(odd) {
   margin-left: 0;
 }
