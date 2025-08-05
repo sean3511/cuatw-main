@@ -9272,10 +9272,12 @@ textarea {
   width: 100%;
 }
 .core-functional__lf {
- display: flex;
+   display: flex;
 }
 .core-functional__rt {
-  flex: 1 1 0;
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
 }
 .core-functional .user-info {
   height: 54px;
@@ -9336,13 +9338,13 @@ textarea {
   padding: 0 5px;
 }
 .core-functional .functional-list {
-  display: flex;
-  flex: 1 1 0;
-  gap: 8px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    gap: 8px;
+    display: flex;
+    flex: 1 1 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .core-functional .functional-list__item {
   min-width: 48px;
