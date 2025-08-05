@@ -10041,12 +10041,27 @@ textarea {
 .member-center__user-m .user-m__icon__vip.-normal {
   background: linear-gradient(135deg, #bac2ff 30%, #002e99 100%);
 }
+.member-center__user-m .user-m__icon__vip.-bronze {
+  background: linear-gradient(135deg, #ddc7ab 30%, #542f15 100%);
+}
 .member-center__user-m .user-m__icon__vip.-gold {
   background: linear-gradient(135deg, #fff1b8 30%, #ab862b 100%);
+}
+.member-center__user-m .user-m__icon__vip.-platinum {
+  background: linear-gradient(135deg, #ddfffa 30%, #437e76 100%);
 }
 .member-center__user-m .user-m__icon__vip.-silver {
   background: linear-gradient(135deg, #ffffff 50%, #8d90a2 100%);
 }
+.member-center__user-m .user-m__icon__vip.-diamond {
+  background: url(../images/vip_bg_diamond.png);
+  background-size: cover;
+}
+.member-center__user-m .user-m__icon__vip.-master {
+  background: url(../images/vip_bg_master.png);
+  background-size: cover;
+}
+
 .member-center__user-m .user-m__icon__upload-icon,
 .member-center__user-m .user-m__icon__input {
   position: absolute;
@@ -10493,12 +10508,33 @@ textarea {
 .inner-user__user-m .user-m__icon__vip.-normal {
   background: linear-gradient(135deg, #bac2ff 30%, #002e99 100%);
 }
+
+.inner-user__user-m .user-m__icon__vip.-bronze {
+  background: linear-gradient(135deg, #ddc7ab 30%, #542f15 100%);
+}
+
 .inner-user__user-m .user-m__icon__vip.-gold {
   background: linear-gradient(135deg, #fff1b8 30%, #ab862b 100%);
 }
+
+.inner-user__user-m .user-m__icon__vip.-platinum {
+  background: linear-gradient(135deg, #ddfffa 30%, #437e76 100%);
+}
+
 .inner-user__user-m .user-m__icon__vip.-silver {
   background: linear-gradient(135deg, #ffffff 50%, #8d90a2 100%);
 }
+
+.inner-user__user-m .user-m__icon__vip.-diamond {
+  background: url(../images/vip_bg_diamond.png);
+  background-size: cover;
+}
+
+.inner-user__user-m .user-m__icon__vip.-master {
+  background: url(../images/vip_bg_master.png);
+  background-size: cover;
+}
+
 .inner-user__user-m .user-m__name {
   font-size: 16px;
   font-weight: 600;
