@@ -36,7 +36,7 @@ window.toast = () => {
 // })
 
 
-// ===== 交易紀錄統計數額（只統計「金额」欄位） =====
+// ===== 交易紀錄統計數額（只統計「金額」欄位） =====
 function updateMoneySum() {
 
   const moneyBox = document.querySelector('.mywallet-money');
@@ -59,7 +59,7 @@ function updateMoneySum() {
   });
 
   // console.log(`💰 總金額加總：${total}`);
-  moneyBox.textContent = `加总金额：${total.toLocaleString()}`;
+  moneyBox.textContent = `加總金額：${total.toLocaleString()}`;
 }
 
 // ===== 直接執行，不等 DOMContentLoaded =====
@@ -107,7 +107,7 @@ function updateMyRecordMoney() {
   });
 
   // console.log(`💰 總金額加總：${total}`);
-  moneyBox.textContent = `加总金额：${total.toLocaleString()}`;
+  moneyBox.textContent = `加總金額：${total.toLocaleString()}`;
 }
 
 // ===== 啟動定時器，每 3 秒更新一次金額 =====
