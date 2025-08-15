@@ -73,7 +73,18 @@
                                                             </select>
                         </div>
                     </div>
-                    
+                       <div class="mywallet-select page_filter">
+                        <div class="mywallet-select__title ">
+                            <select class="mywallet-select__sel select_num">
+                                <option value="all">顯示全部</option>
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="btn-tab">
                         <a class="btn-tab__item yesterday" data-range-button="yesterday" data-range="2025-08-14 00:00:00~2025-08-14 23:59:59" href="javascript:void(0);">
                             <span class="btn-tab__item__text">昨天</span>
@@ -3095,6 +3106,7 @@
                     </tr>
                 </tfoot>
                     </table>
+                    <div class="pagination marignbot" id="pagination"></div>
                 </div>
             </div>
         </div>
@@ -3323,6 +3335,7 @@
 
     <script type="text/javascript" src="/assets/style/js/slick.min.js"></script>
     <script src="/assets/style/js/main.js?t=1755196361"></script>
+    <script src="js/autopage.js"></script>
 
     <script>
     
@@ -3548,7 +3561,6 @@
     $('#start-time-btn').click(function(){ $('#start-time-input').trigger('click')});
     $('#end-time-btn').click(function(){ $('#end-time-input').trigger('click')});
 </script>
-
 
 
 </body>
