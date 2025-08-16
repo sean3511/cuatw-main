@@ -15517,6 +15517,10 @@ textarea {
 }
 .responsive-table {
   font-size: 10px !important;
+    width: max-content;
+    min-width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
 }
 .table-wrapper #table > :not(caption) > * > * {
   padding: .5rem 4px !important;
