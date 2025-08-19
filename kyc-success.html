@@ -15,6 +15,108 @@
 </head>
 
 <body>
+    <!-- 登入密碼STATR -->
+       <div id="show2" class="cardboard-dialog" style="display: none;">
+        <div class="dialog-mask">
+            <div class="dialog success">
+                <a href="javascript:void(0);" class="dialog__close" onclick="show2()">
+                    <div class="dialog__close__img"></div>
+                </a>
+                <div class="dialog__header">
+                    <div class="dialog__header__top">
+                        <p class="amount-title">修改登入密碼</p>
+                    </div>
+                </div>
+                <div class="dialog__body">
+                    <div class="dialog-amount-list">
+                        <div class="dialog-amount-list__input">
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="">舊密碼</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-group">
+                                                <input type="text" class="el-input" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="">設定新密碼</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-group">
+                                                <input type="text" class="el-input" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog__body-footer">
+                    <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                        onclick="show2()">確定</a>
+                </div>
+            </div>
+            <!--popup-->
+        </div>
+    </div>
+    <!-- 登入密碼END -->
+      <!-- 託售密碼STATR -->
+       <div id="show1" class="cardboard-dialog" style="display: none;">
+        <div class="dialog-mask">
+            <div class="dialog success">
+                <a href="javascript:void(0);" class="dialog__close" onclick="show1()">
+                    <div class="dialog__close__img"></div>
+                </a>
+                <div class="dialog__header">
+                    <div class="dialog__header__top">
+                        <p class="amount-title">修改託售密碼</p>
+                    </div>
+                </div>
+                <div class="dialog__body">
+                    <div class="dialog-amount-list">
+                        <div class="dialog-amount-list__input">
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="">舊密碼</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-group">
+                                                <input type="text" class="el-input" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-tableviewcell -default -value1 -subtitle">
+                                <div class="ui-tableviewcell__text">
+                                    <p class="">設定新密碼</p>
+                                    <div class="com-cell">
+                                        <div class="com-cell__form">
+                                            <div class="form-group">
+                                                <input type="text" class="el-input" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog__body-footer">
+                    <a class="btn btn-primary rounded-pill btn-ripple" href="javascript:void(0)"
+                        onclick="show2()">確定</a>
+                </div>
+            </div>
+            <!--popup-->
+        </div>
+    </div>
+    <!-- 託售密碼END -->
         <div class="layout-main inner-bg">
         <div class="nav glow-bg">
             <div class="nav__left">
@@ -30,84 +132,95 @@
         <div class="layout-content">
             <div class="com-inner">
                 <div class="com-inner__content">
-                    <form id="edit-form" method="POST" action="">
-                        <div class="mydata">
-                            <div class="cell-list">
-                                <div class="com-cell-title">
-                                    <h4 class="com-cell-title__text">1.基本資料</h4>
-                                </div>
-                                <div class="com-cell">
-                                    <div class="com-cell__form">
-                                        <div class="form-title">
-                                            <span class="form-title__require">＊</span>
-                                            <p class="form-title__text">真實姓名</p>
+                            <!-- 新增內容start -->
+                       <div class="layout-content">
+                            <div class="sub-title">基本資料</div>
+                            <form class="pt-3">
+                                <div class="mb-2">
+                                    <div class="row g-3 align-items-start">
+                                        <div class="col-4">
+                                            <label for="" class="col-form-label">帳號</label>
                                         </div>
-                                        <div class="form-group">
-                                            <input name="name" type="text" class="el-input" placeholder="请输入真實姓名" required="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="com-cell">
-                                    <div class="com-cell__form">
-                                        <div class="form-title">
-                                            <span class="form-title__require">＊</span>
-                                            <p class="form-title__text">出生年月日</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <input name="birthday" value="2007-08-16" type="hidden" id="birthday" class="el-input flatpickr-input" placeholder="請輸入出生年月日" required="" readonly="readonly"><input class="el-input flatpickr-input flatpickr-mobile" tabindex="1" type="date" required="" placeholder="請輸入出生年月日" value="2007-08-16">
+                                        <div class="col-8">
+                                            <input type="text" readonly="" class="form-control-plaintext" value="abc666">
+                                            <span class="form-text text-danger">
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="com-cell">
-                                    <div class="com-cell__form">
-                                        <div class="form-title">
-                                            <span class="form-title__require">＊</span>
-                                            <p class="form-title__text">身分證號</p>
+                                <div class="mb-2">
+                                    <div class="row g-3 align-items-start">
+                                        <div class="col-4">
+                                            <label for="" class="col-form-label">真實姓名</label>
                                         </div>
-                                        <div class="form-group">
-                                            <input name="id_number" maxlength="10" type="text" class="el-input" placeholder="請輸入身分證號" required="">
+                                        <div class="col-8 d-flex">
+                                                                <input type="text" readonly="" class="form-control-plaintext" value="潘*尾">
+                                                            </div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <div class="row g-3 align-items-start">
+                                        <div class="col-4">
+                                            <label for="" class="col-form-label">生日</label>
+                                        </div>
+                                        <div class="col-8 d-flex">
+                                                                <input type="text" readonly="" class="form-control-plaintext" value="20**-06-**">
+                                                            </div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <div class="row g-3 align-items-start">
+                                        <div class="col-4">
+                                            <label for="" class="col-form-label">身分證號</label>
+                                        </div>
+                                        <div class="col-8 d-flex">
+                                                                <input type="text" readonly="" class="form-control-plaintext" value="B123****78">
+                                                            </div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <div class="row g-3 align-items-start">
+                                        <div class="col-4">
+                                            <label for="" class="col-form-label">錢包餘額</label>
+                                        </div>
+                                        <div class="col-8">
+                                            <input type="text" readonly="" class="form-control-plaintext" value="0.80">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="com-cell-title">
-                                    <h4 class="com-cell-title__text">2.上傳認證</h4>
-                                    <a href="javascript:void(0)" class="btn btn-secondary rounded-pill btn-ripple" onclick="show9()">查看範例</a>
-                                </div>
-                                <div class="com-cell-info ">
-                                    身分證正面
-                                </div>
-                                <div class="com-cell">
-                                    <div class="com-cell__form cell__form-item">
-                                    <div class="preview" style="height:auto;">
-                                        <p>點擊選擇身分證正面</p>
-                                    </div>
-                                    <input class="image" type="file" id="id-front" name="id_front" style="display: none;" accept="image/*">
-
+                                <div class="mb-2">
+                                    <div class="row g-3 align-items-start">
+                                        <div class="col-4">
+                                            <label for="" class="col-form-label">手機號碼</label>
+                                        </div>
+                                        <div class="col-8">
+                                            <input type="text" readonly="" class="form-control-plaintext" value="0985***977">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="com-cell-info ">
-                                    身分證背面
-                                </div>
-                                <div class="com-cell">
-                                    <div class="com-cell__form cell__form-item">
-                                    <div class="preview" style="height:auto;">
-                                        <p>點擊選擇身分證背面</p>
-                                    </div>
-                                    <input class="image" type="file" id="id-back" name="id_back" style="display: none;" accept="image/*">
-
+                                <div class="mb-2">
+                                    <div class="row g-3 align-items-start">
+                                        <div class="col-4">
+                                            <label for="" class="col-form-label">登入密碼</label>
+                                        </div>
+                                        <div class="col-8">
+                                            <button onclick="show2()" type="button" class="btn btn-secondary btn-form rounded-pill modify-password" data-type="login">修改密碼</button>
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                <div class="com-cell-title">
-                                    <h4 class="com-cell-title__text">注意事項</h4>
+                                <div class="mb-2">
+                                    <div class="row g-3 align-items-start">
+                                        <div class="col-4">
+                                            <label for="" class="col-form-label">託售密碼</label>
+                                        </div>
+                                        <div class="col-8">
+                                            <button onclick="show1()" type="button" class="btn btn-secondary btn-form rounded-pill modify-password" data-type="withdrawal">修改密碼</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="com-cell-info ">※上傳前請務必看過範例。</div>
-                            </div>
-                            <div class="com-inner__content-footer">
-                                <button type="submit" class="btn btn-primary rounded-pill btn-ripple">送出</button>
-                            </div>
+                            </form>
                         </div>
-                    </form>
+                           <!-- 新增內容end -->
                 </div>
             </div>
         </div>
@@ -432,7 +545,26 @@
     });
             dangerMessage("實名認證已完成","無需再次填寫", "https://gf888.tw/1824e8c9a3ad9495a988cd567860aaf0");
     </script>
-
+    <!-- 彈窗script -->
+<script>
+      function show1() {
+            var x = document.getElementById('show1');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+      function show2() {
+            var x = document.getElementById('show2');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+</script>
+    <!-- 彈窗script -->
 
 
 </body>
