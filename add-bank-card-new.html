@@ -183,14 +183,10 @@
            $('#edit-form [name="bank_branch"]').closest('div.com-cell').hide();
            $('#edit-form [name="bank_branch"]').val('無');
            $('#image').closest('div.com-cell').hide();
-              $('.com-inner__content').append(
-        '<p class="trc-tip" style="color:#ff3d3d;">綁定前務必仔細檢查地址是否正確，TRC20地址僅以大寫字母“T”開頭。例如：T9zG21</p>'
-    );
        } else {
            $('#edit-form [name="bank_branch"]').closest('div.com-cell').show();
            $('#edit-form [name="bank_branch"]').val('');
            $('#image').closest('div.com-cell').show();
-           $('#edit-form .trc-tip').remove();
        }
     });
     </script>
