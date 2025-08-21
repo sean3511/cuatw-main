@@ -2586,6 +2586,9 @@ textarea {
   padding: 15px 0;
   border-bottom: 1px solid rgba(80, 85, 98, 0.1);
 }
+.ui-tableviewcell__text p{
+  flex: 1 1 0;
+}
 .ui-tableviewcell__text .title,
 .ui-tableviewcell__text .sub-text {
   margin: 0;
@@ -15594,6 +15597,43 @@ textarea {
   user-select: none;
   pointer-events: none;
 }
+.form-control-plaintext{
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: .375rem 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+    background-color: transparent;
+    border: solid transparent;
+    border-width: 1px 0;
+}
+.col-form-label{
+    display: inline-block;
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+    color: #fff;
+}
+.sub-title{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    font-size: 18px;
+    color: #FFF;
+}
+.sub-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 4px;
+    height: 100%;
+    background-color: #f5cb9b;
+  }
 @keyframes bounceIn {
   from,
   20%,
