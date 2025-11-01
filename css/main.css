@@ -10004,18 +10004,24 @@ textarea {
 
 .member-center__user-m {
   display: flex;
-  flex-direction: column;
+  padding: 0px 24px;
+  gap: 16px;
+}
+.member-center__user-m a{
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .member-center__user-m .user-m__icon {
   display: flex;
-  background-image: url('../images/common/image/member_login_bg@2x.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 78px;
   position: relative;
 }
 .member-center__user-m .user-m__icon__avatar {
@@ -10034,14 +10040,15 @@ textarea {
   justify-content: center;
 }
 .member-center__user-m .user-m__icon__vip {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 16px;
 }
 .member-center__user-m .user-m__icon__vip.-normal {
   background: linear-gradient(135deg, #bac2ff 30%, #002e99 100%);
@@ -10083,12 +10090,10 @@ textarea {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  text-align: center;
 }
 .member-center__user-m .user-m__info {
   position: relative;
-  min-height: 54px;
-  padding-top: 8px;
+  height: 48px;
 }
 .member-center__user-m .user-m__info .info-list {
   padding: 0;
@@ -10096,12 +10101,10 @@ textarea {
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .member-center__user-m .user-m__info .info-list__item {
   display: flex;
   align-items: center;
-  padding-top: 16px;
 }
 .member-center__user-m .user-m__info .info-list__item:first-child {
   padding-top: 0;
@@ -10187,12 +10190,19 @@ textarea {
   top: 230px;
 }
 
+.member-menu {
+  flex: 1 0 0;
+  --bs-gutter-x: clamp(4px, 2vw, 10px);
+  --bs-gutter-y: clamp(4px, 2vh, 10px);
+  max-height: 500px;
+}
+
 .member-menu-top {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   position: relative;
-  margin: 10px 16px 0;
+  margin: 8px 16px 0;
   background: transparent
     linear-gradient(
       180deg,
@@ -10216,7 +10226,7 @@ textarea {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 12px;
+  padding: 8px;
 }
 .member-menu-top__item + .member-menu-top__item:after {
   content: '';
@@ -10248,11 +10258,10 @@ textarea {
   font-size: 12px;
   font-weight: 600;
   margin: 0;
-  padding-top: 4px;
 }
 .member-menu-top .member-menu-top-bg {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 4px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -10278,7 +10287,10 @@ textarea {
   margin-top: 50px;
 }
 .member-menu-bottom .com-inner__content {
-  padding: 16px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  padding: 8px 24px 32px;
 }
 .member-menu-bottom .ui-tableview-grouped {
   padding-bottom: 0px;
@@ -10305,28 +10317,35 @@ textarea {
 .member-menu-bottom .ui-tableview-grouped .ui-tableviewcell:last-child {
   border-bottom: 0px;
 }
+.member-menu__item{
+  display: flex;
+}
 
 .member-menu__item .item-cell {
+  flex: 1; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 16px;
-  padding: 12px;
+  padding: 4px;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
   background-image: linear-gradient(to bottom, #314ba4 0, #131d3e 100%);
   border: 2px rgba(255, 255, 255, 0.4392156863) solid;
-  box-shadow: #496488 4px 4px 0px 0px;
+  box-shadow: #496488 2px 2px 0px 0px;
 }
 .member-menu__item .item-cell__icon {
   display: flex;
-  width: 40px;
+  min-width: 40px;
+  max-width: 80px;
+  width: 6vh;
 }
 .member-menu__item .item-cell__title {
   margin: 0;
-  padding-top: 8px;
-  font-size: 14px;
+  padding-top: 4x;
+  font-size: clamp(12px, 1.2vw, 16px);
+  white-space: nowrap;
   color: #ffffff;
 }
 
@@ -10438,7 +10457,7 @@ textarea {
   flex-shrink: 0;
   height: 48px;
   padding: 0px 8px;
-  margin-top: 16px;
+  margin-top: 8px;
   border-radius: 1000px;
   background-image: url('../images/common/image/btn-primary-bg@2x.png');
   background-repeat: no-repeat;
