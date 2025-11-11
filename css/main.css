@@ -5786,7 +5786,6 @@ textarea {
   overflow-y: auto;
   max-height: 55vh;
 }
-
 .popup-mask {
   position: fixed;
   top: 0;
@@ -15653,6 +15652,46 @@ textarea {
     height: 100%;
     background-color: #f5cb9b;
   }
+.client-popup-mask{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5019607843);
+    align-items: center;
+    justify-content: center;
+    animation: fade 0.4s;
+    animation-fill-mode: forwards;
+    z-index: 3000;
+}
+.client-popup-cotainer{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: clamp(40px, 40%, 160px);
+  justify-content: space-around;
+}
+.client-popup-btn{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.client-popup-img{
+  width: 60px;
+  height: 60px;
+}
+.client-popup-label{
+  color: rgb(255 255 255);
+  text-align: center;
+  margin-top: 10px;
+}
 @keyframes bounceIn {
   from,
   20%,

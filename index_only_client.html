@@ -23,6 +23,21 @@
         <img class="btn-icon" src="./images/common/image/back-btn.png" alt="">
       </a>
     </div>
+      <!-- 客服popup -->
+     <div class="client-popup-mask">
+       <div class="client-popup-cotainer">
+            <a href="service.html">
+              <div class="client-popup-btn online-service">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <circle cx="30" cy="30" r="30" fill="#4054C7"/>
+                        <path d="M21.8163 12.3745C16.5981 15.4499 13.3298 21.0735 13.1496 27.1979L12.737 27.3101C9.69022 28.1427 8.21229 32.5246 9.42225 37.1347C10.6311 41.7416 14.0574 44.7822 17.1053 43.9502L18.8983 43.4576C19.8555 43.1956 20.3227 41.8428 19.948 40.4197L17.2239 30.0368V27.7364C17.2239 22.8907 19.7531 18.4193 23.861 15.9951C27.9727 13.5697 33.028 13.5697 37.1386 15.9951C41.2465 18.4193 43.7757 22.8907 43.7757 27.7364V30.0462L41.2102 39.8182C40.1464 41.238 38.8076 42.4559 37.2398 43.3775C36.4532 43.8441 35.6271 44.204 34.7815 44.4892C34.3841 43.7346 33.7664 43.242 33.061 43.242H27.3296C26.1191 43.242 25.1506 44.6706 25.1506 46.4441V46.799C25.1506 48.5692 26.1191 50 27.3296 50H33.0616C33.879 50 34.579 49.341 34.9531 48.3735C36.3774 47.9821 37.7677 47.4127 39.081 46.6404C40.4767 45.8172 41.7267 44.806 42.8175 43.6544L43.897 43.9508C46.9422 44.7828 50.3712 41.7422 51.5779 37.1353C52.7873 32.5251 51.3105 28.1433 48.2621 27.3107L47.8506 27.1957C47.6665 21.0707 44.4016 15.4499 39.1823 12.375C36.4987 10.7917 33.4979 10 30.4982 10C27.5006 9.99945 24.5009 10.7911 21.8163 12.3745Z" fill="white"/>
+                        </svg>
+                        <div class="client-popup-label">線上客服</div>
+              </div>
+            </a>
+        </div>
+     </div>
+     <!-- 客服popup -->
     <!-- 公告中心popup -->
     <div id="promotions" class="popup">
       <div class="popup-mask">
@@ -636,6 +651,27 @@
         popup.style.display = 'none';
       }
     }
+    $(function () {
+  // 開啟：點第 4 個 tabbar 項目
+  $(document).on('click', '.tabbar > a.tabbar__item:nth-child(4)', function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    $('.client-popup-mask').css('display', 'flex');
+  });
+
+  // 點按鈕本體：不要關閉
+  $(document).on('click', '.client-popup-btn', function (e) {
+    e.stopPropagation();
+  });
+
+  // 點遮罩或容器內「非按鈕區域」：關閉
+  $(document).on('click', '.client-popup-mask', function (e) {
+    // 只要點擊目標往上找不到 .client-popup-btn，就關閉
+    if ($(e.target).closest('.client-popup-btn').length === 0) {
+      $(this).css('display', 'none');
+    }
+  });
+});
   </script>
 </body>
 
