@@ -4071,6 +4071,9 @@ textarea {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
 }
+label a{
+  color:rgb(0, 0, 238) !important;
+}
 .com-cell__check .check-checkbox {
   position: relative;
   display: flex;
@@ -9889,6 +9892,7 @@ textarea {
 .entry-form__main .main-login .btn,
 .entry-form__main .main-reg .btn {
   border-radius: 4px;
+  padding: 4px;
 }
 .entry-form__main .main-login .btn--disabled,
 .entry-form__main .main-reg .btn--disabled {
@@ -9952,14 +9956,14 @@ textarea {
   transform: translate(0px, 0px);
 }
 .entry-form__main .main-login .com-cell .el-input {
-  font-size: 12px;
+  font-size: 12px !important;
   color: #ffffff;
 }
 .entry-form__main .main-login .com-cell .el-input::-moz-placeholder {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 .entry-form__main .main-login .com-cell .el-input::placeholder {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 .entry-form__main .main-reg {
   padding-left: 12%;
