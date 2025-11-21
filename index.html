@@ -682,6 +682,27 @@
     }
   });
 });
+ $(function () {
+  // 開啟：點第 4 個 tabbar 項目
+  $(document).on('click', '.tabbar > a.tabbar__item:nth-child(4)', function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    $('.client-popup-mask').css('display', 'flex');
+  });
+
+  // 點按鈕本體：不要關閉
+  $(document).on('click', '.client-popup-btn', function (e) {
+    e.stopPropagation();
+  });
+
+  // 點遮罩或容器內「非按鈕區域」：關閉
+  $(document).on('click', '.client-popup-mask', function (e) {
+    // 只要點擊目標往上找不到 .client-popup-btn，就關閉
+    if ($(e.target).closest('.client-popup-btn').length === 0) {
+      $(this).css('display', 'none');
+    }
+  });
+});
   </script>
 </body>
 
